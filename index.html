@@ -3,168 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أساسيات الشبكات - المستوى الأول - عالم الشبكات</title>
-    <link rel="stylesheet" href="/../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>عالم الشبكات - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- الترويسة -->
     <header>
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
-                    <li><a href="../osi.html">نموذج OSI</a></li>
-                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
-                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
-                    <li><a href="#" class="active">المستوى الأول</a></li>
-                    <li><a href="../level2/index.html">المستوى الثاني</a></li>
-                </ul>
-            </nav>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="pages/level1/index.html">المستوى الأساسي</a></li>
+                    <li><a href="pages/level2/index.html">المستوى المتقدم</a></li>
+                    <li><a href="pages/quiz.html">اختبر معلوماتك</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <div class="page-banner">
+    <!-- قسم البطل -->
+    <section class="hero-section">
         <div class="container">
-            <h1>المستوى الأول - أساسيات الشبكات</h1>
-            <p>تعلم أساسيات الشبكات بشكل مفصل ومبسط للمبتدئين</p>
-        </div>
-    </div>
-
-    <div class="content-wrapper">
-        <div class="container">
-            <div class="sidebar">
-                <div class="toc">
-                    <h3>محتويات المستوى الأول</h3>
-                    <ul>
-                        <li><a href="index.html" class="active">نظرة عامة على المستوى الأول</a></li>
-                        <li><a href="network-fundamentals.html">مفاهيم الشبكات الأساسية</a></li>
-                        <li><a href="network-types.html">أنواع الشبكات</a></li>
-                        <li><a href="network-components.html">مكونات الشبكة</a></li>
-                        <li><a href="network-topologies.html">طوبولوجيا الشبكة</a></li>
-                        <li><a href="addressing.html">العنونة في الشبكات</a></li>
-                        <li><a href="basic-security.html">أساسيات أمن الشبكات</a></li>
-                        <li><a href="wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
-                        <li><a href="basic-routing.html">أساسيات التوجيه</a></li>
-                        <li><a href="basic-labs.html">المختبرات العملية الأساسية</a></li>
-                    </ul>
-                </div>
-                <div class="related-content">
-                    <h3>مواضيع ذات صلة</h3>
-                    <ul>
-                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
-                        <li><a href="../osi.html">نموذج OSI</a></li>
-                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
-                        <li><a href="../level2/index.html">المستوى الثاني</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="main-content">
-                <section class="content-section">
-                    <h2>نظرة عامة على المستوى الأول</h2>
-                    <div class="section-image">
-                        <img src="../../images/network-basics.svg" alt="أساسيات الشبكات">
-                    </div>
-                    <p>مرحبًا بك في المستوى الأول من دورة أساسيات الشبكات! هذا المستوى مصمم خصيصًا للمبتدئين الذين لديهم خلفية بسيطة عن الشبكات ويرغبون في تعميق فهمهم للمفاهيم الأساسية.</p>
-                    <p>في هذا المستوى، سنتناول المفاهيم الأساسية للشبكات بشكل مفصل ومبسط، بدءًا من التعريفات الأساسية وصولًا إلى المفاهيم المتقدمة قليلًا مثل أساسيات التوجيه وأمن الشبكات.</p>
-                    
-                    <h3>ماذا ستتعلم في المستوى الأول؟</h3>
-                    <ul>
-                        <li>مفاهيم الشبكات الأساسية والمصطلحات الشائعة</li>
-                        <li>أنواع الشبكات المختلفة وخصائصها</li>
-                        <li>المكونات الأساسية للشبكة (الأجهزة والبرمجيات)</li>
-                        <li>طوبولوجيا الشبكة وأنماط الاتصال</li>
-                        <li>أساسيات العنونة في الشبكات (IPv4, IPv6)</li>
-                        <li>مبادئ أمن الشبكات الأساسية</li>
-                        <li>أساسيات الشبكات اللاسلكية</li>
-                        <li>مفاهيم التوجيه الأساسية</li>
-                        <li>تطبيقات عملية ومختبرات أساسية</li>
-                    </ul>
-                    
-                    <div class="info-box">
-                        <h4>ملاحظة هامة:</h4>
-                        <p>هذا المستوى يركز على المفاهيم الأساسية ويهدف إلى بناء أساس متين لفهم الشبكات. بعد إتقان هذا المستوى، يمكنك الانتقال إلى المستوى الثاني الذي يتناول مواضيع أكثر تقدمًا مثل مايكروتك (MikroTik) وبرمجة الشبكات وتركيبها وحمايتها.</p>
-                    </div>
-                </section>
-
-                <section class="content-section">
-                    <h2>كيفية استخدام هذا المستوى</h2>
-                    <p>لتحقيق أقصى استفادة من هذا المستوى، ننصحك باتباع الخطوات التالية:</p>
-                    
-                    <h3>1. اتبع التسلسل المنطقي</h3>
-                    <p>تم تنظيم المحتوى بشكل متسلسل ومنطقي، حيث تبني كل وحدة على المفاهيم التي تم تقديمها في الوحدات السابقة. لذلك، ننصحك بدراسة الوحدات بالترتيب المقدم.</p>
-                    
-                    <h3>2. قم بحل التمارين والاختبارات</h3>
-                    <p>في نهاية كل وحدة، ستجد تمارين واختبارات قصيرة لتقييم فهمك للمفاهيم. قم بحلها للتأكد من استيعابك للمادة قبل الانتقال إلى الوحدة التالية.</p>
-                    
-                    <h3>3. طبق ما تعلمته عمليًا</h3>
-                    <p>قسم المختبرات العملية الأساسية يحتوي على تطبيقات عملية للمفاهيم التي تعلمتها. حاول تنفيذ هذه التطبيقات لترسيخ المفاهيم وتطوير مهاراتك العملية.</p>
-                    
-                    <h3>4. استخدم الموارد الإضافية</h3>
-                    <p>في نهاية كل وحدة، ستجد قائمة بالموارد الإضافية التي يمكنك الرجوع إليها لمزيد من التعمق في الموضوع.</p>
-                </section>
-
-                <section class="content-section">
-                    <h2>المشاريع العملية</h2>
-                    <p>لتطبيق ما تعلمته في هذا المستوى، سنقدم لك ثلاثة مشاريع عملية:</p>
-                    
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <h3>المشروع الأول: إنشاء شبكة منزلية بسيطة</h3>
-                            <p>في هذا المشروع، ستتعلم كيفية إعداد شبكة منزلية بسيطة تتضمن راوتر وعدة أجهزة متصلة، وكيفية تكوينها بشكل صحيح.</p>
-                            <a href="basic-labs.html#project1" class="btn primary-btn">ابدأ المشروع</a>
-                        </div>
-                        
-                        <div class="project-card">
-                            <h3>المشروع الثاني: تحليل حركة الشبكة</h3>
-                            <p>في هذا المشروع، ستتعلم كيفية استخدام أدوات تحليل حركة الشبكة لفهم كيفية تبادل البيانات بين الأجهزة.</p>
-                            <a href="basic-labs.html#project2" class="btn primary-btn">ابدأ المشروع</a>
-                        </div>
-                        
-                        <div class="project-card">
-                            <h3>المشروع الثالث: تأمين شبكة منزلية</h3>
-                            <p>في هذا المشروع، ستتعلم الخطوات الأساسية لتأمين شبكتك المنزلية ضد التهديدات الشائعة.</p>
-                            <a href="basic-labs.html#project3" class="btn primary-btn">ابدأ المشروع</a>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="navigation-buttons">
-                    <a href="../basics.html" class="btn outline-btn">العودة إلى أساسيات الشبكات</a>
-                    <a href="network-fundamentals.html" class="btn primary-btn">التالي: مفاهيم الشبكات الأساسية</a>
-                </div>
-
-                <div class="quiz-promo">
-                    <h3>اختبر معلوماتك!</h3>
-                    <p>بعد الانتهاء من دراسة المستوى الأول، قم بإجراء الاختبار الشامل لتقييم فهمك للمفاهيم الأساسية.</p>
-                    <a href="../quiz.html" class="btn secondary-btn">اختبر معلوماتك</a>
+            <div class="hero-content">
+                <h1>تعلم أساسيات وتقنيات الشبكات</h1>
+                <p>منصة تعليمية شاملة لفهم عالم الشبكات من المفاهيم الأساسية إلى التقنيات المتقدمة</p>
+                <div class="hero-buttons">
+                    <a href="pages/level1/index.html" class="btn primary-btn">ابدأ التعلم الآن</a>
+                    <a href="#features" class="btn outline-btn">تعرف على المزيد</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- قسم المميزات -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>ما يميز منصتنا التعليمية</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>محتوى تعليمي شامل</h3>
+                    <p>دروس مفصلة تغطي جميع جوانب الشبكات من المبادئ الأساسية إلى المفاهيم المتقدمة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>تطبيقات عملية</h3>
+                    <p>مختبرات عملية وتمارين تطبيقية لتعزيز المفاهيم النظرية وتطوير المهارات العملية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>اختبارات تفاعلية</h3>
+                    <p>اختبارات وتمارين تفاعلية لقياس مستوى فهمك وتقدمك في المواد التعليمية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>تصميم متجاوب</h3>
+                    <p>تجربة تعليمية سلسة على جميع الأجهزة: الحواسيب المكتبية والأجهزة اللوحية والهواتف الذكية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>مسار تعليمي متدرج</h3>
+                    <p>تقدم تدريجي من المفاهيم الأساسية إلى المواضيع المتقدمة بطريقة منظمة وسهلة الفهم</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>محتوى محدث باستمرار</h3>
+                    <p>مواكبة لأحدث التقنيات والمعايير في عالم الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المستويات -->
+    <section class="levels-section">
+        <div class="container">
+            <h2>استكشف مستويات التعلم</h2>
+            <div class="levels-grid">
+                <div class="level-card">
+                    <div class="level-image" style="background-image: url('images/network-basics.svg');"></div>
+                    <div class="level-content">
+                        <h3>المستوى الأساسي</h3>
+                        <p>تعلم المفاهيم الأساسية للشبكات ونموذج OSI وبروتوكول TCP/IP</p>
+                        <ul class="level-topics">
+                            <li>أساسيات الشبكات وأنواعها</li>
+                            <li>مكونات الشبكة الأساسية</li>
+                            <li>طوبولوجيا الشبكات</li>
+                            <li>نظام العنونة IP</li>
+                            <li>أساسيات التوجيه والتبديل</li>
+                            <li>أساسيات الشبكات اللاسلكية</li>
+                        </ul>
+                        <a href="pages/level1/index.html" class="btn primary-btn">ابدأ التعلم</a>
+                    </div>
+                </div>
+                <div class="level-card">
+                    <div class="level-image" style="background-image: url('images/tcp-protocol.svg');"></div>
+                    <div class="level-content">
+                        <h3>المستوى المتقدم</h3>
+                        <p>تعمق في تقنيات الشبكات المتقدمة وتطبيقاتها العملية</p>
+                        <ul class="level-topics">
+                            <li>تقنيات MikroTik وتطبيقاتها</li>
+                            <li>برمجة الشبكات وأتمتتها</li>
+                            <li>تكوين وإدارة الشبكات المتقدمة</li>
+                            <li>أمن الشبكات وحمايتها</li>
+                            <li>الشبكات اللاسلكية المتقدمة</li>
+                            <li>الشبكات الافتراضية والحوسبة السحابية</li>
+                        </ul>
+                        <a href="pages/level2/index.html" class="btn primary-btn">استكشف المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
-                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                    <p>منصة تعليمية شاملة لفهم عالم الشبكات من المفاهيم الأساسية إلى التقنيات المتقدمة</p>
                 </div>
                 <div class="footer-links">
                     <h3>روابط سريعة</h3>
                     <ul>
-                        <li><a href="../../index.html">الرئيسية</a></li>
-                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
-                        <li><a href="../osi.html">نموذج OSI</a></li>
-                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
-                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="pages/level1/index.html">المستوى الأساسي</a></li>
+                        <li><a href="pages/level2/index.html">المستوى المتقدم</a></li>
+                        <li><a href="pages/quiz.html">اختبر معلوماتك</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -173,7 +158,7 @@
                     <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
                     <div class="social-icons">
                         <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -183,6 +168,6 @@
         </div>
     </footer>
 
-    <script src="../../js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
