@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المختبرات العملية الأساسية - المستوى الأول - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="index.html" class="active">المستوى الأول</a></li>
+                    <li><a href="../level2/index.html">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>المختبرات العملية الأساسية</h1>
+            <p>تطبيق المفاهيم النظرية من خلال تجارب عملية وتمارين تطبيقية</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الأول</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الأول</a></li>
+                        <li><a href="network-fundamentals.html">مفاهيم الشبكات الأساسية</a></li>
+                        <li><a href="network-types.html">أنواع الشبكات</a></li>
+                        <li><a href="network-components.html">مكونات الشبكة</a></li>
+                        <li><a href="network-topologies.html">طوبولوجيا الشبكة</a></li>
+                        <li><a href="addressing.html">العنونة في الشبكات</a></li>
+                        <li><a href="basic-security.html">أساسيات أمن الشبكات</a></li>
+                        <li><a href="wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
+                        <li><a href="basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="basic-labs.html" class="active">المختبرات العملية الأساسية</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>أهمية التطبيق العملي في تعلم الشبكات</h2>
+                    <p>تعلم الشبكات لا يكتمل بدون التطبيق العملي. فالمفاهيم النظرية تصبح أكثر وضوحًا وفهمًا عندما يتم تطبيقها عمليًا. المختبرات العملية توفر بيئة آمنة للتجربة والتعلم من الأخطاء دون التأثير على الشبكات الإنتاجية.</p>
+                    
+                    <div class="info-box">
+                        <h4>فوائد المختبرات العملية:</h4>
+                        <ul>
+                            <li><strong>تعزيز الفهم:</strong> ترسيخ المفاهيم النظرية من خلال التطبيق العملي.</li>
+                            <li><strong>اكتساب المهارات:</strong> تطوير المهارات العملية اللازمة للعمل في مجال الشبكات.</li>
+                            <li><strong>استكشاف الأخطاء وإصلاحها:</strong> تعلم كيفية تحديد المشكلات وحلها.</li>
+                            <li><strong>التجربة الآمنة:</strong> تجربة التكوينات المختلفة دون مخاطرة بالشبكات الحقيقية.</li>
+                            <li><strong>بناء الثقة:</strong> زيادة الثقة بالنفس قبل العمل على الشبكات الإنتاجية.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>أدوات ومحاكيات الشبكات</h2>
+                    <p>هناك العديد من الأدوات والمحاكيات التي يمكن استخدامها لإنشاء بيئات شبكات افتراضية للتعلم والتجربة:</p>
+                    
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <h3>1. Cisco Packet Tracer</h3>
+                            <div class="tool-image">
+                                <img src="../../images/labs/packet-tracer.svg" alt="Cisco Packet Tracer">
+                            </div>
+                            <p>محاكي شبكات تعليمي من شركة Cisco يسمح بإنشاء شبكات افتراضية وتكوينها ومراقبتها.</p>
+                            
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>واجهة رسومية سهلة الاستخدام</li>
+                                <li>دعم لمجموعة واسعة من أجهزة Cisco</li>
+                                <li>إمكانية محاكاة الشبكات المعقدة</li>
+                                <li>وضع المحاكاة الحية لتتبع حركة الحزم</li>
+                                <li>متاح مجانًا للطلاب المسجلين في Cisco Networking Academy</li>
+                            </ul>
+                            
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>تعلم أساسيات الشبكات</li>
+                                <li>تكوين أجهزة Cisco</li>
+                                <li>تصميم واختبار الشبكات</li>
+                                <li>استكشاف بروتوكولات التوجيه وإصلاحها</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h3>2. GNS3</h3>
+                            <div class="tool-image">
+                                <img src="../../images/labs/gns3.svg" alt="GNS3">
+                            </div>
+                            <p>محاكي شبكات متقدم يسمح بمحاكاة الشبكات المعقدة باستخدام صور نظام التشغيل الحقيقية.</p>
+                            
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>محاكاة أكثر واقعية باستخدام صور نظام التشغيل الحقيقية</li>
+                                <li>دعم لأجهزة من شركات مختلفة (Cisco، Juniper، وغيرها)</li>
+                                <li>إمكانية التكامل مع الأجهزة الحقيقية</li>
+                                <li>دعم للأجهزة الافتراضية مثل VirtualBox و VMware</li>
+                                <li>مفتوح المصدر ومجاني</li>
+                            </ul>
+                            
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>محاكاة الشبكات المعقدة</li>
+                                <li>اختبار التكوينات قبل تطبيقها في بيئة الإنتاج</li>
+                                <li>التحضير للشهادات المهنية</li>
+                                <li>تجربة التقنيات المتقدمة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h3>3. Wireshark</h3>
+                            <div class="tool-image">
+                                <img src="../../images/labs/wireshark.svg" alt="Wireshark">
+                            </div>
+                            <p>محلل بروتوكولات الشبكة يسمح بالتقاط وتحليل حركة المرور في الشبكة.</p>
+                            
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>التقاط حزم البيانات في الوقت الفعلي</li>
+                                <li>تحليل مفصل للبروتوكولات</li>
+                                <li>فلترة متقدمة للحزم</li>
+                                <li>دعم لمئات البروتوكولات</li>
+                                <li>مفتوح المصدر ومجاني</li>
+                            </ul>
+                            
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>تحليل حركة المرور في الشبكة</li>
+                                <li>استكشاف مشكلات الشبكة وإصلاحها</li>
+                                <li>فهم كيفية عمل البروتوكولات</li>
+                                <li>اكتشاف الأنشطة المشبوهة في الشبكة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <h3>4. VirtualBox / VMware</h3>
+                            <div class="tool-image">
+                                <img src="../../images/labs/virtualbox.svg" alt="VirtualBox">
+                            </div>
+                            <p>برامج الأجهزة الافتراضية التي تسمح بتشغيل أنظمة تشغيل متعددة على جهاز واحد.</p>
+                            
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>إنشاء أجهزة افتراضية متعددة</li>
+                                <li>دعم لمعظم أنظمة التشغيل</li>
+                                <li>إمكانية إنشاء شبكات افتراضية بين الأجهزة</li>
+                                <li>VirtualBox مفتوح المصدر ومجاني</li>
+                            </ul>
+                            
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>إنشاء خوادم افتراضية</li>
+                                <li>اختبار أنظمة التشغيل المختلفة</li>
+                                <li>إنشاء بيئات اختبار معزولة</li>
+                                <li>تعلم إدارة الخوادم والشبكات</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>المختبر العملي 1: إعداد شبكة محلية بسيطة</h2>
+                    <p>في هذا المختبر، سنقوم بإنشاء شبكة محلية بسيطة تتكون من جهازي كمبيوتر ومحول (Switch) باستخدام Cisco Packet Tracer.</p>
+                    
+                    <div class="lab-steps">
+                        <h3>الأهداف:</h3>
+                        <ul>
+                            <li>إنشاء شبكة محلية بسيطة</li>
+                            <li>تكوين عناوين IP للأجهزة</li>
+                            <li>اختبار الاتصال بين الأجهزة</li>
+                        </ul>
+                        
+                        <h3>المتطلبات:</h3>
+                        <ul>
+                            <li>برنامج Cisco Packet Tracer</li>
+                        </ul>
+                        
+                        <h3>خطوات التنفيذ:</h3>
+                        <ol>
+                            <li>
+                                <h4>افتح برنامج Cisco Packet Tracer وأنشئ مشروعًا جديدًا</h4>
+                                <p>قم بفتح برنامج Cisco Packet Tracer وإنشاء مشروع جديد من خلال النقر على "File" ثم "New".</p>
+                            </li>
+                            
+                            <li>
+                                <h4>أضف الأجهزة إلى مساحة العمل</h4>
+                                <p>من شريط الأدوات، اختر:</p>
+                                <ul>
+                                    <li>جهازي كمبيوتر (PC) من قسم "End Devices"</li>
+                                    <li>محول (Switch) من قسم "Network Devices"</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>قم بتوصيل الأجهزة</h4>
+                                <p>استخدم أداة التوصيل (كابل مستقيم) لتوصيل كل جهاز كمبيوتر بالمحول:</p>
+                                <ul>
+                                    <li>انقر على أداة التوصيل (Straight-Through Cable)</li>
+                                    <li>انقر على الكمبيوتر الأول ثم اختر منفذ FastEthernet</li>
+                                    <li>انقر على المحول واختر أحد منافذ FastEthernet (مثل FastEthernet0/1)</li>
+                                    <li>كرر العملية للكمبيوتر الثاني (استخدم منفذ مختلف على المحول، مثل FastEthernet0/2)</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>قم بتكوين عناوين IP للأجهزة</h4>
+                                <p>لكل جهاز كمبيوتر:</p>
+                                <ul>
+                                    <li>انقر نقرًا مزدوجًا على الجهاز لفتح نافذة التكوين</li>
+                                    <li>انتقل إلى علامة التبويب "Desktop" ثم انقر على "IP Configuration"</li>
+                                    <li>للكمبيوتر الأول:
+                                        <ul>
+                                            <li>عنوان IP: 192.168.1.10</li>
+                                            <li>قناع الشبكة: 255.255.255.0</li>
+                                            <li>البوابة الافتراضية: (اتركها فارغة لهذا المختبر)</li>
+                                        </ul>
+                                    </li>
+                                    <li>للكمبيوتر الثاني:
+                                        <ul>
+                                            <li>عنوان IP: 192.168.1.11</li>
+                                            <li>قناع الشبكة: 255.255.255.0</li>
+                                            <li>البوابة الافتراضية: (اتركها فارغة لهذا المختبر)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>اختبر الاتصال بين الأجهزة</h4>
+                                <p>استخدم أمر ping لاختبار الاتصال:</p>
+                                <ul>
+                                    <li>انقر نقرًا مزدوجًا على الكمبيوتر الأول</li>
+                                    <li>انتقل إلى علامة التبويب "Desktop" ثم انقر على "Command Prompt"</li>
+                                    <li>اكتب الأمر: ping 192.168.1.11</li>
+                                    <li>يجب أن ترى ردودًا ناجحة من الكمبيوتر الثاني</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        
+                        <h3>النتائج المتوقعة:</h3>
+                        <ul>
+                            <li>يجب أن تكون قادرًا على إرسال حزم ping بنجاح بين الكمبيوترين</li>
+                            <li>يمكنك مشاهدة حركة البيانات في وضع المحاكاة (Simulation Mode)</li>
+                        </ul>
+                        
+                        <h3>أسئلة للتفكير:</h3>
+                        <ol>
+                            <li>ماذا يحدث إذا قمت بتغيير قناع الشبكة لأحد الأجهزة إلى 255.255.0.0؟</li>
+                            <li>ماذا يحدث إذا قمت بتغيير عنوان IP لأحد الأجهزة إلى 192.168.2.10؟</li>
+                            <li>لماذا لا نحتاج إلى بوابة افتراضية في هذه الشبكة البسيطة؟</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>المختبر العملي 2: إعداد موجه وشبكتين فرعيتين</h2>
+                    <p>في هذا المختبر، سنقوم بإنشاء شبكتين فرعيتين متصلتين بموجه (Router) وإعداد التوجيه بينهما.</p>
+                    
+                    <div class="lab-steps">
+                        <h3>الأهداف:</h3>
+                        <ul>
+                            <li>إنشاء شبكتين فرعيتين</li>
+                            <li>تكوين موجه للربط بين الشبكتين</li>
+                            <li>تكوين عناوين IP للأجهزة والموجه</li>
+                            <li>اختبار الاتصال بين الشبكتين</li>
+                        </ul>
+                        
+                        <h3>المتطلبات:</h3>
+                        <ul>
+                            <li>برنامج Cisco Packet Tracer</li>
+                        </ul>
+                        
+                        <h3>خطوات التنفيذ:</h3>
+                        <ol>
+                            <li>
+                                <h4>أنشئ مشروعًا جديدًا وأضف الأجهزة</h4>
+                                <ul>
+                                    <li>أربعة أجهزة كمبيوتر (PC)</li>
+                                    <li>محولان (Switch)</li>
+                                    <li>موجه واحد (Router) - اختر موجه Cisco 1941</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>قم بتوصيل الأجهزة</h4>
+                                <ul>
+                                    <li>قم بتوصيل جهازي كمبيوتر بالمحول الأول</li>
+                                    <li>قم بتوصيل جهازي كمبيوتر آخرين بالمحول الثاني</li>
+                                    <li>قم بتوصيل المحول الأول بالمنفذ GigabitEthernet0/0 على الموجه</li>
+                                    <li>قم بتوصيل المحول الثاني بالمنفذ GigabitEthernet0/1 على الموجه</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>قم بتكوين واجهات الموجه</h4>
+                                <ul>
+                                    <li>انقر نقرًا مزدوجًا على الموجه</li>
+                                    <li>انتقل إلى علامة التبويب "CLI"</li>
+                                    <li>أدخل الأوامر التالية:
+                                        <pre>
+enable
+configure terminal
+interface GigabitEthernet0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+interface GigabitEthernet0/1
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+exit
+exit
+                                        </pre>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>قم بتكوين عناوين IP لأجهزة الكمبيوتر</h4>
+                                <ul>
+                                    <li>الكمبيوتر 1 (في الشبكة الأولى):
+                                        <ul>
+                                            <li>عنوان IP: 192.168.1.10</li>
+                                            <li>قناع الشبكة: 255.255.255.0</li>
+                                            <li>البوابة الافتراضية: 192.168.1.1</li>
+                                        </ul>
+                                    </li>
+                                    <li>الكمبيوتر 2 (في الشبكة الأولى):
+                                        <ul>
+                                            <li>عنوان IP: 192.168.1.11</li>
+                                            <li>قناع الشبكة: 255.255.255.0</li>
+                                            <li>البوابة الافتراضية: 192.168.1.1</li>
+                                        </ul>
+                                    </li>
+                                    <li>الكمبيوتر 3 (في الشبكة الثانية):
+                                        <ul>
+                                            <li>عنوان IP: 192.168.2.10</li>
+                                            <li>قناع الشبكة: 255.255.255.0</li>
+                                            <li>البوابة الافتراضية: 192.168.2.1</li>
+                                        </ul>
+                                    </li>
+                                    <li>الكمبيوتر 4 (في الشبكة الثانية):
+                                        <ul>
+                                            <li>عنوان IP: 192.168.2.11</li>
+                                            <li>قناع الشبكة: 255.255.255.0</li>
+                                            <li>البوابة الافتراضية: 192.168.2.1</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>اختبر الاتصال داخل كل شبكة فرعية</h4>
+                                <ul>
+                                    <li>من الكمبيوتر 1، قم بإرسال ping إلى الكمبيوتر 2 (192.168.1.11)</li>
+                                    <li>من الكمبيوتر 3، قم بإرسال ping إلى الكمبيوتر 4 (192.168.2.11)</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>اختبر الاتصال بين الشبكتين الفرعيتين</h4>
+                                <ul>
+                                    <li>من الكمبيوتر 1، قم بإرسال ping إلى الكمبيوتر 3 (192.168.2.10)</li>
+                                    <li>من الكمبيوتر 2، قم بإرسال ping إلى الكمبيوتر 4 (192.168.2.11)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        
+                        <h3>النتائج المتوقعة:</h3>
+                        <ul>
+                            <li>يجب أن تكون قادرًا على إرسال ping بنجاح بين الأجهزة في نفس الشبكة الفرعية</li>
+                            <li>يجب أن تكون قادرًا على إرسال ping بنجاح بين الأجهزة في الشبكتين الفرعيتين المختلفتين</li>
+                        </ul>
+                        
+                        <h3>أسئلة للتفكير:</h3>
+                        <ol>
+                            <li>ما هو دور البوابة الافتراضية في هذا السيناريو؟</li>
+                            <li>ماذا يحدث إذا قمت بإيقاف تشغيل إحدى واجهات الموجه؟</li>
+                            <li>كيف يمكنك التحقق من جدول التوجيه على الموجه؟</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>المختبر العملي 3: تحليل حركة المرور باستخدام Wireshark</h2>
+                    <p>في هذا المختبر، سنستخدم Wireshark لالتقاط وتحليل حركة المرور في الشبكة.</p>
+                    
+                    <div class="lab-steps">
+                        <h3>الأهداف:</h3>
+                        <ul>
+                            <li>تثبيت وإعداد Wireshark</li>
+                            <li>التقاط حزم البيانات</li>
+                            <li>تحليل بروتوكولات مختلفة</li>
+                            <li>استخدام فلاتر Wireshark</li>
+                        </ul>
+                        
+                        <h3>المتطلبات:</h3>
+                        <ul>
+                            <li>جهاز كمبيوتر متصل بالإنترنت</li>
+                            <li>برنامج Wireshark</li>
+                        </ul>
+                        
+                        <h3>خطوات التنفيذ:</h3>
+                        <ol>
+                            <li>
+                                <h4>قم بتثبيت Wireshark</h4>
+                                <ul>
+                                    <li>قم بتنزيل Wireshark من الموقع الرسمي: <a href="https://www.wireshark.org/download.html" target="_blank">https://www.wireshark.org/download.html</a></li>
+                                    <li>قم بتثبيت البرنامج باتباع التعليمات</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>ابدأ التقاط حزم البيانات</h4>
+                                <ul>
+                                    <li>افتح Wireshark</li>
+                                    <li>اختر واجهة الشبكة التي ترغب في التقاط حزم البيانات منها (عادة ما تكون واجهة Wi-Fi أو Ethernet)</li>
+                                    <li>انقر على زر "Start capturing packets" (رمز القرش)</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>قم بتوليد بعض حركة المرور</h4>
+                                <ul>
+                                    <li>افتح متصفح الويب وقم بزيارة بعض المواقع</li>
+                                    <li>قم بإرسال ping إلى بعض المواقع من نافذة الأوامر (Command Prompt)</li>
+                                    <li>قم بتنزيل ملف صغير</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>أوقف التقاط حزم البيانات</h4>
+                                <ul>
+                                    <li>انقر على زر "Stop capturing packets" (المربع الأحمر)</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>تحليل بروتوكول DNS</h4>
+                                <ul>
+                                    <li>استخدم فلتر: dns</li>
+                                    <li>ابحث عن طلبات DNS واستجاباتها</li>
+                                    <li>انقر نقرًا مزدوجًا على إحدى حزم DNS لفتح التفاصيل</li>
+                                    <li>استكشف حقول DNS المختلفة</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>تحليل بروتوكول HTTP/HTTPS</h4>
+                                <ul>
+                                    <li>استخدم فلتر: http or tls</li>
+                                    <li>ابحث عن طلبات HTTP/HTTPS واستجاباتها</li>
+                                    <li>لاحظ الفرق بين HTTP (غير مشفر) و HTTPS (مشفر)</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>تحليل بروتوكول TCP</h4>
+                                <ul>
+                                    <li>استخدم فلتر: tcp</li>
+                                    <li>ابحث عن عملية المصافحة الثلاثية (SYN, SYN-ACK, ACK)</li>
+                                    <li>لاحظ أرقام التسلسل وأرقام الإقرار</li>
+                                </ul>
+                            </li>
+                            
+                            <li>
+                                <h4>استخدام فلاتر متقدمة</h4>
+                                <ul>
+                                    <li>فلتر لعنوان IP محدد: ip.addr == 192.168.1.1</li>
+                                    <li>فلتر لمنفذ محدد: tcp.port == 80</li>
+                                    <li>فلتر للحزم التي تحتوي على كلمة معينة: frame contains "example"</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        
+                        <h3>النتائج المتوقعة:</h3>
+                        <ul>
+                            <li>فهم أفضل لكيفية عمل البروتوكولات المختلفة</li>
+                            <li>القدرة على تحليل حركة المرور في الشبكة</li>
+                            <li>فهم كيفية استخدام فلاتر Wireshark للبحث عن معلومات محددة</li>
+                        </ul>
+                        
+                        <h3>أسئلة للتفكير:</h3>
+                        <ol>
+                            <li>ما هي البروتوكولات الأكثر استخدامًا في حركة المرور التي التقطتها؟</li>
+                            <li>ما الفرق بين حزم HTTP و HTTPS من حيث المحتوى الذي يمكنك رؤيته؟</li>
+                            <li>كيف يمكنك استخدام Wireshark لاستكشاف مشكلات الشبكة وإصلاحها؟</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. أي من الأدوات التالية يستخدم لتحليل حركة المرور في الشبكة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">Cisco Packet Tracer</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">Wireshark</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">VirtualBox</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">GNS3</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو الأمر المستخدم لاختبار الاتصال بين جهازين في الشبكة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">ipconfig</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">ping</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">tracert</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">netstat</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. ما هو الأمر المستخدم في Cisco IOS لتمكين واجهة الموجه؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">enable interface</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">interface up</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">no shutdown</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">start interface</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="basic-routing.html" class="btn outline-btn">السابق: أساسيات التوجيه</a>
+                    <a href="../level2/index.html" class="btn primary-btn">التالي: المستوى الثاني</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'c'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

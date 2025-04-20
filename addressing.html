@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العنونة في الشبكات - المستوى الأول - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="index.html" class="active">المستوى الأول</a></li>
+                    <li><a href="../level2/index.html">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>العنونة في الشبكات</h1>
+            <p>تعرف على أنظمة العنونة المختلفة وكيفية تحديد هوية الأجهزة على الشبكة</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الأول</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الأول</a></li>
+                        <li><a href="network-fundamentals.html">مفاهيم الشبكات الأساسية</a></li>
+                        <li><a href="network-types.html">أنواع الشبكات</a></li>
+                        <li><a href="network-components.html">مكونات الشبكة</a></li>
+                        <li><a href="network-topologies.html">طوبولوجيا الشبكة</a></li>
+                        <li><a href="addressing.html" class="active">العنونة في الشبكات</a></li>
+                        <li><a href="basic-security.html">أساسيات أمن الشبكات</a></li>
+                        <li><a href="wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
+                        <li><a href="basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="basic-labs.html">المختبرات العملية الأساسية</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>أهمية العنونة في الشبكات</h2>
+                    <p>العنونة في الشبكات هي عملية تحديد هوية فريدة لكل جهاز متصل بالشبكة، مما يسمح بتوجيه البيانات بشكل صحيح من المصدر إلى الوجهة. تشبه العناوين في الشبكات العناوين البريدية في العالم الحقيقي، حيث تساعد في تحديد المرسل والمستقبل بدقة.</p>
+                    
+                    <div class="info-box">
+                        <h4>لماذا نحتاج إلى العنونة؟</h4>
+                        <ul>
+                            <li>تحديد هوية فريدة لكل جهاز على الشبكة</li>
+                            <li>توجيه البيانات بشكل صحيح من المصدر إلى الوجهة</li>
+                            <li>تنظيم الشبكة وتقسيمها إلى مجموعات منطقية</li>
+                            <li>تطبيق سياسات الأمان والتحكم في الوصول</li>
+                            <li>تسهيل إدارة الشبكة ومراقبتها</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>أنواع العناوين في الشبكات</h2>
+                    <p>هناك عدة أنواع من العناوين المستخدمة في الشبكات، ولكل منها دور محدد:</p>
+                    
+                    <div class="address-types">
+                        <div class="address-type">
+                            <h3>1. عنوان MAC (MAC Address)</h3>
+                            <div class="address-image">
+                                <img src="../../images/addressing/mac-address.svg" alt="عنوان MAC">
+                            </div>
+                            <p>عنوان MAC (Media Access Control) هو عنوان فريد مكون من 48 بت (12 خانة سداسية عشرية) مرتبط ببطاقة واجهة الشبكة (NIC) للجهاز. يتم تعيين هذا العنوان من قبل الشركة المصنعة ولا يتغير عادة.</p>
+                            
+                            <h4>خصائص عنوان MAC:</h4>
+                            <ul>
+                                <li>فريد عالميًا (لا يوجد جهازان لهما نفس عنوان MAC)</li>
+                                <li>مكون من 48 بت (6 بايت)</li>
+                                <li>يتم التعبير عنه بـ 12 خانة سداسية عشرية، مثل: 00:1A:2B:3C:4D:5E</li>
+                                <li>أول 6 خانات (3 بايت) تمثل معرف الشركة المصنعة (OUI)</li>
+                                <li>آخر 6 خانات (3 بايت) تمثل رقم الجهاز الفريد</li>
+                                <li>يستخدم في الطبقة الثانية (طبقة ربط البيانات) من نموذج OSI</li>
+                            </ul>
+                            
+                            <h4>استخدامات عنوان MAC:</h4>
+                            <ul>
+                                <li>تحديد هوية الأجهزة داخل الشبكة المحلية</li>
+                                <li>توجيه البيانات بين الأجهزة في نفس الشبكة المحلية</li>
+                                <li>تصفية حركة المرور (MAC Filtering) لأغراض الأمان</li>
+                                <li>تخصيص عناوين IP ثابتة باستخدام DHCP</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="address-type">
+                            <h3>2. عنوان IP (IP Address)</h3>
+                            <div class="address-image">
+                                <img src="../../images/addressing/ip-address.svg" alt="عنوان IP">
+                            </div>
+                            <p>عنوان IP (Internet Protocol) هو عنوان منطقي يستخدم لتحديد هوية الجهاز على الشبكة وتوجيه البيانات بين الشبكات المختلفة. هناك نوعان رئيسيان من عناوين IP: IPv4 وIPv6.</p>
+                            
+                            <h4>IPv4 (Internet Protocol version 4):</h4>
+                            <ul>
+                                <li>مكون من 32 بت (4 بايت)</li>
+                                <li>يتم التعبير عنه بأربعة أرقام عشرية مفصولة بنقاط، مثل: 192.168.1.1</li>
+                                <li>يسمح بحوالي 4.3 مليار عنوان فريد</li>
+                                <li>يستخدم في معظم الشبكات الحالية</li>
+                            </ul>
+                            
+                            <h4>IPv6 (Internet Protocol version 6):</h4>
+                            <ul>
+                                <li>مكون من 128 بت (16 بايت)</li>
+                                <li>يتم التعبير عنه بثمانية مجموعات من الأرقام السداسية العشرية مفصولة بنقطتين، مثل: 2001:0db8:85a3:0000:0000:8a2e:0370:7334</li>
+                                <li>يسمح بعدد هائل من العناوين (2^128، أي حوالي 340 تريليون تريليون تريليون)</li>
+                                <li>تم تطويره لمعالجة مشكلة نفاد عناوين IPv4</li>
+                            </ul>
+                            
+                            <h4>أنواع عناوين IP حسب النطاق:</h4>
+                            <ul>
+                                <li><strong>عناوين عامة (Public):</strong> يمكن الوصول إليها من الإنترنت</li>
+                                <li><strong>عناوين خاصة (Private):</strong> تستخدم داخل الشبكات المحلية فقط</li>
+                                <li><strong>عناوين محلية (Link-local):</strong> تستخدم للاتصال المباشر بين الأجهزة</li>
+                                <li><strong>عناوين البث (Broadcast):</strong> تستخدم لإرسال البيانات إلى جميع الأجهزة في الشبكة</li>
+                                <li><strong>عناوين متعددة البث (Multicast):</strong> تستخدم لإرسال البيانات إلى مجموعة محددة من الأجهزة</li>
+                            </ul>
+                            
+                            <h4>أنواع عناوين IP حسب التخصيص:</h4>
+                            <ul>
+                                <li><strong>عناوين ثابتة (Static):</strong> يتم تعيينها يدويًا ولا تتغير</li>
+                                <li><strong>عناوين ديناميكية (Dynamic):</strong> يتم تخصيصها تلقائيًا باستخدام DHCP وقد تتغير</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="address-type">
+                            <h3>3. اسم المضيف والنطاق (Hostname and Domain)</h3>
+                            <div class="address-image">
+                                <img src="../../images/addressing/dns.svg" alt="اسم المضيف والنطاق">
+                            </div>
+                            <p>أسماء المضيفين والنطاقات هي أسماء سهلة القراءة تستخدم بدلاً من عناوين IP لتسهيل تذكرها واستخدامها.</p>
+                            
+                            <h4>مكونات اسم النطاق الكامل (FQDN - Fully Qualified Domain Name):</h4>
+                            <ul>
+                                <li><strong>اسم المضيف (Hostname):</strong> اسم الجهاز المحدد، مثل "www"</li>
+                                <li><strong>اسم النطاق (Domain Name):</strong> اسم النطاق الذي ينتمي إليه المضيف، مثل "example.com"</li>
+                                <li><strong>المثال الكامل:</strong> www.example.com</li>
+                            </ul>
+                            
+                            <h4>نظام أسماء النطاقات (DNS - Domain Name System):</h4>
+                            <p>DNS هو نظام يترجم أسماء النطاقات إلى عناوين IP والعكس. يعمل كدليل هاتف للإنترنت، حيث يربط بين الأسماء سهلة القراءة للإنسان وعناوين IP التي تفهمها الأجهزة.</p>
+                            
+                            <h4>كيف يعمل DNS:</h4>
+                            <ol>
+                                <li>يكتب المستخدم اسم النطاق في المتصفح (مثل www.example.com)</li>
+                                <li>يرسل المتصفح طلبًا إلى خادم DNS المحلي</li>
+                                <li>إذا كان خادم DNS المحلي يعرف العنوان، فإنه يرده مباشرة</li>
+                                <li>إذا لم يكن يعرفه، فإنه يسأل خوادم DNS أخرى حتى يجد الإجابة</li>
+                                <li>يتم إرجاع عنوان IP المقابل لاسم النطاق</li>
+                                <li>يستخدم المتصفح عنوان IP للاتصال بالموقع</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="address-type">
+                            <h3>4. المنافذ (Ports)</h3>
+                            <div class="address-image">
+                                <img src="../../images/addressing/ports.svg" alt="المنافذ">
+                            </div>
+                            <p>المنافذ هي أرقام تستخدم لتحديد التطبيقات والخدمات المختلفة على الجهاز. تعمل المنافذ مع عناوين IP لتوجيه البيانات إلى التطبيق الصحيح.</p>
+                            
+                            <h4>خصائص المنافذ:</h4>
+                            <ul>
+                                <li>أرقام من 0 إلى 65535</li>
+                                <li>المنافذ من 0 إلى 1023 هي منافذ محجوزة (Well-known Ports)</li>
+                                <li>المنافذ من 1024 إلى 49151 هي منافذ مسجلة (Registered Ports)</li>
+                                <li>المنافذ من 49152 إلى 65535 هي منافذ ديناميكية/خاصة (Dynamic/Private Ports)</li>
+                            </ul>
+                            
+                            <h4>أمثلة على المنافذ الشائعة:</h4>
+                            <ul>
+                                <li>HTTP: المنفذ 80</li>
+                                <li>HTTPS: المنفذ 443</li>
+                                <li>FTP: المنفذ 21</li>
+                                <li>SSH: المنفذ 22</li>
+                                <li>SMTP: المنفذ 25</li>
+                                <li>DNS: المنفذ 53</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تقسيم الشبكات الفرعية (Subnetting)</h2>
+                    <p>تقسيم الشبكات الفرعية هو عملية تقسيم شبكة IP كبيرة إلى شبكات فرعية أصغر لتحسين الأداء والأمان وتسهيل الإدارة.</p>
+                    
+                    <h3>لماذا نستخدم تقسيم الشبكات الفرعية؟</h3>
+                    <ul>
+                        <li>تقليل حركة البث (Broadcast Traffic)</li>
+                        <li>تحسين أداء الشبكة</li>
+                        <li>تعزيز الأمان من خلال عزل المجموعات المختلفة</li>
+                        <li>تسهيل إدارة الشبكة</li>
+                        <li>الاستخدام الأمثل لعناوين IP</li>
+                    </ul>
+                    
+                    <h3>مفاهيم أساسية في تقسيم الشبكات الفرعية:</h3>
+                    
+                    <h4>1. قناع الشبكة (Subnet Mask)</h4>
+                    <p>قناع الشبكة هو رقم يستخدم لتحديد أي جزء من عنوان IP يمثل معرف الشبكة وأي جزء يمثل معرف المضيف.</p>
+                    <p>مثال: قناع الشبكة 255.255.255.0 (أو /24 بتدوين CIDR) يعني أن أول 24 بت من عنوان IP تمثل معرف الشبكة، والـ 8 بت المتبقية تمثل معرف المضيف.</p>
+                    
+                    <h4>2. تدوين CIDR (Classless Inter-Domain Routing)</h4>
+                    <p>تدوين CIDR هو طريقة مختصرة لتمثيل عنوان IP وقناع الشبكة معًا.</p>
+                    <p>مثال: 192.168.1.0/24 يعني أن عنوان الشبكة هو 192.168.1.0 وقناع الشبكة هو 255.255.255.0 (24 بت).</p>
+                    
+                    <h4>3. عنوان الشبكة (Network Address)</h4>
+                    <p>عنوان الشبكة هو العنوان الأول في نطاق الشبكة، ويتم الحصول عليه بتطبيق عملية AND المنطقية بين عنوان IP وقناع الشبكة.</p>
+                    <p>مثال: في الشبكة 192.168.1.0/24، عنوان الشبكة هو 192.168.1.0.</p>
+                    
+                    <h4>4. عنوان البث (Broadcast Address)</h4>
+                    <p>عنوان البث هو العنوان الأخير في نطاق الشبكة، ويستخدم لإرسال البيانات إلى جميع الأجهزة في الشبكة.</p>
+                    <p>مثال: في الشبكة 192.168.1.0/24، عنوان البث هو 192.168.1.255.</p>
+                    
+                    <h4>5. نطاق العناوين القابلة للاستخدام (Usable IP Range)</h4>
+                    <p>نطاق العناوين القابلة للاستخدام هو مجموعة العناوين التي يمكن تخصيصها للأجهزة في الشبكة، وهي جميع العناوين بين عنوان الشبكة وعنوان البث.</p>
+                    <p>مثال: في الشبكة 192.168.1.0/24، نطاق العناوين القابلة للاستخدام هو من 192.168.1.1 إلى 192.168.1.254.</p>
+                    
+                    <div class="info-box">
+                        <h4>مثال عملي على تقسيم الشبكات الفرعية:</h4>
+                        <p>لنفترض أن لدينا شبكة 192.168.0.0/24 ونريد تقسيمها إلى 4 شبكات فرعية متساوية.</p>
+                        <ol>
+                            <li>نحتاج إلى 2 بت إضافية لتمثيل 4 شبكات فرعية (2^2 = 4)</li>
+                            <li>قناع الشبكة الجديد سيكون /26 (24 + 2)</li>
+                            <li>الشبكات الفرعية الناتجة:
+                                <ul>
+                                    <li>الشبكة الفرعية 1: 192.168.0.0/26 (العناوين من 192.168.0.0 إلى 192.168.0.63)</li>
+                                    <li>الشبكة الفرعية 2: 192.168.0.64/26 (العناوين من 192.168.0.64 إلى 192.168.0.127)</li>
+                                    <li>الشبكة الفرعية 3: 192.168.0.128/26 (العناوين من 192.168.0.128 إلى 192.168.0.191)</li>
+                                    <li>الشبكة الفرعية 4: 192.168.0.192/26 (العناوين من 192.168.0.192 إلى 192.168.0.255)</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>العلاقة بين العناوين المختلفة</h2>
+                    <p>لفهم كيفية عمل العناوين المختلفة معًا، دعنا نتتبع مسار البيانات عندما يقوم مستخدم بتصفح موقع ويب:</p>
+                    
+                    <ol>
+                        <li><strong>اسم النطاق:</strong> يكتب المستخدم اسم النطاق (مثل www.example.com) في المتصفح.</li>
+                        <li><strong>DNS:</strong> يقوم نظام DNS بترجمة اسم النطاق إلى عنوان IP (مثل 93.184.216.34).</li>
+                        <li><strong>عنوان IP والمنفذ:</strong> يقوم المتصفح بالاتصال بعنوان IP على المنفذ 80 (HTTP) أو 443 (HTTPS).</li>
+                        <li><strong>التوجيه:</strong> تمر البيانات عبر العديد من أجهزة التوجيه، التي تستخدم عناوين IP لتحديد المسار.</li>
+                        <li><strong>عنوان MAC:</strong> في كل شبكة محلية، يتم استخدام عناوين MAC لتوجيه البيانات بين الأجهزة.</li>
+                        <li><strong>الاستجابة:</strong> يرسل الخادم البيانات المطلوبة، متبعًا نفس المسار تقريبًا في الاتجاه المعاكس.</li>
+                    </ol>
+                    
+                    <div class="info-box">
+                        <h4>ملاحظة هامة:</h4>
+                        <p>كل نوع من العناوين يعمل في طبقة مختلفة من نموذج OSI:</p>
+                        <ul>
+                            <li>عناوين MAC: تعمل في الطبقة الثانية (طبقة ربط البيانات)</li>
+                            <li>عناوين IP: تعمل في الطبقة الثالثة (طبقة الشبكة)</li>
+                            <li>المنافذ: تعمل في الطبقة الرابعة (طبقة النقل)</li>
+                            <li>أسماء النطاقات: تعمل في الطبقة السابعة (طبقة التطبيق)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. أي من العناوين التالية يتم تعيينه من قبل الشركة المصنعة ولا يتغير عادة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">عنوان IP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">عنوان MAC</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">اسم النطاق</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">رقم المنفذ</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو النظام الذي يترجم أسماء النطاقات إلى عناوين IP؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">DHCP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">DNS</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">HTTP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">FTP</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. في الشبكة 192.168.1.0/24، ما هو عنوان البث؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">192.168.1.0</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">192.168.1.1</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">192.168.1.254</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">192.168.1.255</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="network-topologies.html" class="btn outline-btn">السابق: طوبولوجيا الشبكة</a>
+                    <a href="basic-security.html" class="btn primary-btn">التالي: أساسيات أمن الشبكات</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'd'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

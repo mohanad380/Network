@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات الشبكات - عالم الشبكات</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="basics.html" class="active">أساسيات الشبكات</a></li>
+                    <li><a href="osi.html">نموذج OSI</a></li>
+                    <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="quiz.html">اختبر معلوماتك</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>أساسيات الشبكات</h1>
+            <p>تعرف على المفاهيم الأساسية للشبكات وأنواعها ومكوناتها</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات الصفحة</h3>
+                    <ul>
+                        <li><a href="#intro">مقدمة عن الشبكات</a></li>
+                        <li><a href="#definition">تعريف الشبكات وأهميتها</a></li>
+                        <li><a href="#types">أنواع الشبكات</a></li>
+                        <li><a href="#components">مكونات الشبكة الأساسية</a></li>
+                        <li><a href="#addressing">مفاهيم العنونة والاتصال</a></li>
+                        <li><a href="#topology">طوبولوجيا الشبكة</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="osi.html">نموذج OSI</a></li>
+                        <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section id="intro" class="content-section">
+                    <h2>مقدمة عن الشبكات</h2>
+                    <div class="section-image">
+                        <img src="../images/network-intro.svg" alt="مقدمة عن الشبكات">
+                    </div>
+                    <p>الشبكات هي أحد أهم ركائز عالم التكنولوجيا الحديث، فهي تمثل الأساس الذي يربط أجهزة الحاسوب والأجهزة الإلكترونية المختلفة معًا، مما يتيح لها تبادل المعلومات والبيانات فيما بينها.</p>
+                    <p>في هذا القسم، سنتعرف على المفاهيم الأساسية للشبكات، بدءًا من تعريفها وأهميتها، مرورًا بأنواعها المختلفة ومكوناتها الأساسية، وصولًا إلى مفاهيم العنونة والاتصال وطوبولوجيا الشبكة.</p>
+                </section>
+
+                <section id="definition" class="content-section">
+                    <h2>تعريف الشبكات وأهميتها</h2>
+                    
+                    <h3>ما هي الشبكات؟</h3>
+                    <div class="section-image">
+                        <img src="../images/network-definition.svg" alt="تعريف الشبكات">
+                    </div>
+                    <p>الشبكات هي مجموعة من الأجهزة المتصلة ببعضها البعض بهدف تبادل البيانات والمعلومات فيما بينها. يمكن أن تتكون الشبكة من جهازين فقط أو من آلاف الأجهزة المتصلة معًا.</p>
+                    
+                    <div class="info-box">
+                        <h4>أمثلة توضيحية:</h4>
+                        <ul>
+                            <li><strong>المفهوم البسيط:</strong> في المنزل، يوجد جهاز راوتر (موجّه) لتوزيع الإنترنت، ومتصل به عدة أجهزة مثل الهواتف الذكية وأجهزة الكمبيوتر والأجهزة اللوحية. هذه الأجهزة تشكل شبكة محلية صغيرة تتبادل البيانات فيما بينها.</li>
+                            <li><strong>المفهوم الموسع:</strong> عندما يتصل جهازك بالإنترنت، فإنه يتواصل مع شبكة خارجية تضم ملايين الأجهزة والخوادم حول العالم، ويتبادل البيانات معها، مثل تصفح موقع فيسبوك أو يوتيوب.</li>
+                        </ul>
+                    </div>
+
+                    <h3>أهمية شبكات الكمبيوتر</h3>
+                    <p>تكمن أهمية الشبكات في عدة نقاط أساسية:</p>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h4>مشاركة الموارد</h4>
+                            <p>تتيح الشبكات مشاركة الموارد مثل الطابعات وأجهزة التخزين والبرامج بين عدة مستخدمين، مما يقلل التكاليف.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4>تبادل المعلومات</h4>
+                            <p>تسهل عملية تبادل المعلومات والملفات بين المستخدمين بسرعة وكفاءة.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>التواصل</h4>
+                            <p>تمكن المستخدمين من التواصل عبر البريد الإلكتروني والمراسلات الفورية ومؤتمرات الفيديو.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>مركزية البيانات</h4>
+                            <p>تسمح بتخزين البيانات في مكان مركزي يمكن الوصول إليه من أي مكان.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>توفير الوقت والجهد</h4>
+                            <p>تقلل من الوقت والجهد المبذول في نقل البيانات يدويًا.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="types" class="content-section">
+                    <h2>أنواع الشبكات</h2>
+                    <p>تصنف الشبكات عادة حسب المساحة الجغرافية التي تغطيها، وفيما يلي أهم أنواع الشبكات:</p>
+                    
+                    <div class="network-types">
+                        <div class="network-type">
+                            <h3>1. الشبكة الشخصية (PAN - Personal Area Network)</h3>
+                            <div class="section-image">
+                                <img src="../images/pan-network.svg" alt="الشبكة الشخصية">
+                            </div>
+                            <p>هي شبكة صغيرة جدًا تربط الأجهزة الشخصية للفرد في نطاق محدود لا يتعدى بضعة أمتار.</p>
+                            <div class="examples">
+                                <h4>أمثلة:</h4>
+                                <ul>
+                                    <li>اتصال سماعة البلوتوث بالهاتف</li>
+                                    <li>اتصال الساعة الذكية بالهاتف</li>
+                                    <li>ربط الكمبيوتر المحمول بالطابعة عبر البلوتوث</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="network-type">
+                            <h3>2. الشبكة المحلية (LAN - Local Area Network)</h3>
+                            <div class="section-image">
+                                <img src="../images/lan-network.svg" alt="الشبكة المحلية">
+                            </div>
+                            <p>هي شبكة تربط مجموعة من الأجهزة في منطقة جغرافية محدودة مثل منزل أو مكتب أو مبنى. تتميز بسرعة نقل بيانات عالية وتكلفة منخفضة نسبيًا. يمكن أن تصل سرعة نقل البيانات فيها إلى 10 ميغابت في الثانية أو 1 جيجابايت في الثانية.</p>
+                            <div class="examples">
+                                <h4>أمثلة:</h4>
+                                <ul>
+                                    <li>شبكة المنزل التي تربط أجهزة الكمبيوتر والهواتف بالإنترنت</li>
+                                    <li>شبكة المكتب التي تربط أجهزة الموظفين معًا</li>
+                                    <li>شبكة مختبر الحاسوب في المدرسة أو الجامعة</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="network-type">
+                            <h3>3. الشبكة الإقليمية (MAN - Metropolitan Area Network)</h3>
+                            <div class="section-image">
+                                <img src="../images/man-network.svg" alt="الشبكة الإقليمية">
+                            </div>
+                            <p>هي شبكة تغطي منطقة جغرافية أكبر من الشبكة المحلية، مثل مدينة أو حرم جامعي كبير. تربط عدة شبكات محلية معًا وتستخدم تقنيات مثل الألياف البصرية لتحقيق سرعات عالية.</p>
+                            <div class="examples">
+                                <h4>أمثلة:</h4>
+                                <ul>
+                                    <li>شبكة تربط فروع شركة في مدينة واحدة</li>
+                                    <li>شبكة تربط عدة مباني في حرم جامعي</li>
+                                    <li>شبكة الكابل التلفزيوني في مدينة</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="network-type">
+                            <h3>4. الشبكة الواسعة (WAN - Wide Area Network)</h3>
+                            <div class="section-image">
+                                <img src="../images/wan-network.svg" alt="الشبكة الواسعة">
+                            </div>
+                            <p>هي شبكة تغطي مساحة جغرافية واسعة مثل دولة أو قارة أو حتى العالم بأكمله. تربط عدة شبكات محلية أو إقليمية معًا. أشهر مثال على الشبكة الواسعة هو الإنترنت.</p>
+                            <div class="examples">
+                                <h4>أمثلة:</h4>
+                                <ul>
+                                    <li>شبكة تربط فروع شركة عالمية في دول مختلفة</li>
+                                    <li>شبكة البنوك التي تربط الفروع والصرافات الآلية حول العالم</li>
+                                    <li>شبكات شركات الاتصالات العالمية</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="network-type">
+                            <h3>5. أنواع أخرى من الشبكات</h3>
+                            <ul>
+                                <li><strong>الشبكة الداخلية المحدودة (CAN - Campus Area Network):</strong> تربط المباني في حرم جامعي أو مجمع شركات.</li>
+                                <li><strong>شبكة التخزين (SAN - Storage Area Network):</strong> شبكة مخصصة لربط أجهزة التخزين بالخوادم.</li>
+                                <li><strong>الشبكة الافتراضية الخاصة (VPN - Virtual Private Network):</strong> تنشئ اتصالًا آمنًا ومشفرًا عبر شبكة عامة مثل الإنترنت.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="components" class="content-section">
+                    <h2>مكونات الشبكة الأساسية</h2>
+                    <p>لكي تعمل الشبكة بشكل صحيح، هناك عدة مكونات أساسية يجب توفرها:</p>
+
+                    <h3>1. الأجهزة (Hardware)</h3>
+                    <div class="components-grid">
+                        <div class="component-card">
+                            <div class="component-image">
+                                <img src="../images/switch.svg" alt="المحولات">
+                            </div>
+                            <h4>المحولات (Switches)</h4>
+                            <p>المحولات هي أساس معظم شبكات الشركات. تعمل كوحدة تحكم تربط بين أجهزة الكمبيوتر والطابعات والخوادم داخل مبنى أو مجموعة مبانٍ. تتيح المحولات للأجهزة المتصلة على شبكتك الاتصال ببعضها البعض وبالشبكات الأخرى، وتساعد في تبادل المعلومات وتخصيص الموارد.</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-image">
+                                <img src="../images/router.svg" alt="الموجّهات">
+                            </div>
+                            <h4>الموجّهات (Routers)</h4>
+                            <p>تعمل الموجّهات كجهاز إرسال، حيث تحلل البيانات المرسلة عبر الشبكة وتختار أفضل مسار لها للنقل وترسلها في طريقها. تربط الموجّهات شبكتك بالعالم الخارجي، وتحمي المعلومات من التهديدات الأمنية، كما يمكنها أن تقرر أي أجهزة الكمبيوتر التي تحصل على الأولوية على الآخرين.</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-image">
+                                <img src="../images/access-point.svg" alt="نقاط الوصول اللاسلكية">
+                            </div>
+                            <h4>نقاط الوصول اللاسلكية (Access Points)</h4>
+                            <p>تتيح نقطة الوصول للأجهزة إمكانية الاتصال بالشبكة اللاسلكية بدون كابلات. إن الشبكة اللاسلكية تجعل من السهل توصيل أجهزة جديدة عبر الإنترنت وتوفر دعمًا مرنًا للعاملين المتنقلين.</p>
+                        </div>
+
+                        <div class="component-card">
+                            <div class="component-image">
+                                <img src="../images/cables.svg" alt="كابلات الشبكة">
+                            </div>
+                            <h4>كابلات الشبكة</h4>
+                            <p>هناك ثلاثة أنواع رئيسة من الكابلات المستخدمة في الشبكات:</p>
+                            <ul>
+                                <li><strong>الكابلات المحورية (Coaxial Cable):</strong> تستخدم في نقل الإشارة التلفزيونية وبعض أنواع الشبكات.</li>
+                                <li><strong>كابلات الألياف الضوئية (Fiber Optic Cable):</strong> توفر سرعات عالية جدًا لنقل البيانات وتستخدم في الشبكات الكبيرة.</li>
+                                <li><strong>كابلات الزوج المجدول (Twisted Pair Cable):</strong> الأكثر شيوعًا في شبكات LAN، وتأتي بنوعين: محمية (STP) وغير محمية (UTP).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>2. البرمجيات (Software)</h3>
+                    <div class="software-components">
+                        <div class="software-component">
+                            <h4>أنظمة التشغيل الشبكية</h4>
+                            <p>برامج تدير موارد الشبكة وتنظم الوصول إليها، مثل Windows Server وLinux.</p>
+                        </div>
+                        <div class="software-component">
+                            <h4>برامج الحماية</h4>
+                            <p>برامج تحمي الشبكة من التهديدات الخارجية مثل الفيروسات والبرمجيات الخبيثة، وتشمل جدران الحماية (Firewalls) وبرامج مكافحة الفيروسات.</p>
+                        </div>
+                        <div class="software-component">
+                            <h4>برامج إدارة الشبكة</h4>
+                            <p>تساعد في مراقبة أداء الشبكة وتشخيص المشكلات وإدارة الموارد.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="addressing" class="content-section">
+                    <h2>مفاهيم العنونة والاتصال</h2>
+
+                    <div class="addressing-concepts">
+                        <div class="addressing-concept">
+                            <h3>عنوان IP (IP Address)</h3>
+                            <div class="section-image">
+                                <img src="../images/ip-address.svg" alt="عنوان IP">
+                            </div>
+                            <p>عنوان IP هو سلسلة من الأرقام تعرّف جهازًا على الشبكة، مثل بصمة الإصبع للإنسان. يتكون عنوان IP من أربعة أرقام مفصولة بنقاط، مثل 192.168.1.1. هناك نوعان من عناوين IP:</p>
+                            <ul>
+                                <li><strong>عنوان IPv4:</strong> يتكون من 32 بت، مقسمة إلى أربعة أقسام، كل قسم يتراوح بين 0 و255.</li>
+                                <li><strong>عنوان IPv6:</strong> تم تطويره بسبب نفاد عناوين IPv4، ويتكون من 128 بت، مما يوفر عددًا هائلاً من العناوين.</li>
+                            </ul>
+                        </div>
+
+                        <div class="addressing-concept">
+                            <h3>البورت (Port)</h3>
+                            <div class="section-image">
+                                <img src="../images/port.svg" alt="البورت">
+                            </div>
+                            <p>البورت هو "منفذ" افتراضي يسمح للبروتوكولات المختلفة بالعمل على نفس الجهاز دون تداخل. كل بروتوكول يستخدم رقم بورت محدد، مثل:</p>
+                            <ul>
+                                <li>بروتوكول HTTP يستخدم البورت 80</li>
+                                <li>بروتوكول HTTPS يستخدم البورت 443</li>
+                                <li>بروتوكول FTP يستخدم البورت 21</li>
+                            </ul>
+                        </div>
+
+                        <div class="addressing-concept">
+                            <h3>البروتوكول (Protocol)</h3>
+                            <div class="section-image">
+                                <img src="../images/protocol.svg" alt="البروتوكول">
+                            </div>
+                            <p>البروتوكول هو مجموعة من القواعد التي تحدد كيفية تبادل البيانات بين الأجهزة على الشبكة. من أشهر البروتوكولات:</p>
+                            <ul>
+                                <li><strong>HTTP/HTTPS:</strong> لتصفح مواقع الويب</li>
+                                <li><strong>FTP:</strong> لنقل الملفات</li>
+                                <li><strong>SMTP:</strong> لإرسال البريد الإلكتروني</li>
+                                <li><strong>POP3/IMAP:</strong> لاستقبال البريد الإلكتروني</li>
+                                <li><strong>TCP/IP:</strong> مجموعة البروتوكولات الأساسية للإنترنت</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="topology" class="content-section">
+                    <h2>طوبولوجيا الشبكة (Network Topology)</h2>
+                    <p>طوبولوجيا الشبكة هي الطريقة التي يتم بها ترتيب وتوصيل أجهزة الشبكة معًا. هناك عدة أنواع من طوبولوجيا الشبكة:</p>
+
+                    <div class="topology-types">
+                        <div class="topology-type">
+                            <h3>1. الطوبولوجيا النجمية (Star Topology)</h3>
+                            <div class="section-image">
+                                <img src="../images/star-topology.svg" alt="الطوبولوجيا النجمية">
+                            </div>
+                            <p>جميع الأجهزة متصلة بجهاز مركزي (محول أو موجّه). هذا النوع هو الأكثر شيوعًا في الشبكات المنزلية والمكتبية.</p>
+                            <div class="pros-cons">
+                                <div class="pros">
+                                    <h4>مميزاتها:</h4>
+                                    <ul>
+                                        <li>سهولة إضافة أجهزة جديدة</li>
+                                        <li>إذا فشل جهاز واحد، لا تتأثر بقية الشبكة</li>
+                                        <li>سهولة اكتشاف الأخطاء وإصلاحها</li>
+                                    </ul>
+                                </div>
+                                <div class="cons">
+                                    <h4>عيوبها:</h4>
+                                    <ul>
+                                        <li>إذا فشل الجهاز المركزي، تفشل الشبكة بأكملها</li>
+                                        <li>تكلفة أعلى بسبب الحاجة إلى كابلات أكثر</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topology-type">
+                            <h3>2. الطوبولوجيا الحلقية (Ring Topology)</h3>
+                            <div class="section-image">
+                                <img src="../images/ring-topology.svg" alt="الطوبولوجيا الحلقية">
+                            </div>
+                            <p>كل جهاز متصل بجهازين آخرين، مكونًا حلقة مغلقة. تنتقل البيانات في اتجاه واحد حول الحلقة.</p>
+                            <div class="pros-cons">
+                                <div class="pros">
+                                    <h4>مميزاتها:</h4>
+                                    <ul>
+                                        <li>أداء متساوٍ لجميع الأجهزة</li>
+                                        <li>سهولة تحديد الأخطاء</li>
+                                    </ul>
+                                </div>
+                                <div class="cons">
+                                    <h4>عيوبها:</h4>
+                                    <ul>
+                                        <li>إذا فشل جهاز واحد، قد تتعطل الشبكة بأكملها</li>
+                                        <li>صعوبة إضافة أجهزة جديدة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topology-type">
+                            <h3>3. الطوبولوجيا الخطية (Bus Topology)</h3>
+                            <div class="section-image">
+                                <img src="../images/bus-topology.svg" alt="الطوبولوجيا الخطية">
+                            </div>
+                            <p>جميع الأجهزة متصلة بكابل رئيسي واحد.</p>
+                            <div class="pros-cons">
+                                <div class="pros">
+                                    <h4>مميزاتها:</h4>
+                                    <ul>
+                                        <li>سهولة التركيب</li>
+                                        <li>تكلفة منخفضة</li>
+                                        <li>مناسبة للشبكات الصغيرة</li>
+                                    </ul>
+                                </div>
+                                <div class="cons">
+                                    <h4>عيوبها:</h4>
+                                    <ul>
+                                        <li>إذا انقطع الكابل الرئيسي، تفشل الشبكة بأكملها</li>
+                                        <li>أداء الشبكة يتدهور مع زيادة عدد الأجهزة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="topology-type">
+                            <h3>4. الطوبولوجيا الشبكية (Mesh Topology)</h3>
+                            <div class="section-image">
+                                <img src="../images/mesh-topology.svg" alt="الطوبولوجيا الشبكية">
+                            </div>
+                            <p>كل جهاز متصل مباشرة بجميع الأجهزة الأخرى في الشبكة.</p>
+                            <div class="pros-cons">
+                                <div class="pros">
+                                    <h4>مميزاتها:</h4>
+                                    <ul>
+                                        <li>موثوقية عالية جدًا</li>
+                                        <li>إذا فشل مسار واحد، يمكن استخدام مسارات بديلة</li>
+                                    </ul>
+                                </div>
+                                <div class="cons">
+                                    <h4>عيوبها:</h4>
+                                    <ul>
+                                        <li>تكلفة عالية جدًا</li>
+                                        <li>تعقيد في التركيب والصيانة</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="navigation-buttons">
+                    <a href="../index.html" class="btn secondary-btn"><i class="fas fa-arrow-right"></i> الرئيسية</a>
+                    <a href="osi.html" class="btn primary-btn">نموذج OSI <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <div class="quiz-promo">
+                    <h3>اختبر معلوماتك!</h3>
+                    <p>هل أنت جاهز لاختبار معلوماتك حول أساسيات الشبكات؟</p>
+                    <a href="quiz.html#basics-quiz" class="btn primary-btn">ابدأ الاختبار</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>دليل شامل لأساسيات الشبكات ونموذج OSI وبروتوكول TCP/IP</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="osi.html">نموذج OSI</a></li>
+                        <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-envelope"></i> info@network-world.com</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 عالم الشبكات. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشبكات اللاسلكية المتقدمة - المستوى الثاني - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="../level1/index.html">المستوى الأول</a></li>
+                    <li><a href="index.html" class="active">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>الشبكات اللاسلكية المتقدمة</h1>
+            <p>تعلم تقنيات وبروتوكولات الشبكات اللاسلكية المتقدمة وتطبيقاتها</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الثاني</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الثاني</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                        <li><a href="network-programming.html">برمجة الشبكات</a></li>
+                        <li><a href="advanced-configuration.html">تركيب وتكوين الشبكات المتقدمة</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                        <li><a href="advanced-wireless.html" class="active">الشبكات اللاسلكية المتقدمة</a></li>
+                        <li><a href="virtual-networks.html">الشبكات الافتراضية</a></li>
+                        <li><a href="advanced-labs.html">المختبرات العملية المتقدمة</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../level1/wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>مقدمة في الشبكات اللاسلكية المتقدمة</h2>
+                    <p>الشبكات اللاسلكية المتقدمة هي تطور للشبكات اللاسلكية التقليدية، حيث توفر سرعات أعلى وتغطية أوسع وموثوقية أكبر وميزات أمان محسنة. في هذا القسم، سنتعمق في التقنيات والمعايير المتقدمة للشبكات اللاسلكية وكيفية تصميمها وتنفيذها وإدارتها بكفاءة.</p>
+                    
+                    <div class="info-box">
+                        <h3>تطور معايير الشبكات اللاسلكية:</h3>
+                        <div class="standards-timeline">
+                            <div class="standard">
+                                <h4>IEEE 802.11 (Wi-Fi الأصلي)</h4>
+                                <p><strong>السنة:</strong> 1997</p>
+                                <p><strong>السرعة:</strong> حتى 2 ميجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 2.4 جيجاهرتز</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11b</h4>
+                                <p><strong>السنة:</strong> 1999</p>
+                                <p><strong>السرعة:</strong> حتى 11 ميجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 2.4 جيجاهرتز</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11a</h4>
+                                <p><strong>السنة:</strong> 1999</p>
+                                <p><strong>السرعة:</strong> حتى 54 ميجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 5 جيجاهرتز</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11g</h4>
+                                <p><strong>السنة:</strong> 2003</p>
+                                <p><strong>السرعة:</strong> حتى 54 ميجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 2.4 جيجاهرتز</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11n</h4>
+                                <p><strong>السنة:</strong> 2009</p>
+                                <p><strong>السرعة:</strong> حتى 600 ميجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 2.4 و 5 جيجاهرتز</p>
+                                <p><strong>الميزات:</strong> MIMO، قنوات 40 ميجاهرتز</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11ac (Wi-Fi 5)</h4>
+                                <p><strong>السنة:</strong> 2013</p>
+                                <p><strong>السرعة:</strong> حتى 6.9 جيجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 5 جيجاهرتز</p>
+                                <p><strong>الميزات:</strong> MU-MIMO، قنوات أوسع (حتى 160 ميجاهرتز)، تشكيل الحزمة</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11ax (Wi-Fi 6)</h4>
+                                <p><strong>السنة:</strong> 2019</p>
+                                <p><strong>السرعة:</strong> حتى 9.6 جيجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 2.4 و 5 و 6 جيجاهرتز</p>
+                                <p><strong>الميزات:</strong> OFDMA، 1024-QAM، Target Wake Time، كفاءة طاقة محسنة</p>
+                            </div>
+                            
+                            <div class="standard">
+                                <h4>IEEE 802.11be (Wi-Fi 7)</h4>
+                                <p><strong>السنة:</strong> 2024 (متوقع)</p>
+                                <p><strong>السرعة:</strong> حتى 30 جيجابت/ثانية</p>
+                                <p><strong>التردد:</strong> 2.4 و 5 و 6 جيجاهرتز</p>
+                                <p><strong>الميزات:</strong> قنوات 320 ميجاهرتز، 4096-QAM، Multi-Link Operation</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تقنيات الشبكات اللاسلكية المتقدمة</h2>
+                    
+                    <div class="advanced-tech">
+                        <h3>1. تقنية MIMO (Multiple-Input Multiple-Output)</h3>
+                        <p>MIMO هي تقنية تستخدم هوائيات متعددة للإرسال والاستقبال لزيادة سعة الشبكة وتحسين الموثوقية.</p>
+                        
+                        <div class="tech-details">
+                            <h4>أنواع MIMO:</h4>
+                            <ul>
+                                <li><strong>SU-MIMO (Single-User MIMO):</strong> تستخدم جميع تدفقات البيانات المتعددة لجهاز واحد.</li>
+                                <li><strong>MU-MIMO (Multi-User MIMO):</strong> تسمح بإرسال البيانات إلى عدة أجهزة في نفس الوقت.</li>
+                                <li><strong>Massive MIMO:</strong> تستخدم عشرات أو مئات الهوائيات لزيادة السعة بشكل كبير.</li>
+                            </ul>
+                            
+                            <h4>فوائد MIMO:</h4>
+                            <ul>
+                                <li>زيادة معدل نقل البيانات</li>
+                                <li>تحسين نطاق التغطية</li>
+                                <li>تقليل التداخل</li>
+                                <li>تحسين الأداء في البيئات ذات المسارات المتعددة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tech-implementation">
+                            <h4>تنفيذ MU-MIMO في نقطة وصول:</h4>
+                            <div class="code-block">
+                                <pre>
+# تكوين MU-MIMO على نقطة وصول Cisco
+AP(config)# ap dot11 5ghz mu-mimo
+AP(config)# ap dot11 5ghz channel width 80
+AP(config)# ap dot11 5ghz beamforming
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="advanced-tech">
+                        <h3>2. تقنية OFDMA (Orthogonal Frequency Division Multiple Access)</h3>
+                        <p>OFDMA هي تقنية تقسم قناة الاتصال إلى أجزاء أصغر تسمى Resource Units (RUs)، مما يسمح بخدمة عدة أجهزة في نفس الوقت.</p>
+                        
+                        <div class="tech-details">
+                            <h4>كيف تعمل OFDMA:</h4>
+                            <ul>
+                                <li>تقسيم القناة إلى وحدات موارد متعددة</li>
+                                <li>تخصيص وحدات الموارد لأجهزة مختلفة</li>
+                                <li>إرسال واستقبال البيانات من/إلى عدة أجهزة في نفس الوقت</li>
+                            </ul>
+                            
+                            <h4>فوائد OFDMA:</h4>
+                            <ul>
+                                <li>تقليل زمن الانتظار (Latency)</li>
+                                <li>زيادة كفاءة استخدام الطيف الترددي</li>
+                                <li>تحسين الأداء في البيئات ذات الكثافة العالية</li>
+                                <li>تقليل استهلاك الطاقة للأجهزة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="advanced-tech">
+                        <h3>3. تشكيل الحزمة (Beamforming)</h3>
+                        <p>تشكيل الحزمة هي تقنية تركز إشارات الراديو في اتجاه محدد بدلاً من بثها في جميع الاتجاهات، مما يحسن قوة الإشارة والنطاق.</p>
+                        
+                        <div class="tech-details">
+                            <h4>أنواع تشكيل الحزمة:</h4>
+                            <ul>
+                                <li><strong>تشكيل الحزمة الصريح (Explicit Beamforming):</strong> يتطلب تبادل معلومات بين نقطة الوصول والعميل.</li>
+                                <li><strong>تشكيل الحزمة الضمني (Implicit Beamforming):</strong> تقدر نقطة الوصول اتجاه العميل دون تبادل معلومات.</li>
+                            </ul>
+                            
+                            <h4>فوائد تشكيل الحزمة:</h4>
+                            <ul>
+                                <li>زيادة نطاق التغطية</li>
+                                <li>تحسين قوة الإشارة للأجهزة البعيدة</li>
+                                <li>تقليل التداخل مع الأجهزة الأخرى</li>
+                                <li>تحسين الأداء في البيئات المزدحمة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="advanced-tech">
+                        <h3>4. تقنية BSS Coloring</h3>
+                        <p>BSS Coloring هي تقنية تساعد في تقليل التداخل بين الشبكات اللاسلكية المتداخلة من خلال تعيين "لون" فريد لكل شبكة.</p>
+                        
+                        <div class="tech-details">
+                            <h4>كيف تعمل BSS Coloring:</h4>
+                            <ul>
+                                <li>تعيين قيمة لون فريدة لكل مجموعة خدمة أساسية (BSS)</li>
+                                <li>تمكين الأجهزة من تحديد ما إذا كانت الإشارة من شبكتها أو من شبكة أخرى</li>
+                                <li>تجاهل الإشارات من الشبكات الأخرى إذا كانت قوة الإشارة أقل من حد معين</li>
+                            </ul>
+                            
+                            <h4>فوائد BSS Coloring:</h4>
+                            <ul>
+                                <li>تقليل التداخل بين الشبكات المتجاورة</li>
+                                <li>تحسين كفاءة استخدام القناة</li>
+                                <li>زيادة الإنتاجية في البيئات ذات الكثافة العالية</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="advanced-tech">
+                        <h3>5. تقنية Target Wake Time (TWT)</h3>
+                        <p>TWT هي تقنية لتوفير الطاقة تسمح للأجهزة بالاتفاق مع نقطة الوصول على أوقات محددة للاستيقاظ وتبادل البيانات.</p>
+                        
+                        <div class="tech-details">
+                            <h4>كيف تعمل TWT:</h4>
+                            <ul>
+                                <li>تحديد جدول زمني للأجهزة للاستيقاظ وتبادل البيانات</li>
+                                <li>السماح للأجهزة بالدخول في وضع السكون لفترات أطول</li>
+                                <li>تنسيق وقت الاستيقاظ لتقليل التنافس والتصادم</li>
+                            </ul>
+                            
+                            <h4>فوائد TWT:</h4>
+                            <ul>
+                                <li>تحسين عمر البطارية للأجهزة المحمولة وأجهزة إنترنت الأشياء</li>
+                                <li>تقليل الازدحام في الشبكة</li>
+                                <li>تحسين كفاءة استخدام الشبكة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تصميم وتخطيط الشبكات اللاسلكية المؤسسية</h2>
+                    <p>تصميم شبكة لاسلكية مؤسسية فعالة يتطلب تخطيطًا دقيقًا ومراعاة العديد من العوامل لضمان التغطية المثلى والأداء والموثوقية.</p>
+                    
+                    <div class="design-process">
+                        <h3>عملية تصميم الشبكة اللاسلكية:</h3>
+                        <div class="process-steps">
+                            <div class="step">
+                                <h4>1. تقييم المتطلبات</h4>
+                                <ul>
+                                    <li>تحديد عدد المستخدمين وأنواع الأجهزة</li>
+                                    <li>تحديد أنواع التطبيقات وعرض النطاق الترددي المطلوب</li>
+                                    <li>تحديد متطلبات التغطية والتنقل</li>
+                                    <li>تحديد متطلبات الأمان والامتثال</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step">
+                                <h4>2. مسح الموقع</h4>
+                                <ul>
+                                    <li>إجراء مسح قبل التنفيذ لتحديد مصادر التداخل</li>
+                                    <li>تحليل خصائص المبنى والعوائق</li>
+                                    <li>تحديد المواقع المثلى لنقاط الوصول</li>
+                                    <li>تقدير عدد نقاط الوصول المطلوبة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step">
+                                <h4>3. اختيار المعدات</h4>
+                                <ul>
+                                    <li>اختيار نقاط الوصول المناسبة (معايير، ميزات، أداء)</li>
+                                    <li>اختيار وحدات التحكم اللاسلكية</li>
+                                    <li>تحديد متطلبات البنية التحتية السلكية</li>
+                                    <li>اختيار الهوائيات والملحقات</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step">
+                                <h4>4. تصميم الشبكة</h4>
+                                <ul>
+                                    <li>تخطيط تخصيص القنوات</li>
+                                    <li>تخطيط إدارة الطاقة</li>
+                                    <li>تصميم VLANs وتقسيم الشبكة</li>
+                                    <li>تخطيط التجوال والتنقل</li>
+                                    <li>تصميم الأمان والمصادقة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step">
+                                <h4>5. التنفيذ</h4>
+                                <ul>
+                                    <li>تركيب وتكوين نقاط الوصول</li>
+                                    <li>تكوين وحدات التحكم اللاسلكية</li>
+                                    <li>تنفيذ سياسات الأمان</li>
+                                    <li>تكامل مع البنية التحتية الحالية</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step">
+                                <h4>6. التحقق والاختبار</h4>
+                                <ul>
+                                    <li>إجراء مسح بعد التنفيذ للتحقق من التغطية</li>
+                                    <li>اختبار الأداء والسعة</li>
+                                    <li>اختبار التجوال والتنقل</li>
+                                    <li>التحقق من الأمان والمصادقة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="step">
+                                <h4>7. التوثيق والصيانة</h4>
+                                <ul>
+                                    <li>توثيق تصميم الشبكة والتكوينات</li>
+                                    <li>إنشاء إجراءات التشغيل القياسية</li>
+                                    <li>تنفيذ المراقبة المستمرة</li>
+                                    <li>تخطيط الصيانة الدورية والترقيات</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="site-survey">
+                        <h3>أدوات وتقنيات مسح الموقع:</h3>
+                        <div class="survey-tools">
+                            <div class="tool">
+                                <h4>1. أدوات مسح الموقع المتخصصة</h4>
+                                <p>برامج وأجهزة مصممة خصيصًا لتحليل وتخطيط الشبكات اللاسلكية.</p>
+                                <h5>أمثلة:</h5>
+                                <ul>
+                                    <li>Ekahau Site Survey</li>
+                                    <li>AirMagnet Survey</li>
+                                    <li>NetSpot</li>
+                                    <li>TamoGraph Site Survey</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool">
+                                <h4>2. محللات الطيف</h4>
+                                <p>أدوات تكشف جميع إشارات الراديو في البيئة، بما في ذلك مصادر التداخل غير Wi-Fi.</p>
+                                <h5>أمثلة:</h5>
+                                <ul>
+                                    <li>MetaGeek Wi-Spy</li>
+                                    <li>Fluke Networks AirMagnet Spectrum XT</li>
+                                    <li>Cisco Spectrum Expert</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool">
+                                <h4>3. أدوات محاكاة التخطيط</h4>
+                                <p>برامج تسمح بإنشاء نماذج افتراضية للبيئة وتوقع التغطية قبل التنفيذ الفعلي.</p>
+                                <h5>أمثلة:</h5>
+                                <ul>
+                                    <li>Ekahau Pro</li>
+                                    <li>iBwave Design</li>
+                                    <li>Cisco Wireless Planning Tool</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="channel-planning">
+                        <h3>تخطيط القنوات وإدارة التداخل:</h3>
+                        <p>التخطيط السليم للقنوات أمر حيوي لتقليل التداخل وتحسين أداء الشبكة اللاسلكية.</p>
+                        
+                        <div class="channel-tips">
+                            <h4>نصائح لتخطيط القنوات:</h4>
+                            <ul>
+                                <li><strong>استخدام القنوات غير المتداخلة:</strong> في نطاق 2.4 جيجاهرتز، استخدم القنوات 1، 6، 11 فقط.</li>
+                                <li><strong>الاستفادة من نطاق 5 جيجاهرتز:</strong> يوفر المزيد من القنوات غير المتداخلة.</li>
+                                <li><strong>تجنب القنوات DFS:</strong> إذا كان ذلك ممكنًا، لتجنب التداخل مع الرادارات.</li>
+                                <li><strong>تخطيط إعادة استخدام القنوات:</strong> ضمان عدم استخدام نفس القناة في نقاط وصول متجاورة.</li>
+                                <li><strong>مراعاة قوة الإشارة:</strong> ضبط مستويات الطاقة لتقليل التداخل بين الخلايا.</li>
+                                <li><strong>استخدام التخصيص التلقائي للقنوات:</strong> الاستفادة من خوارزميات التحسين في وحدات التحكم اللاسلكية.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="channel-example">
+                            <h4>مثال على تخطيط القنوات في مبنى متعدد الطوابق:</h4>
+                            <div class="code-block">
+                                <pre>
+# تكوين تخصيص القنوات على وحدة تحكم Cisco WLC
+Controller(config)# ap dot11 5ghz channel global auto
+
+# تكوين تخصيص القنوات يدويًا لنقاط وصول محددة
+Controller(config)# ap name AP1 dot11 5ghz channel 36
+Controller(config)# ap name AP2 dot11 5ghz channel 44
+Controller(config)# ap name AP3 dot11 5ghz channel 149
+Controller(config)# ap name AP4 dot11 5ghz channel 157
+
+# تكوين عرض القناة
+Controller(config)# ap dot11 5ghz channel width 80
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تقنيات التجوال والتنقل المتقدمة</h2>
+                    <p>التجوال (Roaming) هو عملية انتقال جهاز العميل من نقطة وصول إلى أخرى أثناء الحفاظ على اتصال مستمر. في البيئات المؤسسية، يعد التجوال السلس أمرًا ضروريًا لدعم التطبيقات الحساسة للتأخير مثل الصوت والفيديو.</p>
+                    
+                    <div class="roaming-types">
+                        <h3>أنواع التجوال:</h3>
+                        <div class="roaming-type">
+                            <h4>1. التجوال ضمن وحدة التحكم (Intra-Controller Roaming)</h4>
+                            <p>انتقال العميل بين نقاط وصول متصلة بنفس وحدة التحكم اللاسلكية.</p>
+                            <h5>الخصائص:</h5>
+                            <ul>
+                                <li>أبسط أنواع التجوال</li>
+                                <li>لا يتطلب إعادة مصادقة</li>
+                                <li>تأخير منخفض</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="roaming-type">
+                            <h4>2. التجوال بين وحدات التحكم (Inter-Controller Roaming)</h4>
+                            <p>انتقال العميل بين نقاط وصول متصلة بوحدات تحكم مختلفة.</p>
+                            <h5>الخصائص:</h5>
+                            <ul>
+                                <li>أكثر تعقيدًا من التجوال ضمن وحدة التحكم</li>
+                                <li>قد يتطلب بروتوكولات خاصة بين وحدات التحكم</li>
+                                <li>يمكن أن يكون تجوالًا محليًا أو نفقيًا</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="roaming-type">
+                            <h4>3. التجوال بين النطاقات (Layer 3 Roaming)</h4>
+                            <p>انتقال العميل بين شبكات فرعية IP مختلفة.</p>
+                            <h5>الخصائص:</h5>
+                            <ul>
+                                <li>الأكثر تعقيدًا</li>
+                                <li>يتطلب آليات للحفاظ على عنوان IP للعميل</li>
+                                <li>غالبًا ما يستخدم النفق لتوجيه حركة المرور</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roaming-protocols">
+                        <h3>بروتوكولات وتقنيات التجوال المتقدمة:</h3>
+                        <div class="protocol">
+                            <h4>1. 802.11r (Fast Transition)</h4>
+                            <p>معيار IEEE يسمح بالتجوال السريع من خلال تبسيط عملية المصادقة عند الانتقال بين نقاط الوصول.</p>
+                            <h5>كيف يعمل:</h5>
+                            <ul>
+                                <li>إنشاء مفاتيح مصادقة مسبقًا أثناء الاتصال الأولي</li>
+                                <li>تخزين مفاتيح المصادقة في جميع نقاط الوصول ضمن نفس المجال</li>
+                                <li>تقليل عدد تبادلات المصادقة المطلوبة أثناء التجوال</li>
+                            </ul>
+                            <h5>تكوين 802.11r على نقطة وصول Cisco:</h5>
+                            <div class="code-block">
+                                <pre>
+Controller(config)# wlan test-wlan 1
+Controller(config-wlan)# security wpa akm ft psk
+Controller(config-wlan)# security wpa akm ft 802.1x
+Controller(config-wlan)# security ft
+Controller(config-wlan)# security ft over-the-ds
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>2. 802.11k (Radio Resource Management)</h4>
+                            <p>معيار يحسن كفاءة التجوال من خلال تزويد العملاء بمعلومات عن نقاط الوصول المجاورة.</p>
+                            <h5>الميزات:</h5>
+                            <ul>
+                                <li>تقارير نقاط الوصول المجاورة</li>
+                                <li>قياسات قناة العميل</li>
+                                <li>تقارير الحمل</li>
+                                <li>تقارير الإحصاءات</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>3. 802.11v (Wireless Network Management)</h4>
+                            <p>معيار يوفر آليات لإدارة الشبكة اللاسلكية، بما في ذلك توجيه العملاء إلى نقاط وصول أفضل.</p>
+                            <h5>الميزات:</h5>
+                            <ul>
+                                <li>انتقال شبكة BSS</li>
+                                <li>إدارة الطاقة</li>
+                                <li>تحميل متوازن</li>
+                                <li>تشخيص الشبكة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>4. تقنية Opportunistic Key Caching (OKC)</h4>
+                            <p>تقنية تسمح بإعادة استخدام مفاتيح المصادقة عند التجوال بين نقاط الوصول.</p>
+                            <h5>الميزات:</h5>
+                            <ul>
+                                <li>تقليل زمن التجوال</li>
+                                <li>تجنب إعادة المصادقة الكاملة</li>
+                                <li>متوافقة مع معظم الأجهزة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>أمان الشبكات اللاسلكية المتقدم</h2>
+                    <p>أمان الشبكات اللاسلكية المتقدم يتجاوز بروتوكولات التشفير الأساسية ليشمل مجموعة شاملة من التقنيات والممارسات لحماية الشبكة من التهديدات المتطورة.</p>
+                    
+                    <div class="security-protocols">
+                        <h3>بروتوكولات الأمان اللاسلكي المتقدمة:</h3>
+                        <div class="protocol">
+                            <h4>1. WPA3-Enterprise</h4>
+                            <p>أحدث معيار أمان للشبكات اللاسلكية المؤسسية، يوفر حماية محسنة مقارنة بـ WPA2.</p>
+                            <h5>الميزات:</h5>
+                            <ul>
+                                <li><strong>تشفير 192 بت:</strong> مستوى أمان أعلى للبيانات.</li>
+                                <li><strong>حماية محسنة ضد هجمات كلمات المرور:</strong> باستخدام Simultaneous Authentication of Equals (SAE).</li>
+                                <li><strong>حماية الخصوصية:</strong> تحسين حماية الخصوصية في الشبكات المفتوحة.</li>
+                                <li><strong>مقاومة هجمات القاموس:</strong> تقليل فعالية هجمات تخمين كلمات المرور.</li>
+                            </ul>
+                            <h5>تكوين WPA3-Enterprise على وحدة تحكم Cisco:</h5>
+                            <div class="code-block">
+                                <pre>
+Controller(config)# wlan enterprise-wlan 2
+Controller(config-wlan)# security wpa akm 802.1x
+Controller(config-wlan)# security wpa wpa3
+Controller(config-wlan)# security wpa wpa3 ciphers gcmp256
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>2. 802.1X/EAP (Extensible Authentication Protocol)</h4>
+                            <p>إطار عمل للمصادقة يدعم طرق مصادقة متعددة للشبكات اللاسلكية المؤسسية.</p>
+                            <h5>طرق EAP الشائعة:</h5>
+                            <ul>
+                                <li><strong>EAP-TLS:</strong> يستخدم شهادات رقمية للعملاء والخادم، الأكثر أمانًا.</li>
+                                <li><strong>EAP-TTLS:</strong> يستخدم شهادة للخادم فقط، ويدعم طرق مصادقة متعددة للعميل.</li>
+                                <li><strong>PEAP:</strong> مشابه لـ EAP-TTLS، يوفر نفقًا آمنًا لطرق EAP الأخرى.</li>
+                                <li><strong>EAP-FAST:</strong> يستخدم بيانات اعتماد محمية (PACs) بدلاً من الشهادات.</li>
+                            </ul>
+                            <h5>مكونات بنية 802.1X:</h5>
+                            <ul>
+                                <li><strong>العميل (Supplicant):</strong> الجهاز الذي يطلب الوصول إلى الشبكة.</li>
+                                <li><strong>المصادق (Authenticator):</strong> نقطة الوصول أو المفتاح الذي يتحكم في الوصول.</li>
+                                <li><strong>خادم المصادقة (Authentication Server):</strong> خادم RADIUS الذي يتحقق من بيانات اعتماد المستخدم.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="advanced-security">
+                        <h3>تقنيات الأمان المتقدمة:</h3>
+                        <div class="technique">
+                            <h4>1. أنظمة منع التسلل اللاسلكي (WIPS)</h4>
+                            <p>أنظمة تراقب الطيف اللاسلكي للكشف عن التهديدات والهجمات ومنعها.</p>
+                            <h5>قدرات WIPS:</h5>
+                            <ul>
+                                <li>كشف نقاط الوصول غير المصرح بها (Rogue APs)</li>
+                                <li>كشف هجمات الحرمان من الخدمة (DoS)</li>
+                                <li>كشف هجمات التزوير (Spoofing)</li>
+                                <li>كشف هجمات إلغاء المصادقة (Deauthentication)</li>
+                                <li>كشف هجمات الوسيط (Man-in-the-Middle)</li>
+                            </ul>
+                            <h5>تنفيذ WIPS:</h5>
+                            <ul>
+                                <li><strong>أجهزة استشعار مخصصة:</strong> أجهزة مخصصة لمراقبة الطيف اللاسلكي.</li>
+                                <li><strong>وضع المراقبة:</strong> تكوين بعض نقاط الوصول للعمل كأجهزة استشعار.</li>
+                                <li><strong>وضع المسح:</strong> تكوين نقاط الوصول للمسح الدوري للقنوات.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="technique">
+                            <h4>2. تقسيم الشبكة اللاسلكية</h4>
+                            <p>فصل حركة المرور اللاسلكية إلى شبكات منطقية مختلفة لتحسين الأمان والأداء.</p>
+                            <h5>استراتيجيات التقسيم:</h5>
+                            <ul>
+                                <li><strong>شبكات SSID متعددة:</strong> إنشاء شبكات منفصلة لمجموعات مستخدمين مختلفة.</li>
+                                <li><strong>VLANs:</strong> ربط كل SSID بـ VLAN مختلف.</li>
+                                <li><strong>جدران نارية داخلية:</strong> تقييد حركة المرور بين الشبكات المقسمة.</li>
+                                <li><strong>سياسات أمان مختلفة:</strong> تطبيق مستويات أمان مختلفة لكل شبكة.</li>
+                            </ul>
+                            <h5>مثال على تقسيم الشبكة:</h5>
+                            <div class="code-block">
+                                <pre>
+# تكوين SSID متعددة على وحدة تحكم Cisco
+Controller(config)# wlan corporate 1
+Controller(config-wlan)# security wpa akm 802.1x
+Controller(config-wlan)# interface vlan10
+Controller(config-wlan)# exit
+
+Controller(config)# wlan guest 2
+Controller(config-wlan)# security wpa akm psk
+Controller(config-wlan)# interface vlan20
+Controller(config-wlan)# exit
+
+Controller(config)# wlan iot 3
+Controller(config-wlan)# security wpa akm psk
+Controller(config-wlan)# interface vlan30
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="technique">
+                            <h4>3. التحكم في الوصول القائم على الهوية</h4>
+                            <p>تطبيق سياسات الوصول بناءً على هوية المستخدم وحالة الجهاز.</p>
+                            <h5>مكونات التحكم في الوصول:</h5>
+                            <ul>
+                                <li><strong>نظام إدارة الهوية:</strong> للتحقق من هوية المستخدمين.</li>
+                                <li><strong>نظام التحكم في الوصول إلى الشبكة (NAC):</strong> للتحقق من حالة الجهاز.</li>
+                                <li><strong>سياسات الوصول:</strong> قواعد تحدد من يمكنه الوصول إلى ماذا.</li>
+                                <li><strong>تطبيق السياسات:</strong> آليات لفرض سياسات الوصول.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>إدارة ومراقبة الشبكات اللاسلكية المؤسسية</h2>
+                    <p>إدارة ومراقبة الشبكات اللاسلكية المؤسسية بفعالية أمر ضروري لضمان الأداء الأمثل والموثوقية والأمان.</p>
+                    
+                    <div class="management-systems">
+                        <h3>أنظمة إدارة الشبكات اللاسلكية:</h3>
+                        <div class="system">
+                            <h4>1. وحدات التحكم اللاسلكية (WLCs)</h4>
+                            <p>أجهزة مركزية تدير مجموعات من نقاط الوصول وتوفر إدارة موحدة للشبكة اللاسلكية.</p>
+                            <h5>وظائف WLC:</h5>
+                            <ul>
+                                <li>إدارة تكوين نقاط الوصول</li>
+                                <li>تحسين الترددات اللاسلكية (RF)</li>
+                                <li>إدارة التجوال</li>
+                                <li>تطبيق سياسات الأمان</li>
+                                <li>توزيع الحمل</li>
+                                <li>مراقبة وتشخيص المشكلات</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="system">
+                            <h4>2. أنظمة إدارة الشبكة (NMS)</h4>
+                            <p>برامج توفر رؤية شاملة وإدارة للبنية التحتية للشبكة بأكملها، بما في ذلك المكونات اللاسلكية والسلكية.</p>
+                            <h5>ميزات NMS:</h5>
+                            <ul>
+                                <li>اكتشاف وجرد الأجهزة</li>
+                                <li>مراقبة الأداء</li>
+                                <li>إدارة التكوين</li>
+                                <li>إدارة الأحداث والتنبيهات</li>
+                                <li>تحليل البيانات وإعداد التقارير</li>
+                                <li>تخطيط السعة</li>
+                            </ul>
+                            <h5>أمثلة على أنظمة NMS:</h5>
+                            <ul>
+                                <li>Cisco Prime Infrastructure</li>
+                                <li>Aruba AirWave</li>
+                                <li>SolarWinds Network Performance Monitor</li>
+                                <li>PRTG Network Monitor</li>
+                                <li>ManageEngine OpManager</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="system">
+                            <h4>3. حلول الشبكات المدارة من السحابة</h4>
+                            <p>منصات إدارة قائمة على السحابة توفر إدارة مركزية للشبكات اللاسلكية دون الحاجة إلى بنية تحتية محلية.</p>
+                            <h5>ميزات الإدارة السحابية:</h5>
+                            <ul>
+                                <li>إدارة عن بعد من أي مكان</li>
+                                <li>تحديثات تلقائية للبرامج</li>
+                                <li>قابلية التوسع</li>
+                                <li>تكامل مع خدمات السحابة الأخرى</li>
+                                <li>تحليلات متقدمة</li>
+                            </ul>
+                            <h5>أمثلة على حلول الإدارة السحابية:</h5>
+                            <ul>
+                                <li>Cisco Meraki</li>
+                                <li>Aruba Central</li>
+                                <li>Ubiquiti UniFi</li>
+                                <li>Ruckus Cloud</li>
+                                <li>EnGenius Cloud</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="monitoring-metrics">
+                        <h3>مقاييس ومؤشرات الأداء الرئيسية:</h3>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <h4>1. قوة الإشارة (RSSI)</h4>
+                                <p>قياس لقوة الإشارة اللاسلكية المستلمة، يقاس بالديسيبل ميلي واط (dBm).</p>
+                                <h5>القيم المثالية:</h5>
+                                <ul>
+                                    <li><strong>ممتاز:</strong> -50 dBm إلى -65 dBm</li>
+                                    <li><strong>جيد:</strong> -65 dBm إلى -70 dBm</li>
+                                    <li><strong>مقبول:</strong> -70 dBm إلى -80 dBm</li>
+                                    <li><strong>ضعيف:</strong> أقل من -80 dBm</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="metric">
+                                <h4>2. نسبة الإشارة إلى الضوضاء (SNR)</h4>
+                                <p>الفرق بين قوة الإشارة ومستوى الضوضاء الخلفية، يقاس بالديسيبل (dB).</p>
+                                <h5>القيم المثالية:</h5>
+                                <ul>
+                                    <li><strong>ممتاز:</strong> أكبر من 40 dB</li>
+                                    <li><strong>جيد:</strong> 25 dB إلى 40 dB</li>
+                                    <li><strong>مقبول:</strong> 15 dB إلى 25 dB</li>
+                                    <li><strong>ضعيف:</strong> أقل من 15 dB</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="metric">
+                                <h4>3. استخدام القناة</h4>
+                                <p>النسبة المئوية للوقت الذي تكون فيه القناة مشغولة.</p>
+                                <h5>القيم المثالية:</h5>
+                                <ul>
+                                    <li><strong>ممتاز:</strong> أقل من 20%</li>
+                                    <li><strong>جيد:</strong> 20% إلى 40%</li>
+                                    <li><strong>مقبول:</strong> 40% إلى 60%</li>
+                                    <li><strong>مزدحم:</strong> أكثر من 60%</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="metric">
+                                <h4>4. معدل إعادة المحاولة</h4>
+                                <p>النسبة المئوية للحزم التي تتطلب إعادة إرسال.</p>
+                                <h5>القيم المثالية:</h5>
+                                <ul>
+                                    <li><strong>ممتاز:</strong> أقل من 5%</li>
+                                    <li><strong>جيد:</strong> 5% إلى 10%</li>
+                                    <li><strong>مقبول:</strong> 10% إلى 20%</li>
+                                    <li><strong>سيء:</strong> أكثر من 20%</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="metric">
+                                <h4>5. زمن الانتقال بين نقاط الوصول</h4>
+                                <p>الوقت المستغرق للعميل للانتقال من نقطة وصول إلى أخرى.</p>
+                                <h5>القيم المثالية:</h5>
+                                <ul>
+                                    <li><strong>ممتاز:</strong> أقل من 50 مللي ثانية</li>
+                                    <li><strong>جيد:</strong> 50 إلى 100 مللي ثانية</li>
+                                    <li><strong>مقبول:</strong> 100 إلى 150 مللي ثانية</li>
+                                    <li><strong>سيء:</strong> أكثر من 150 مللي ثانية</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="metric">
+                                <h4>6. كثافة العملاء</h4>
+                                <p>عدد العملاء المتصلين بنقطة وصول واحدة.</p>
+                                <h5>القيم المثالية (تعتمد على نوع نقطة الوصول):</h5>
+                                <ul>
+                                    <li><strong>نقاط وصول أساسية:</strong> 10-25 عميل</li>
+                                    <li><strong>نقاط وصول متوسطة:</strong> 25-50 عميل</li>
+                                    <li><strong>نقاط وصول عالية الكثافة:</strong> 50-100+ عميل</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="troubleshooting">
+                        <h3>استكشاف الأخطاء وإصلاحها:</h3>
+                        <div class="common-issues">
+                            <h4>مشكلات شائعة وحلولها:</h4>
+                            <div class="issue">
+                                <h5>1. ضعف التغطية</h5>
+                                <p><strong>الأسباب المحتملة:</strong></p>
+                                <ul>
+                                    <li>عدد غير كافٍ من نقاط الوصول</li>
+                                    <li>موقع غير مناسب لنقاط الوصول</li>
+                                    <li>عوائق مادية</li>
+                                    <li>إعدادات طاقة غير مناسبة</li>
+                                </ul>
+                                <p><strong>الحلول:</strong></p>
+                                <ul>
+                                    <li>إجراء مسح للموقع وإعادة تقييم التغطية</li>
+                                    <li>إضافة نقاط وصول إضافية</li>
+                                    <li>تعديل مواقع نقاط الوصول</li>
+                                    <li>ضبط مستويات الطاقة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="issue">
+                                <h5>2. التداخل</h5>
+                                <p><strong>الأسباب المحتملة:</strong></p>
+                                <ul>
+                                    <li>تداخل القنوات</li>
+                                    <li>أجهزة غير Wi-Fi في نفس النطاق</li>
+                                    <li>شبكات لاسلكية مجاورة</li>
+                                </ul>
+                                <p><strong>الحلول:</strong></p>
+                                <ul>
+                                    <li>إعادة تخطيط القنوات</li>
+                                    <li>استخدام نطاق 5 جيجاهرتز</li>
+                                    <li>تحديد وإزالة مصادر التداخل</li>
+                                    <li>استخدام تقنيات مثل BSS Coloring</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="issue">
+                                <h5>3. مشكلات التجوال</h5>
+                                <p><strong>الأسباب المحتملة:</strong></p>
+                                <ul>
+                                    <li>تداخل في التغطية غير كافٍ</li>
+                                    <li>إعدادات التجوال غير مناسبة</li>
+                                    <li>عملاء "لزجون" (يتمسكون بنقطة وصول بعيدة)</li>
+                                </ul>
+                                <p><strong>الحلول:</strong></p>
+                                <ul>
+                                    <li>تحسين تداخل التغطية</li>
+                                    <li>تمكين 802.11k/v/r</li>
+                                    <li>ضبط عتبات التجوال</li>
+                                    <li>تنفيذ توجيه العملاء</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="issue">
+                                <h5>4. انخفاض الأداء</h5>
+                                <p><strong>الأسباب المحتملة:</strong></p>
+                                <ul>
+                                    <li>ازدحام القناة</li>
+                                    <li>عدد كبير جدًا من العملاء</li>
+                                    <li>عملاء بطيئون يؤثرون على الشبكة</li>
+                                    <li>قيود عرض النطاق الترددي الخارجي</li>
+                                </ul>
+                                <p><strong>الحلول:</strong></p>
+                                <ul>
+                                    <li>تحسين تخصيص القنوات</li>
+                                    <li>إضافة نقاط وصول</li>
+                                    <li>تمكين Band Steering لتوجيه العملاء إلى 5 جيجاهرتز</li>
+                                    <li>تنفيذ QoS</li>
+                                    <li>تحديث البنية التحتية السلكية</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tools">
+                            <h4>أدوات استكشاف الأخطاء وإصلاحها:</h4>
+                            <ul>
+                                <li><strong>محللات الطيف:</strong> لتحديد مصادر التداخل.</li>
+                                <li><strong>محللات بروتوكول Wi-Fi:</strong> لفحص حزم Wi-Fi وتحديد المشكلات على مستوى البروتوكول.</li>
+                                <li><strong>أدوات مسح الشبكة اللاسلكية:</strong> لتقييم التغطية وجودة الإشارة.</li>
+                                <li><strong>أدوات مراقبة الشبكة:</strong> لتتبع الأداء والاتجاهات على مدار الوقت.</li>
+                                <li><strong>سجلات وحدة التحكم اللاسلكية:</strong> لتحديد المشكلات على مستوى النظام.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. أي من التقنيات التالية تسمح بإرسال البيانات إلى عدة أجهزة في نفس الوقت؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">SU-MIMO</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">MU-MIMO</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">OFDM</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">BSS Coloring</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو المعيار الذي يسمح بالتجوال السريع من خلال تبسيط عملية المصادقة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">802.11k</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">802.11r</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">802.11v</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">802.11ax</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. ما هي القيمة المثالية لنسبة الإشارة إلى الضوضاء (SNR) لأداء ممتاز؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">أكبر من 10 dB</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">أكبر من 20 dB</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">أكبر من 40 dB</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">أكبر من 60 dB</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="network-security.html" class="btn outline-btn">السابق: أمن الشبكات</a>
+                    <a href="virtual-networks.html" class="btn primary-btn">التالي: الشبكات الافتراضية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'c'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

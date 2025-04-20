@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات التوجيه - المستوى الأول - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="index.html" class="active">المستوى الأول</a></li>
+                    <li><a href="../level2/index.html">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>أساسيات التوجيه</h1>
+            <p>تعرف على مفاهيم وتقنيات توجيه البيانات عبر الشبكات المختلفة</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الأول</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الأول</a></li>
+                        <li><a href="network-fundamentals.html">مفاهيم الشبكات الأساسية</a></li>
+                        <li><a href="network-types.html">أنواع الشبكات</a></li>
+                        <li><a href="network-components.html">مكونات الشبكة</a></li>
+                        <li><a href="network-topologies.html">طوبولوجيا الشبكة</a></li>
+                        <li><a href="addressing.html">العنونة في الشبكات</a></li>
+                        <li><a href="basic-security.html">أساسيات أمن الشبكات</a></li>
+                        <li><a href="wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
+                        <li><a href="basic-routing.html" class="active">أساسيات التوجيه</a></li>
+                        <li><a href="basic-labs.html">المختبرات العملية الأساسية</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>مفهوم التوجيه في الشبكات</h2>
+                    <p>التوجيه (Routing) هو عملية تحديد المسار الأمثل لنقل البيانات من المصدر إلى الوجهة عبر شبكة أو مجموعة من الشبكات المترابطة. يعتبر التوجيه من العمليات الأساسية في الشبكات، وخاصة في الشبكات الكبيرة والإنترنت.</p>
+                    
+                    <div class="info-box">
+                        <h4>أهمية التوجيه:</h4>
+                        <ul>
+                            <li><strong>الاتصال بين الشبكات المختلفة:</strong> يسمح التوجيه بالاتصال بين الأجهزة الموجودة في شبكات مختلفة.</li>
+                            <li><strong>تحديد المسار الأمثل:</strong> يساعد في اختيار أفضل مسار لنقل البيانات بناءً على عوامل مثل المسافة والتكلفة والازدحام.</li>
+                            <li><strong>التعامل مع الأعطال:</strong> يمكن للتوجيه إعادة توجيه البيانات عبر مسارات بديلة في حالة حدوث أعطال في المسار الأصلي.</li>
+                            <li><strong>تحسين أداء الشبكة:</strong> يساهم في توزيع حركة المرور بشكل متوازن وتقليل الازدحام.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>أجهزة التوجيه (Routers)</h2>
+                    <p>أجهزة التوجيه (الموجهات) هي أجهزة متخصصة تعمل في الطبقة الثالثة (طبقة الشبكة) من نموذج OSI، وتقوم بتوجيه البيانات بين الشبكات المختلفة.</p>
+                    
+                    <div class="router-components">
+                        <h3>مكونات جهاز التوجيه:</h3>
+                        <div class="component">
+                            <h4>1. وحدة المعالجة المركزية (CPU)</h4>
+                            <p>تنفذ البرامج والخوارزميات المسؤولة عن اتخاذ قرارات التوجيه.</p>
+                        </div>
+                        
+                        <div class="component">
+                            <h4>2. الذاكرة</h4>
+                            <ul>
+                                <li><strong>ذاكرة الوصول العشوائي (RAM):</strong> تخزن جداول التوجيه والتكوينات النشطة.</li>
+                                <li><strong>ذاكرة القراءة فقط (ROM):</strong> تخزن برنامج التشغيل الأساسي.</li>
+                                <li><strong>ذاكرة الفلاش (Flash Memory):</strong> تخزن نظام التشغيل وملفات التكوين.</li>
+                                <li><strong>ذاكرة NVRAM:</strong> تخزن ملف التكوين الاحتياطي.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component">
+                            <h4>3. واجهات الشبكة</h4>
+                            <p>منافذ تستخدم للاتصال بالشبكات المختلفة، مثل منافذ Ethernet أو منافذ الألياف البصرية.</p>
+                        </div>
+                        
+                        <div class="component">
+                            <h4>4. نظام التشغيل</h4>
+                            <p>برنامج متخصص يدير موارد الموجه ويوفر واجهة للتكوين والإدارة (مثل Cisco IOS أو Juniper JunOS).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="router-functions">
+                        <h3>وظائف جهاز التوجيه:</h3>
+                        <ul>
+                            <li><strong>تحديد المسار:</strong> تحديد أفضل مسار لإرسال البيانات بناءً على جداول التوجيه.</li>
+                            <li><strong>توجيه الحزم:</strong> إرسال حزم البيانات إلى الواجهة المناسبة بناءً على عنوان الوجهة.</li>
+                            <li><strong>تبادل معلومات التوجيه:</strong> تبادل معلومات حول الشبكات المتاحة مع الموجهات الأخرى.</li>
+                            <li><strong>تصفية حركة المرور:</strong> تطبيق قواعد التحكم في الوصول لتصفية حركة المرور.</li>
+                            <li><strong>ترجمة عناوين الشبكة (NAT):</strong> ترجمة عناوين IP الخاصة إلى عناوين IP عامة.</li>
+                            <li><strong>جودة الخدمة (QoS):</strong> إعطاء الأولوية لأنواع معينة من حركة المرور.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>جداول التوجيه (Routing Tables)</h2>
+                    <p>جدول التوجيه هو قاعدة بيانات يحتفظ بها جهاز التوجيه وتحتوي على معلومات حول الشبكات المعروفة والمسارات المتاحة إليها.</p>
+                    
+                    <div class="routing-table">
+                        <h3>مكونات جدول التوجيه:</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>العنصر</th>
+                                    <th>الوصف</th>
+                                    <th>مثال</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>عنوان الشبكة الوجهة</td>
+                                    <td>عنوان الشبكة التي يتم توجيه البيانات إليها</td>
+                                    <td>192.168.1.0/24</td>
+                                </tr>
+                                <tr>
+                                    <td>قناع الشبكة</td>
+                                    <td>يحدد أي جزء من العنوان يمثل الشبكة وأي جزء يمثل المضيف</td>
+                                    <td>255.255.255.0</td>
+                                </tr>
+                                <tr>
+                                    <td>البوابة التالية</td>
+                                    <td>عنوان IP للموجه التالي في المسار</td>
+                                    <td>10.0.0.1</td>
+                                </tr>
+                                <tr>
+                                    <td>الواجهة</td>
+                                    <td>الواجهة التي سيتم إرسال البيانات من خلالها</td>
+                                    <td>Ethernet0/0</td>
+                                </tr>
+                                <tr>
+                                    <td>المقياس (Metric)</td>
+                                    <td>قيمة تستخدم لتحديد أفضلية المسار (القيمة الأقل هي الأفضل)</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>المصدر</td>
+                                    <td>كيف تم تعلم هذا المسار (ثابت، ديناميكي، مباشر)</td>
+                                    <td>OSPF</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="routing-table-example">
+                        <h3>مثال على جدول توجيه:</h3>
+                        <pre>
+الوجهة         قناع الشبكة      البوابة التالية   الواجهة       المقياس  المصدر
+---------------------------------------------------------------------------
+0.0.0.0/0      0.0.0.0          10.0.0.1          Ethernet0/0   1        ثابت
+10.0.0.0/24    255.255.255.0    مباشر            Ethernet0/0   0        متصل
+192.168.1.0/24 255.255.255.0    مباشر            Ethernet0/1   0        متصل
+192.168.2.0/24 255.255.255.0    192.168.1.2      Ethernet0/1   1        RIP
+172.16.0.0/16  255.255.0.0      10.0.0.2          Ethernet0/0   120      OSPF
+                        </pre>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4>كيف يعمل التوجيه:</h4>
+                        <ol>
+                            <li>عندما يتلقى الموجه حزمة بيانات، يفحص عنوان IP الوجهة.</li>
+                            <li>يبحث في جدول التوجيه عن أفضل تطابق لعنوان الوجهة.</li>
+                            <li>إذا وجد تطابقًا، يرسل الحزمة إلى البوابة التالية أو الواجهة المحددة.</li>
+                            <li>إذا لم يجد تطابقًا، يستخدم المسار الافتراضي (0.0.0.0/0) إن وجد.</li>
+                            <li>إذا لم يكن هناك مسار افتراضي، يتم إسقاط الحزمة وإرسال رسالة "الشبكة غير قابلة للوصول".</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>بروتوكولات التوجيه (Routing Protocols)</h2>
+                    <p>بروتوكولات التوجيه هي مجموعة من القواعد التي تستخدمها أجهزة التوجيه لتبادل معلومات حول الشبكات المتاحة وتحديد أفضل المسارات.</p>
+                    
+                    <div class="routing-protocols">
+                        <h3>تصنيف بروتوكولات التوجيه:</h3>
+                        
+                        <h4>1. حسب النطاق:</h4>
+                        <div class="protocol-types">
+                            <div class="protocol-type">
+                                <h5>بروتوكولات التوجيه الداخلية (IGP)</h5>
+                                <p>تستخدم داخل نظام مستقل واحد (مثل شبكة مؤسسة واحدة).</p>
+                                <p>أمثلة: RIP، OSPF، EIGRP</p>
+                            </div>
+                            
+                            <div class="protocol-type">
+                                <h5>بروتوكولات التوجيه الخارجية (EGP)</h5>
+                                <p>تستخدم بين الأنظمة المستقلة المختلفة (مثل مزودي خدمة الإنترنت).</p>
+                                <p>أمثلة: BGP</p>
+                            </div>
+                        </div>
+                        
+                        <h4>2. حسب الخوارزمية:</h4>
+                        <div class="protocol-types">
+                            <div class="protocol-type">
+                                <h5>بروتوكولات المسافة المتجهة (Distance Vector)</h5>
+                                <p>تعتمد على عدد القفزات (Hops) أو المسافة للوصول إلى الوجهة.</p>
+                                <p>أمثلة: RIP، EIGRP</p>
+                            </div>
+                            
+                            <div class="protocol-type">
+                                <h5>بروتوكولات حالة الوصلة (Link State)</h5>
+                                <p>تبني خريطة كاملة للشبكة وتحسب أفضل المسارات باستخدام خوارزمية Dijkstra.</p>
+                                <p>أمثلة: OSPF، IS-IS</p>
+                            </div>
+                            
+                            <div class="protocol-type">
+                                <h5>بروتوكولات المسار (Path Vector)</h5>
+                                <p>تعتمد على مسارات الأنظمة المستقلة للوصول إلى الوجهة.</p>
+                                <p>أمثلة: BGP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="common-protocols">
+                        <h3>بروتوكولات التوجيه الشائعة:</h3>
+                        
+                        <div class="protocol">
+                            <h4>1. بروتوكول معلومات التوجيه (RIP - Routing Information Protocol)</h4>
+                            <ul>
+                                <li><strong>النوع:</strong> بروتوكول المسافة المتجهة (Distance Vector)</li>
+                                <li><strong>المقياس:</strong> عدد القفزات (Hop Count)</li>
+                                <li><strong>الحد الأقصى للقفزات:</strong> 15 (16 يعتبر غير قابل للوصول)</li>
+                                <li><strong>تحديث التوجيه:</strong> كل 30 ثانية</li>
+                                <li><strong>المميزات:</strong> سهل الإعداد والفهم</li>
+                                <li><strong>العيوب:</strong> بطيء التقارب، لا يأخذ في الاعتبار عرض النطاق أو التأخير</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>2. بروتوكول أولاً المسار الأقصر المفتوح (OSPF - Open Shortest Path First)</h4>
+                            <ul>
+                                <li><strong>النوع:</strong> بروتوكول حالة الوصلة (Link State)</li>
+                                <li><strong>المقياس:</strong> التكلفة (Cost) بناءً على عرض النطاق</li>
+                                <li><strong>تحديث التوجيه:</strong> عند حدوث تغيير في الشبكة</li>
+                                <li><strong>المميزات:</strong> سريع التقارب، يدعم الشبكات الكبيرة، يأخذ في الاعتبار عرض النطاق</li>
+                                <li><strong>العيوب:</strong> أكثر تعقيدًا في الإعداد، يتطلب موارد أكثر</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>3. بروتوكول التوجيه المحسن للبوابة الداخلية (EIGRP - Enhanced Interior Gateway Routing Protocol)</h4>
+                            <ul>
+                                <li><strong>النوع:</strong> بروتوكول المسافة المتجهة المتقدم (Advanced Distance Vector)</li>
+                                <li><strong>المقياس:</strong> مركب (يأخذ في الاعتبار عرض النطاق، التأخير، الحمل، الموثوقية)</li>
+                                <li><strong>تحديث التوجيه:</strong> عند حدوث تغيير في الشبكة</li>
+                                <li><strong>المميزات:</strong> سريع التقارب، استخدام فعال للموارد، يدعم توازن الحمل</li>
+                                <li><strong>العيوب:</strong> مملوك لشركة Cisco (على الرغم من أنه أصبح مفتوح المصدر جزئيًا)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h4>4. بروتوكول البوابة الحدودية (BGP - Border Gateway Protocol)</h4>
+                            <ul>
+                                <li><strong>النوع:</strong> بروتوكول المسار (Path Vector)</li>
+                                <li><strong>المقياس:</strong> سياسات التوجيه (مثل عدد الأنظمة المستقلة، السياسات المحلية)</li>
+                                <li><strong>تحديث التوجيه:</strong> عند حدوث تغيير أو بشكل دوري</li>
+                                <li><strong>المميزات:</strong> قابل للتطوير بشكل كبير، يدعم سياسات التوجيه المعقدة</li>
+                                <li><strong>العيوب:</strong> معقد للغاية، يتطلب موارد كبيرة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مفاهيم متقدمة في التوجيه</h2>
+                    
+                    <div class="advanced-concepts">
+                        <div class="concept">
+                            <h3>1. التوجيه الثابت مقابل التوجيه الديناميكي</h3>
+                            
+                            <div class="comparison">
+                                <div class="comparison-item">
+                                    <h4>التوجيه الثابت (Static Routing)</h4>
+                                    <p>يتم تكوين المسارات يدويًا بواسطة مسؤول الشبكة.</p>
+                                    
+                                    <h5>المميزات:</h5>
+                                    <ul>
+                                        <li>أمان أفضل (لا يتم تبادل معلومات التوجيه)</li>
+                                        <li>استخدام أقل للموارد (CPU، الذاكرة، عرض النطاق)</li>
+                                        <li>قابل للتنبؤ (المسارات لا تتغير)</li>
+                                    </ul>
+                                    
+                                    <h5>العيوب:</h5>
+                                    <ul>
+                                        <li>غير قابل للتطوير في الشبكات الكبيرة</li>
+                                        <li>لا يتكيف تلقائيًا مع التغييرات في الشبكة</li>
+                                        <li>يتطلب تدخلًا يدويًا عند حدوث أعطال</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="comparison-item">
+                                    <h4>التوجيه الديناميكي (Dynamic Routing)</h4>
+                                    <p>تتعلم الموجهات المسارات تلقائيًا باستخدام بروتوكولات التوجيه.</p>
+                                    
+                                    <h5>المميزات:</h5>
+                                    <ul>
+                                        <li>قابل للتطوير في الشبكات الكبيرة</li>
+                                        <li>يتكيف تلقائيًا مع التغييرات في الشبكة</li>
+                                        <li>يوفر مسارات بديلة تلقائيًا في حالة حدوث أعطال</li>
+                                    </ul>
+                                    
+                                    <h5>العيوب:</h5>
+                                    <ul>
+                                        <li>استخدام أكبر للموارد</li>
+                                        <li>أقل أمانًا (يمكن اعتراض معلومات التوجيه)</li>
+                                        <li>أكثر تعقيدًا في الإعداد واستكشاف الأخطاء وإصلاحها</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="concept">
+                            <h3>2. توازن الحمل (Load Balancing)</h3>
+                            <p>توازن الحمل هو توزيع حركة المرور على مسارات متعددة للوصول إلى نفس الوجهة، مما يؤدي إلى استخدام أفضل للموارد وتحسين الأداء.</p>
+                            
+                            <h4>أنواع توازن الحمل:</h4>
+                            <ul>
+                                <li><strong>توازن الحمل المتساوي (Equal-Cost Load Balancing):</strong> توزيع حركة المرور بالتساوي على مسارات لها نفس التكلفة.</li>
+                                <li><strong>توازن الحمل غير المتساوي (Unequal-Cost Load Balancing):</strong> توزيع حركة المرور بنسب مختلفة على مسارات لها تكاليف مختلفة (مدعوم في EIGRP).</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="concept">
+                            <h3>3. تجميع المسارات (Route Summarization)</h3>
+                            <p>تجميع المسارات هو عملية دمج عدة مسارات متجاورة في مسار واحد أكثر عمومية، مما يقلل من حجم جداول التوجيه ويحسن الأداء.</p>
+                            
+                            <h4>مثال على تجميع المسارات:</h4>
+                            <p>بدلاً من الإعلان عن المسارات التالية:</p>
+                            <ul>
+                                <li>192.168.1.0/24</li>
+                                <li>192.168.2.0/24</li>
+                                <li>192.168.3.0/24</li>
+                                <li>192.168.4.0/24</li>
+                            </ul>
+                            <p>يمكن تجميعها في مسار واحد: 192.168.0.0/22</p>
+                        </div>
+                        
+                        <div class="concept">
+                            <h3>4. إعادة التوزيع (Redistribution)</h3>
+                            <p>إعادة التوزيع هي عملية نقل معلومات التوجيه من بروتوكول توجيه إلى آخر، مما يسمح بالاتصال بين الشبكات التي تستخدم بروتوكولات توجيه مختلفة.</p>
+                            
+                            <h4>مثال على إعادة التوزيع:</h4>
+                            <p>موجه يتصل بشبكتين، إحداهما تستخدم OSPF والأخرى تستخدم RIP. يمكن إعادة توزيع المسارات المتعلمة من OSPF إلى RIP والعكس.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. أي من بروتوكولات التوجيه التالية يعتبر بروتوكول حالة الوصلة (Link State)؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">RIP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">OSPF</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">BGP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">EIGRP</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو الحد الأقصى لعدد القفزات في بروتوكول RIP؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">10</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">15</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">20</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">25</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. أي من التالي يعتبر من مميزات التوجيه الثابت (Static Routing)؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">يتكيف تلقائيًا مع التغييرات في الشبكة</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">قابل للتطوير في الشبكات الكبيرة</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">استخدام أقل للموارد</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">يوفر مسارات بديلة تلقائيًا في حالة حدوث أعطال</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="wireless-basics.html" class="btn outline-btn">السابق: أساسيات الشبكات اللاسلكية</a>
+                    <a href="basic-labs.html" class="btn primary-btn">التالي: المختبرات العملية الأساسية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'c'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

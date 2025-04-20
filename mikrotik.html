@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مايكروتك (MikroTik) - المستوى الثاني - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="../level1/index.html">المستوى الأول</a></li>
+                    <li><a href="index.html" class="active">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>مايكروتك (MikroTik)</h1>
+            <p>تعرف على أجهزة MikroTik وكيفية تكوينها وإدارتها لإنشاء حلول شبكات متكاملة</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الثاني</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الثاني</a></li>
+                        <li><a href="mikrotik.html" class="active">مايكروتك (MikroTik)</a></li>
+                        <li><a href="network-programming.html">برمجة الشبكات</a></li>
+                        <li><a href="advanced-configuration.html">تركيب وتكوين الشبكات المتقدمة</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                        <li><a href="advanced-wireless.html">الشبكات اللاسلكية المتقدمة</a></li>
+                        <li><a href="virtual-networks.html">الشبكات الافتراضية</a></li>
+                        <li><a href="advanced-labs.html">المختبرات العملية المتقدمة</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../level1/basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="../level1/network-components.html">مكونات الشبكة</a></li>
+                        <li><a href="../level1/basic-labs.html">المختبرات العملية الأساسية</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>مقدمة عن مايكروتك (MikroTik)</h2>
+                    <p>مايكروتك (MikroTik) هي شركة لاتفية تأسست عام 1996، متخصصة في تطوير أجهزة وبرمجيات الشبكات. تشتهر الشركة بتقديم حلول شبكات عالية الجودة بأسعار تنافسية، مما جعلها خيارًا شائعًا لمزودي خدمة الإنترنت (ISPs) والشركات الصغيرة والمتوسطة.</p>
+                    
+                    <div class="info-box">
+                        <h3>منتجات مايكروتك الرئيسية:</h3>
+                        <ul>
+                            <li><strong>RouterOS:</strong> نظام تشغيل متخصص للشبكات يمكن تثبيته على أجهزة مايكروتك أو على أجهزة الكمبيوتر العادية.</li>
+                            <li><strong>RouterBOARD:</strong> أجهزة توجيه وتبديل مصممة خصيصًا لتشغيل RouterOS.</li>
+                            <li><strong>SwOS:</strong> نظام تشغيل مبسط مصمم خصيصًا لمحولات الشبكة (Switches).</li>
+                            <li><strong>CRS (Cloud Router Switch):</strong> أجهزة تجمع بين وظائف الموجه والمحول.</li>
+                            <li><strong>hAP (Home Access Point):</strong> نقاط وصول لاسلكية للاستخدام المنزلي والمكتبي.</li>
+                            <li><strong>wAP (Wireless Access Point):</strong> نقاط وصول لاسلكية للاستخدام الخارجي.</li>
+                            <li><strong>LHG (Light Head Grid):</strong> أجهزة لاسلكية للاتصالات بعيدة المدى.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>نظام التشغيل RouterOS</h2>
+                    <p>RouterOS هو نظام التشغيل الأساسي لأجهزة مايكروتك، وهو مبني على نواة Linux. يوفر RouterOS مجموعة واسعة من الميزات والوظائف التي تجعله مناسبًا للاستخدام في مختلف سيناريوهات الشبكات.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h3><i class="fas fa-route"></i> التوجيه</h3>
+                            <p>دعم لبروتوكولات التوجيه المختلفة مثل RIP، OSPF، BGP، MPLS.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-wifi"></i> الشبكات اللاسلكية</h3>
+                            <p>دعم لمعايير 802.11a/b/g/n/ac، وإنشاء نقاط وصول، وجسور لاسلكية، وشبكات Mesh.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-shield-alt"></i> الجدار الناري</h3>
+                            <p>جدار ناري متقدم مع دعم لفلترة الحزم، وفحص الحالة، وقوائم العناوين.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-exchange-alt"></i> NAT</h3>
+                            <p>دعم لترجمة عناوين الشبكة (NAT) بأنواعها المختلفة: Source NAT، Destination NAT، Masquerade.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-server"></i> خادم DHCP</h3>
+                            <p>خادم DHCP لتوزيع عناوين IP تلقائيًا، مع دعم للتأجير الثابت والديناميكي.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-users"></i> إدارة المستخدمين</h3>
+                            <p>نظام إدارة مستخدمين متقدم مع دعم للمصادقة المحلية وRADIUS.</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-tachometer-alt"></i> إدارة النطاق الترددي</h3>
+                            <p>أدوات متقدمة لإدارة النطاق الترددي وجودة الخدمة (QoS).</p>
+                        </div>
+                        
+                        <div class="feature">
+                            <h3><i class="fas fa-lock"></i> VPN</h3>
+                            <p>دعم لبروتوكولات VPN المختلفة مثل IPsec، OpenVPN، PPTP، L2TP، SSTP.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>طرق الوصول إلى RouterOS</h2>
+                    <p>يوفر RouterOS عدة طرق للوصول إليه وإدارته:</p>
+                    
+                    <div class="access-methods">
+                        <div class="access-method">
+                            <h3>1. Winbox</h3>
+                            <p>أداة رسومية تعمل على نظام Windows، توفر واجهة سهلة الاستخدام لإدارة أجهزة مايكروتك.</p>
+                            <div class="method-image">
+                                <img src="../../images/mikrotik/winbox.svg" alt="Winbox">
+                            </div>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>واجهة رسومية سهلة الاستخدام</li>
+                                <li>يمكن الاتصال عبر عنوان IP أو عنوان MAC</li>
+                                <li>يدعم معظم وظائف RouterOS</li>
+                                <li>لا يحتاج إلى تثبيت (يمكن تشغيله مباشرة)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="access-method">
+                            <h3>2. WebFig</h3>
+                            <p>واجهة ويب تسمح بإدارة الجهاز من خلال متصفح الويب.</p>
+                            <div class="method-image">
+                                <img src="../../images/mikrotik/webfig.svg" alt="WebFig">
+                            </div>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>لا يحتاج إلى تثبيت برامج إضافية</li>
+                                <li>يعمل على جميع أنظمة التشغيل</li>
+                                <li>يدعم معظم وظائف RouterOS</li>
+                                <li>يمكن الوصول إليه من أي جهاز متصل بالشبكة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="access-method">
+                            <h3>3. واجهة سطر الأوامر (CLI)</h3>
+                            <p>واجهة نصية تسمح بإدارة الجهاز من خلال الأوامر النصية.</p>
+                            <div class="method-image">
+                                <img src="../../images/mikrotik/cli.svg" alt="CLI">
+                            </div>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>يمكن الوصول إليها عبر SSH، Telnet، أو المنفذ التسلسلي</li>
+                                <li>مناسبة للإدارة عن بعد وأتمتة المهام</li>
+                                <li>تدعم جميع وظائف RouterOS</li>
+                                <li>أداء أفضل في الاتصالات البطيئة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="access-method">
+                            <h3>4. تطبيق الهاتف المحمول</h3>
+                            <p>تطبيق للهواتف الذكية يسمح بإدارة أساسية للجهاز.</p>
+                            <div class="method-image">
+                                <img src="../../images/mikrotik/mobile-app.svg" alt="Mobile App">
+                            </div>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>متاح لأنظمة Android و iOS</li>
+                                <li>يوفر وظائف أساسية للمراقبة والإدارة</li>
+                                <li>مناسب للاستخدام السريع والمراقبة</li>
+                                <li>واجهة بسيطة وسهلة الاستخدام</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>التكوين الأساسي لجهاز MikroTik</h2>
+                    <p>في هذا القسم، سنتعرف على الخطوات الأساسية لتكوين جهاز MikroTik جديد.</p>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 1: الاتصال بالجهاز</h3>
+                        <p>عند تشغيل جهاز MikroTik جديد، يمكنك الاتصال به بإحدى الطرق التالية:</p>
+                        <ul>
+                            <li><strong>عبر Winbox:</strong> استخدم Winbox للاتصال بعنوان MAC للجهاز (يظهر في قائمة الأجهزة المكتشفة).</li>
+                            <li><strong>عبر الشبكة:</strong> قم بتوصيل جهاز الكمبيوتر بالمنفذ ether1 واستخدم عنوان IP الافتراضي للجهاز (عادة 192.168.88.1).</li>
+                        </ul>
+                        <p>بيانات الدخول الافتراضية:</p>
+                        <ul>
+                            <li><strong>اسم المستخدم:</strong> admin</li>
+                            <li><strong>كلمة المرور:</strong> (فارغة)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 2: تغيير كلمة المرور</h3>
+                        <p>من الضروري تغيير كلمة المرور الافتراضية لتأمين الجهاز:</p>
+                        <div class="code-block">
+                            <pre>
+/system user set 0 password=كلمة_المرور_الجديدة
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: System > Users > انقر نقرًا مزدوجًا على المستخدم admin > غير كلمة المرور.</p>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 3: تكوين الواجهات (Interfaces)</h3>
+                        <p>تسمية الواجهات وتكوينها حسب الاستخدام:</p>
+                        <div class="code-block">
+                            <pre>
+/interface set 0 name=WAN comment="اتصال الإنترنت"
+/interface set 1 name=LAN comment="الشبكة المحلية"
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: Interfaces > انقر نقرًا مزدوجًا على الواجهة > غير الاسم والتعليق.</p>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 4: تكوين عناوين IP</h3>
+                        <p>تعيين عناوين IP للواجهات:</p>
+                        <div class="code-block">
+                            <pre>
+# تكوين واجهة WAN للحصول على عنوان IP من مزود خدمة الإنترنت
+/ip dhcp-client add interface=WAN disabled=no
+
+# تكوين واجهة LAN بعنوان IP ثابت
+/ip address add address=192.168.1.1/24 interface=LAN
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: IP > Addresses > + > أدخل العنوان والواجهة.</p>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 5: تكوين خادم DHCP</h3>
+                        <p>إعداد خادم DHCP لتوزيع عناوين IP على الأجهزة في الشبكة المحلية:</p>
+                        <div class="code-block">
+                            <pre>
+# إنشاء مجمع عناوين DHCP
+/ip pool add name=dhcp-pool ranges=192.168.1.2-192.168.1.254
+
+# إنشاء شبكة DHCP
+/ip dhcp-server network add address=192.168.1.0/24 gateway=192.168.1.1 dns-server=8.8.8.8,8.8.4.4
+
+# إنشاء خادم DHCP
+/ip dhcp-server add name=dhcp-server interface=LAN address-pool=dhcp-pool disabled=no
+
+# تمكين خادم DHCP
+/ip dhcp-server enable 0
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: IP > DHCP Server > DHCP > + > أدخل الإعدادات.</p>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 6: تكوين NAT</h3>
+                        <p>إعداد NAT للسماح للأجهزة في الشبكة المحلية بالوصول إلى الإنترنت:</p>
+                        <div class="code-block">
+                            <pre>
+/ip firewall nat add chain=srcnat action=masquerade out-interface=WAN
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: IP > Firewall > NAT > + > أدخل الإعدادات.</p>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 7: تكوين قواعد الجدار الناري الأساسية</h3>
+                        <p>إعداد قواعد الجدار الناري الأساسية لحماية الشبكة:</p>
+                        <div class="code-block">
+                            <pre>
+# السماح بالاتصالات المعروفة والمرتبطة
+/ip firewall filter add chain=forward action=accept connection-state=established,related
+
+# حظر الاتصالات غير المصرح بها من الإنترنت إلى الشبكة المحلية
+/ip firewall filter add chain=forward action=drop in-interface=WAN connection-state=new connection-nat-state=!dstnat
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: IP > Firewall > Filter Rules > + > أدخل الإعدادات.</p>
+                    </div>
+                    
+                    <div class="configuration-steps">
+                        <h3>الخطوة 8: حفظ التكوين</h3>
+                        <p>حفظ التكوين لضمان استمراره بعد إعادة تشغيل الجهاز:</p>
+                        <div class="code-block">
+                            <pre>
+/system backup save name=initial-config
+                            </pre>
+                        </div>
+                        <p>أو من خلال Winbox: System > Backup > Backup > أدخل اسم النسخة الاحتياطية.</p>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تكوين الشبكة اللاسلكية</h2>
+                    <p>إذا كان جهاز MikroTik يدعم الشبكات اللاسلكية، يمكنك تكوين نقطة وصول لاسلكية كما يلي:</p>
+                    
+                    <div class="wireless-configuration">
+                        <h3>الخطوة 1: تكوين الواجهة اللاسلكية</h3>
+                        <div class="code-block">
+                            <pre>
+# تعيين وضع نقطة الوصول
+/interface wireless set 0 mode=ap-bridge
+
+# تعيين اسم الشبكة (SSID)
+/interface wireless set 0 ssid=MyNetwork
+
+# تعيين التردد
+/interface wireless set 0 frequency=2437 (للقناة 6)
+
+# تعيين عرض القناة
+/interface wireless set 0 channel-width=20/40mhz-Ce
+
+# تمكين الواجهة اللاسلكية
+/interface wireless enable 0
+                            </pre>
+                        </div>
+                    </div>
+                    
+                    <div class="wireless-configuration">
+                        <h3>الخطوة 2: تكوين أمان الشبكة اللاسلكية</h3>
+                        <div class="code-block">
+                            <pre>
+# تعيين وضع الأمان (WPA2-PSK)
+/interface wireless security-profiles add name=profile1 mode=dynamic-keys authentication-types=wpa2-psk unicast-ciphers=aes-ccm group-ciphers=aes-ccm wpa2-pre-shared-key=كلمة_المرور
+
+# تطبيق ملف الأمان على الواجهة اللاسلكية
+/interface wireless set 0 security-profile=profile1
+                            </pre>
+                        </div>
+                    </div>
+                    
+                    <div class="wireless-configuration">
+                        <h3>الخطوة 3: إضافة الواجهة اللاسلكية إلى جسر الشبكة المحلية</h3>
+                        <div class="code-block">
+                            <pre>
+# إنشاء جسر
+/interface bridge add name=bridge1
+
+# إضافة الواجهات إلى الجسر
+/interface bridge port add bridge=bridge1 interface=LAN
+/interface bridge port add bridge=bridge1 interface=wlan1
+
+# تعيين عنوان IP للجسر
+/ip address add address=192.168.1.1/24 interface=bridge1
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مراقبة وإدارة الشبكة</h2>
+                    <p>يوفر RouterOS أدوات متقدمة لمراقبة وإدارة الشبكة:</p>
+                    
+                    <div class="monitoring-tools">
+                        <div class="tool">
+                            <h3>1. مراقبة استخدام النطاق الترددي</h3>
+                            <p>يمكنك مراقبة استخدام النطاق الترددي لكل واجهة أو لكل مستخدم:</p>
+                            <div class="code-block">
+                                <pre>
+# عرض إحصائيات الواجهات
+/interface monitor-traffic WAN,LAN
+
+# إنشاء قواعد لمراقبة حركة المرور
+/ip traffic-flow set enabled=yes
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="tool">
+                            <h3>2. إدارة النطاق الترددي (QoS)</h3>
+                            <p>يمكنك تحديد أولويات حركة المرور وتقييد النطاق الترددي:</p>
+                            <div class="code-block">
+                                <pre>
+# إنشاء قواعد علامات حركة المرور
+/ip firewall mangle add chain=forward protocol=tcp dst-port=80,443 action=mark-connection new-connection-mark=web-con
+/ip firewall mangle add chain=forward connection-mark=web-con action=mark-packet new-packet-mark=web-traffic
+
+# إنشاء قواعد إدارة النطاق الترددي
+/queue simple add name=web-queue packet-marks=web-traffic max-limit=5M/5M
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="tool">
+                            <h3>3. جدولة المهام</h3>
+                            <p>يمكنك جدولة المهام لتنفيذها في أوقات محددة:</p>
+                            <div class="code-block">
+                                <pre>
+# إعادة تشغيل الجهاز كل يوم في الساعة 3 صباحًا
+/system scheduler add name=daily-reboot on-event="/system reboot" start-time=03:00:00 interval=1d
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="tool">
+                            <h3>4. النسخ الاحتياطي والاستعادة</h3>
+                            <p>يمكنك إنشاء نسخ احتياطية للتكوين واستعادتها عند الحاجة:</p>
+                            <div class="code-block">
+                                <pre>
+# إنشاء نسخة احتياطية
+/system backup save name=backup-date
+
+# استعادة نسخة احتياطية
+/system backup load name=backup-date
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>الشهادات المهنية من MikroTik</h2>
+                    <p>تقدم MikroTik مجموعة من الشهادات المهنية للمتخصصين في مجال الشبكات:</p>
+                    
+                    <div class="certifications">
+                        <div class="certification">
+                            <h3>MTCNA (MikroTik Certified Network Associate)</h3>
+                            <p>الشهادة الأساسية التي تغطي المفاهيم الأساسية لأجهزة MikroTik وRouterOS.</p>
+                            <h4>المواضيع:</h4>
+                            <ul>
+                                <li>أساسيات RouterOS</li>
+                                <li>التوجيه</li>
+                                <li>الجدار الناري</li>
+                                <li>الشبكات اللاسلكية</li>
+                                <li>إدارة النطاق الترددي</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="certification">
+                            <h3>MTCRE (MikroTik Certified Routing Engineer)</h3>
+                            <p>شهادة متقدمة تركز على التوجيه في RouterOS.</p>
+                            <h4>المواضيع:</h4>
+                            <ul>
+                                <li>التوجيه الثابت</li>
+                                <li>OSPF</li>
+                                <li>BGP</li>
+                                <li>MPLS</li>
+                                <li>VRF</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="certification">
+                            <h3>MTCWE (MikroTik Certified Wireless Engineer)</h3>
+                            <p>شهادة متخصصة في الشبكات اللاسلكية باستخدام أجهزة MikroTik.</p>
+                            <h4>المواضيع:</h4>
+                            <ul>
+                                <li>أساسيات الشبكات اللاسلكية</li>
+                                <li>تكوين نقاط الوصول</li>
+                                <li>الجسور اللاسلكية</li>
+                                <li>شبكات Mesh</li>
+                                <li>استكشاف الأخطاء وإصلاحها</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="certification">
+                            <h3>MTCTCE (MikroTik Certified Traffic Control Engineer)</h3>
+                            <p>شهادة متخصصة في إدارة النطاق الترددي وجودة الخدمة.</p>
+                            <h4>المواضيع:</h4>
+                            <ul>
+                                <li>علامات حركة المرور</li>
+                                <li>قواعد الطوابير</li>
+                                <li>إدارة الازدحام</li>
+                                <li>تشكيل حركة المرور</li>
+                                <li>مراقبة الأداء</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. ما هو نظام التشغيل الأساسي لأجهزة MikroTik؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">Windows</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">RouterOS</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">Cisco IOS</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">SwOS</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. أي من الأدوات التالية توفر واجهة رسومية لإدارة أجهزة MikroTik؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">CLI</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">Winbox</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">SSH</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">Telnet</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. ما هو الأمر المستخدم لإنشاء قاعدة NAT في RouterOS؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">/ip nat add</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">/ip firewall nat add</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">/system nat add</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">/ip address nat add</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="index.html" class="btn outline-btn">السابق: نظرة عامة على المستوى الثاني</a>
+                    <a href="network-programming.html" class="btn primary-btn">التالي: برمجة الشبكات</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

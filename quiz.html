@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبر معلوماتك - عالم الشبكات</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="osi.html">نموذج OSI</a></li>
+                    <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="quiz.html" class="active">اختبر معلوماتك</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>اختبر معلوماتك</h1>
+            <p>تحقق من فهمك لأساسيات الشبكات ونموذج OSI وبروتوكول TCP/IP</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>الاختبارات المتاحة</h3>
+                    <ul>
+                        <li><a href="#basics-quiz">اختبار أساسيات الشبكات</a></li>
+                        <li><a href="#osi-quiz">اختبار نموذج OSI</a></li>
+                        <li><a href="#tcp-ip-quiz">اختبار بروتوكول TCP/IP</a></li>
+                        <li><a href="#comprehensive-quiz">اختبار شامل</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="osi.html">نموذج OSI</a></li>
+                        <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>اختبر معلوماتك في عالم الشبكات</h2>
+                    <div class="section-image">
+                        <img src="../images/quiz-intro.svg" alt="اختبر معلوماتك">
+                    </div>
+                    <p>بعد أن تعرفت على أساسيات الشبكات ونموذج OSI وبروتوكول TCP/IP، حان الوقت لاختبار معلوماتك! قمنا بإعداد مجموعة من الاختبارات التفاعلية لمساعدتك على تقييم فهمك للمفاهيم المختلفة.</p>
+                    <p>اختر أحد الاختبارات أدناه وابدأ في اختبار معلوماتك. ستحصل على نتيجتك فورًا بعد الانتهاء من كل اختبار.</p>
+                    
+                    <div class="quiz-cards">
+                        <div class="quiz-card">
+                            <div class="quiz-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>اختبار أساسيات الشبكات</h3>
+                            <p>10 أسئلة حول مفاهيم الشبكات الأساسية وأنواعها ومكوناتها.</p>
+                            <a href="#basics-quiz" class="btn primary-btn">ابدأ الاختبار</a>
+                        </div>
+                        <div class="quiz-card">
+                            <div class="quiz-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>اختبار نموذج OSI</h3>
+                            <p>10 أسئلة حول طبقات نموذج OSI ووظائفها وبروتوكولاتها.</p>
+                            <a href="#osi-quiz" class="btn primary-btn">ابدأ الاختبار</a>
+                        </div>
+                        <div class="quiz-card">
+                            <div class="quiz-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h3>اختبار بروتوكول TCP/IP</h3>
+                            <p>10 أسئلة حول بروتوكول TCP/IP وطبقاته وآلية عمله.</p>
+                            <a href="#tcp-ip-quiz" class="btn primary-btn">ابدأ الاختبار</a>
+                        </div>
+                        <div class="quiz-card">
+                            <div class="quiz-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>اختبار شامل</h3>
+                            <p>20 سؤالًا تغطي جميع المواضيع السابقة بشكل شامل.</p>
+                            <a href="#comprehensive-quiz" class="btn primary-btn">ابدأ الاختبار</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="basics-quiz" class="content-section quiz-section">
+                    <h2>اختبار أساسيات الشبكات</h2>
+                    <div class="quiz-container">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">السؤال <span class="current-question">1</span> من <span class="total-questions">10</span></div>
+                        </div>
+                        
+                        <div class="quiz-questions">
+                            <div class="question" data-question="1" data-correct="2">
+                                <h3>ما هو تعريف الشبكة؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="q1" id="q1-1">
+                                        <label for="q1-1">مجموعة من الأجهزة المتصلة بالإنترنت فقط</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="q1" id="q1-2">
+                                        <label for="q1-2">مجموعة من الأجهزة المتصلة ببعضها البعض بهدف تبادل البيانات والمعلومات</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="q1" id="q1-3">
+                                        <label for="q1-3">مجموعة من أجهزة الكمبيوتر المتصلة بخادم مركزي فقط</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="q1" id="q1-4">
+                                        <label for="q1-4">مجموعة من البرامج التي تتيح الاتصال بالإنترنت</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="question" data-question="2" data-correct="3">
+                                <h3>أي من الشبكات التالية تغطي مساحة جغرافية أكبر؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="q2" id="q2-1">
+                                        <label for="q2-1">الشبكة الشخصية (PAN)</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="q2" id="q2-2">
+                                        <label for="q2-2">الشبكة المحلية (LAN)</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="q2" id="q2-3">
+                                        <label for="q2-3">الشبكة الواسعة (WAN)</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="q2" id="q2-4">
+                                        <label for="q2-4">الشبكة الإقليمية (MAN)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- المزيد من الأسئلة هنا -->
+                            <div class="question" data-question="3" data-correct="1">
+                                <h3>ما هو الجهاز المسؤول عن توجيه البيانات بين الشبكات المختلفة؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="q3" id="q3-1">
+                                        <label for="q3-1">الموجّه (Router)</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="q3" id="q3-2">
+                                        <label for="q3-2">المحول (Switch)</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="q3" id="q3-3">
+                                        <label for="q3-3">المكرر (Repeater)</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="q3" id="q3-4">
+                                        <label for="q3-4">البوابة (Gateway)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- المزيد من الأسئلة -->
+                        </div>
+                        
+                        <div class="quiz-controls">
+                            <button class="btn secondary-btn prev-btn" disabled>السابق</button>
+                            <button class="btn primary-btn next-btn">التالي</button>
+                            <button class="btn primary-btn submit-btn" style="display: none;">إنهاء الاختبار</button>
+                        </div>
+                        
+                        <div class="quiz-result" style="display: none;">
+                            <h3>نتيجة الاختبار</h3>
+                            <div class="result-score">
+                                <div class="score-circle">
+                                    <span class="score-value">0</span>
+                                    <span class="score-total">/10</span>
+                                </div>
+                            </div>
+                            <p class="result-message">أحسنت! استمر في التعلم لتحسين معرفتك بأساسيات الشبكات.</p>
+                            <div class="result-actions">
+                                <button class="btn secondary-btn retry-btn">إعادة الاختبار</button>
+                                <a href="basics.html" class="btn primary-btn">مراجعة المادة</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="osi-quiz" class="content-section quiz-section">
+                    <h2>اختبار نموذج OSI</h2>
+                    <div class="quiz-container">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">السؤال <span class="current-question">1</span> من <span class="total-questions">10</span></div>
+                        </div>
+                        
+                        <div class="quiz-questions">
+                            <div class="question" data-question="1" data-correct="3">
+                                <h3>كم عدد طبقات نموذج OSI؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="osi-q1" id="osi-q1-1">
+                                        <label for="osi-q1-1">4 طبقات</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="osi-q1" id="osi-q1-2">
+                                        <label for="osi-q1-2">5 طبقات</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="osi-q1" id="osi-q1-3">
+                                        <label for="osi-q1-3">7 طبقات</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="osi-q1" id="osi-q1-4">
+                                        <label for="osi-q1-4">9 طبقات</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="question" data-question="2" data-correct="1">
+                                <h3>أي من الطبقات التالية هي الطبقة الأقرب للمستخدم النهائي في نموذج OSI؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="osi-q2" id="osi-q2-1">
+                                        <label for="osi-q2-1">طبقة التطبيق (Application Layer)</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="osi-q2" id="osi-q2-2">
+                                        <label for="osi-q2-2">طبقة العرض (Presentation Layer)</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="osi-q2" id="osi-q2-3">
+                                        <label for="osi-q2-3">طبقة الجلسة (Session Layer)</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="osi-q2" id="osi-q2-4">
+                                        <label for="osi-q2-4">طبقة النقل (Transport Layer)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- المزيد من الأسئلة هنا -->
+                        </div>
+                        
+                        <div class="quiz-controls">
+                            <button class="btn secondary-btn prev-btn" disabled>السابق</button>
+                            <button class="btn primary-btn next-btn">التالي</button>
+                            <button class="btn primary-btn submit-btn" style="display: none;">إنهاء الاختبار</button>
+                        </div>
+                        
+                        <div class="quiz-result" style="display: none;">
+                            <h3>نتيجة الاختبار</h3>
+                            <div class="result-score">
+                                <div class="score-circle">
+                                    <span class="score-value">0</span>
+                                    <span class="score-total">/10</span>
+                                </div>
+                            </div>
+                            <p class="result-message">أحسنت! استمر في التعلم لتحسين معرفتك بنموذج OSI.</p>
+                            <div class="result-actions">
+                                <button class="btn secondary-btn retry-btn">إعادة الاختبار</button>
+                                <a href="osi.html" class="btn primary-btn">مراجعة المادة</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tcp-ip-quiz" class="content-section quiz-section">
+                    <h2>اختبار بروتوكول TCP/IP</h2>
+                    <div class="quiz-container">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">السؤال <span class="current-question">1</span> من <span class="total-questions">10</span></div>
+                        </div>
+                        
+                        <div class="quiz-questions">
+                            <div class="question" data-question="1" data-correct="2">
+                                <h3>كم عدد طبقات بروتوكول TCP/IP؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="tcp-q1" id="tcp-q1-1">
+                                        <label for="tcp-q1-1">3 طبقات</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="tcp-q1" id="tcp-q1-2">
+                                        <label for="tcp-q1-2">4 طبقات</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="tcp-q1" id="tcp-q1-3">
+                                        <label for="tcp-q1-3">5 طبقات</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="tcp-q1" id="tcp-q1-4">
+                                        <label for="tcp-q1-4">7 طبقات</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="question" data-question="2" data-correct="1">
+                                <h3>ما هي عملية إنشاء الاتصال في بروتوكول TCP؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="tcp-q2" id="tcp-q2-1">
+                                        <label for="tcp-q2-1">المصافحة الثلاثية (Three-way Handshake)</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="tcp-q2" id="tcp-q2-2">
+                                        <label for="tcp-q2-2">المصافحة الرباعية (Four-way Handshake)</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="tcp-q2" id="tcp-q2-3">
+                                        <label for="tcp-q2-3">المصافحة الثنائية (Two-way Handshake)</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="tcp-q2" id="tcp-q2-4">
+                                        <label for="tcp-q2-4">لا يوجد مصافحة في بروتوكول TCP</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- المزيد من الأسئلة هنا -->
+                        </div>
+                        
+                        <div class="quiz-controls">
+                            <button class="btn secondary-btn prev-btn" disabled>السابق</button>
+                            <button class="btn primary-btn next-btn">التالي</button>
+                            <button class="btn primary-btn submit-btn" style="display: none;">إنهاء الاختبار</button>
+                        </div>
+                        
+                        <div class="quiz-result" style="display: none;">
+                            <h3>نتيجة الاختبار</h3>
+                            <div class="result-score">
+                                <div class="score-circle">
+                                    <span class="score-value">0</span>
+                                    <span class="score-total">/10</span>
+                                </div>
+                            </div>
+                            <p class="result-message">أحسنت! استمر في التعلم لتحسين معرفتك ببروتوكول TCP/IP.</p>
+                            <div class="result-actions">
+                                <button class="btn secondary-btn retry-btn">إعادة الاختبار</button>
+                                <a href="tcp-ip.html" class="btn primary-btn">مراجعة المادة</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="comprehensive-quiz" class="content-section quiz-section">
+                    <h2>اختبار شامل</h2>
+                    <div class="quiz-container">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">السؤال <span class="current-question">1</span> من <span class="total-questions">20</span></div>
+                        </div>
+                        
+                        <div class="quiz-questions">
+                            <div class="question" data-question="1" data-correct="3">
+                                <h3>ما هو الفرق الرئيسي بين بروتوكول TCP وبروتوكول UDP؟</h3>
+                                <div class="options">
+                                    <div class="option" data-option="1">
+                                        <input type="radio" name="comp-q1" id="comp-q1-1">
+                                        <label for="comp-q1-1">TCP أسرع من UDP</label>
+                                    </div>
+                                    <div class="option" data-option="2">
+                                        <input type="radio" name="comp-q1" id="comp-q1-2">
+                                        <label for="comp-q1-2">UDP يستخدم في تصفح الويب بينما TCP يستخدم في بث الفيديو</label>
+                                    </div>
+                                    <div class="option" data-option="3">
+                                        <input type="radio" name="comp-q1" id="comp-q1-3">
+                                        <label for="comp-q1-3">TCP موثوق ويضمن وصول البيانات، بينما UDP غير موثوق ولا يضمن وصول البيانات</label>
+                                    </div>
+                                    <div class="option" data-option="4">
+                                        <input type="radio" name="comp-q1" id="comp-q1-4">
+                                        <label for="comp-q1-4">TCP يعمل في طبقة الشبكة بينما UDP يعمل في طبقة النقل</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- المزيد من الأسئلة هنا -->
+                        </div>
+                        
+                        <div class="quiz-controls">
+                            <button class="btn secondary-btn prev-btn" disabled>السابق</button>
+                            <button class="btn primary-btn next-btn">التالي</button>
+                            <button class="btn primary-btn submit-btn" style="display: none;">إنهاء الاختبار</button>
+                        </div>
+                        
+                        <div class="quiz-result" style="display: none;">
+                            <h3>نتيجة الاختبار</h3>
+                            <div class="result-score">
+                                <div class="score-circle">
+                                    <span class="score-value">0</span>
+                                    <span class="score-total">/20</span>
+                                </div>
+                            </div>
+                            <p class="result-message">أحسنت! لديك فهم جيد لأساسيات الشبكات ونموذج OSI وبروتوكول TCP/IP.</p>
+                            <div class="result-actions">
+                                <button class="btn secondary-btn retry-btn">إعادة الاختبار</button>
+                                <a href="../index.html" class="btn primary-btn">العودة للرئيسية</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="navigation-buttons">
+                    <a href="tcp-ip.html" class="btn secondary-btn"><i class="fas fa-arrow-right"></i> بروتوكول TCP/IP</a>
+                    <a href="../index.html" class="btn primary-btn">العودة للرئيسية <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>دليل شامل لأساسيات الشبكات ونموذج OSI وبروتوكول TCP/IP</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="osi.html">نموذج OSI</a></li>
+                        <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-envelope"></i> info@network-world.com</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 عالم الشبكات. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

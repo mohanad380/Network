@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برمجة الشبكات - المستوى الثاني - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="../level1/index.html">المستوى الأول</a></li>
+                    <li><a href="index.html" class="active">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>برمجة الشبكات</h1>
+            <p>تعلم كيفية استخدام لغات البرمجة لأتمتة مهام الشبكات وإدارتها</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الثاني</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الثاني</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                        <li><a href="network-programming.html" class="active">برمجة الشبكات</a></li>
+                        <li><a href="advanced-configuration.html">تركيب وتكوين الشبكات المتقدمة</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                        <li><a href="advanced-wireless.html">الشبكات اللاسلكية المتقدمة</a></li>
+                        <li><a href="virtual-networks.html">الشبكات الافتراضية</a></li>
+                        <li><a href="advanced-labs.html">المختبرات العملية المتقدمة</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../level1/basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="../level1/basic-labs.html">المختبرات العملية الأساسية</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>مقدمة في برمجة الشبكات</h2>
+                    <p>برمجة الشبكات هي استخدام لغات البرمجة وأدواتها لأتمتة مهام الشبكات وإدارتها وتحليلها. مع تزايد تعقيد الشبكات الحديثة، أصبحت البرمجة مهارة أساسية لمهندسي الشبكات، حيث تمكنهم من تبسيط العمليات المتكررة وتحسين كفاءة إدارة الشبكة.</p>
+                    
+                    <div class="info-box">
+                        <h3>فوائد برمجة الشبكات:</h3>
+                        <ul>
+                            <li><strong>الأتمتة:</strong> تقليل الأخطاء البشرية وتوفير الوقت من خلال أتمتة المهام المتكررة.</li>
+                            <li><strong>القابلية للتطوير:</strong> إدارة شبكات كبيرة بكفاءة من خلال البرمجة.</li>
+                            <li><strong>المرونة:</strong> تخصيص حلول الشبكات حسب احتياجات المؤسسة.</li>
+                            <li><strong>التحليل:</strong> جمع وتحليل بيانات الشبكة لتحسين الأداء واكتشاف المشكلات.</li>
+                            <li><strong>التوثيق:</strong> توثيق تكوينات الشبكة وتغييراتها بشكل آلي.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>لغات البرمجة المستخدمة في الشبكات</h2>
+                    <p>هناك عدة لغات برمجة يمكن استخدامها في برمجة الشبكات، ولكن بعضها أكثر شيوعًا من غيرها:</p>
+                    
+                    <div class="languages-grid">
+                        <div class="language-card">
+                            <div class="language-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h3>Python</h3>
+                            <p>لغة برمجة عالية المستوى، سهلة التعلم، وتحظى بشعبية كبيرة في مجال الشبكات.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>بناء جملة بسيط وسهل القراءة</li>
+                                <li>مكتبات غنية للشبكات مثل Paramiko، Netmiko، NAPALM</li>
+                                <li>دعم قوي لمعالجة البيانات والتحليل</li>
+                                <li>مجتمع نشط ووثائق ممتازة</li>
+                            </ul>
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>أتمتة تكوين الأجهزة</li>
+                                <li>جمع وتحليل بيانات الشبكة</li>
+                                <li>إنشاء أدوات مراقبة مخصصة</li>
+                                <li>اختبار وتحقق من الشبكة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="language-card">
+                            <div class="language-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h3>JavaScript</h3>
+                            <p>لغة برمجة شائعة تستخدم في تطوير واجهات المستخدم وتطبيقات الويب لإدارة الشبكات.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>دعم قوي للتطوير على جانب العميل والخادم (Node.js)</li>
+                                <li>مكتبات مثل Axios للتعامل مع واجهات برمجة التطبيقات (APIs)</li>
+                                <li>قدرات تفاعلية ممتازة لواجهات المستخدم</li>
+                                <li>دعم للعمليات غير المتزامنة</li>
+                            </ul>
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>تطوير لوحات تحكم الشبكة</li>
+                                <li>التفاعل مع واجهات برمجة تطبيقات الشبكة</li>
+                                <li>تطوير تطبيقات مراقبة الشبكة</li>
+                                <li>تصور بيانات الشبكة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="language-card">
+                            <div class="language-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Bash/Shell</h3>
+                            <p>لغات نصية تستخدم في أنظمة Unix/Linux، مفيدة للأتمتة البسيطة وتنفيذ الأوامر.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>متوفرة افتراضيًا في معظم أنظمة Linux</li>
+                                <li>مناسبة للمهام البسيطة والمتكررة</li>
+                                <li>تكامل سلس مع أدوات سطر الأوامر مثل ssh، ping، traceroute</li>
+                                <li>سهلة التعلم للمبتدئين</li>
+                            </ul>
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>نصوص الاتصال البسيطة</li>
+                                <li>جمع المعلومات الأساسية عن الشبكة</li>
+                                <li>تنفيذ الأوامر على أجهزة متعددة</li>
+                                <li>المهام المجدولة لمراقبة الشبكة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="language-card">
+                            <div class="language-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Go (Golang)</h3>
+                            <p>لغة برمجة حديثة من Google، تتميز بالأداء العالي والتزامن، مناسبة لتطبيقات الشبكات.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>أداء عالٍ وكفاءة في استخدام الموارد</li>
+                                <li>دعم ممتاز للتزامن والبرمجة المتوازية</li>
+                                <li>مكتبة قياسية قوية للشبكات</li>
+                                <li>سهولة بناء تطبيقات قابلة للتوزيع</li>
+                            </ul>
+                            <h4>الاستخدامات:</h4>
+                            <ul>
+                                <li>تطوير أدوات مراقبة الشبكة عالية الأداء</li>
+                                <li>بناء خدمات الشبكة المتزامنة</li>
+                                <li>تطوير أدوات أمان الشبكة</li>
+                                <li>تطبيقات الشبكات ذات الحمل العالي</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مكتبات وأدوات برمجة الشبكات</h2>
+                    <p>هناك العديد من المكتبات والأدوات التي تسهل برمجة الشبكات، خاصة في Python:</p>
+                    
+                    <div class="libraries">
+                        <div class="library">
+                            <h3>1. Paramiko</h3>
+                            <p>مكتبة Python تنفذ بروتوكول SSH v2، تسمح بالاتصال بالأجهزة عبر SSH وتنفيذ الأوامر.</p>
+                            <div class="code-block">
+                                <pre>
+import paramiko
+
+# إنشاء اتصال SSH
+ssh_client = paramiko.SSHClient()
+ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh_client.connect('192.168.1.1', username='admin', password='password')
+
+# تنفيذ أمر
+stdin, stdout, stderr = ssh_client.exec_command('show version')
+output = stdout.read().decode()
+print(output)
+
+# إغلاق الاتصال
+ssh_client.close()
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="library">
+                            <h3>2. Netmiko</h3>
+                            <p>مكتبة Python تعتمد على Paramiko، مصممة خصيصًا للاتصال بأجهزة الشبكة وتكوينها.</p>
+                            <div class="code-block">
+                                <pre>
+from netmiko import ConnectHandler
+
+# تعريف جهاز الشبكة
+device = {
+    'device_type': 'cisco_ios',
+    'ip': '192.168.1.1',
+    'username': 'admin',
+    'password': 'password',
+}
+
+# الاتصال بالجهاز
+net_connect = ConnectHandler(**device)
+
+# تنفيذ أوامر
+output = net_connect.send_command('show ip interface brief')
+print(output)
+
+# تكوين الجهاز
+config_commands = [
+    'interface GigabitEthernet0/1',
+    'description WAN Connection',
+    'ip address 10.0.0.1 255.255.255.0',
+    'no shutdown'
+]
+output = net_connect.send_config_set(config_commands)
+print(output)
+
+# إغلاق الاتصال
+net_connect.disconnect()
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="library">
+                            <h3>3. NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support)</h3>
+                            <p>مكتبة Python توفر واجهة موحدة للتفاعل مع أجهزة شبكات من مصنعين مختلفين.</p>
+                            <div class="code-block">
+                                <pre>
+from napalm import get_network_driver
+
+# تحديد نوع الجهاز والحصول على السائق المناسب
+driver = get_network_driver('ios')
+
+# إنشاء اتصال
+device = driver('192.168.1.1', 'admin', 'password')
+device.open()
+
+# الحصول على معلومات الجهاز
+facts = device.get_facts()
+print(facts)
+
+# الحصول على جدول ARP
+arp_table = device.get_arp_table()
+print(arp_table)
+
+# تكوين الجهاز
+device.load_merge_candidate(config='interface GigabitEthernet0/1\ndescription WAN Connection')
+diff = device.compare_config()
+if diff:
+    print(diff)
+    device.commit_config()
+
+# إغلاق الاتصال
+device.close()
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="library">
+                            <h3>4. Scapy</h3>
+                            <p>مكتبة Python قوية لمعالجة الحزم، تسمح بإنشاء وتحليل وإرسال حزم الشبكة.</p>
+                            <div class="code-block">
+                                <pre>
+from scapy.all import *
+
+# إنشاء حزمة ICMP (ping)
+packet = IP(dst="8.8.8.8") / ICMP()
+
+# إرسال الحزمة واستقبال الرد
+reply = sr1(packet, timeout=2)
+
+# عرض الرد
+if reply:
+    print(reply.summary())
+
+# التقاط الحزم
+def packet_callback(packet):
+    if packet.haslayer(TCP) and packet.haslayer(IP):
+        print(f"TCP: {packet[IP].src}:{packet[TCP].sport} -> {packet[IP].dst}:{packet[TCP].dport}")
+
+# بدء التقاط الحزم
+sniff(prn=packet_callback, filter="tcp", count=10)
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="library">
+                            <h3>5. Ansible</h3>
+                            <p>أداة أتمتة مفتوحة المصدر تستخدم YAML لوصف التكوينات والمهام، مفيدة لأتمتة الشبكات.</p>
+                            <div class="code-block">
+                                <pre>
+# مثال على ملف Ansible Playbook لتكوين أجهزة Cisco
+---
+- name: Configure Cisco Routers
+  hosts: cisco_routers
+  gather_facts: no
+  
+  tasks:
+    - name: Configure Interface
+      cisco.ios.ios_config:
+        lines:
+          - description WAN Connection
+          - ip address 10.0.0.1 255.255.255.0
+          - no shutdown
+        parents: interface GigabitEthernet0/1
+      
+    - name: Configure OSPF
+      cisco.ios.ios_config:
+        lines:
+          - network 10.0.0.0 0.0.0.255 area 0
+          - network 192.168.1.0 0.0.0.255 area 0
+        parents: router ospf 1
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>واجهات برمجة التطبيقات (APIs) في الشبكات</h2>
+                    <p>واجهات برمجة التطبيقات (APIs) هي وسيلة للتفاعل مع أجهزة وخدمات الشبكة برمجيًا. تسمح APIs للمطورين بالتحكم في الشبكة وإدارتها من خلال التعليمات البرمجية.</p>
+                    
+                    <div class="api-types">
+                        <div class="api-type">
+                            <h3>1. واجهات برمجة التطبيقات القائمة على REST</h3>
+                            <p>تستخدم بروتوكول HTTP/HTTPS وتتبادل البيانات بتنسيقات مثل JSON أو XML.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>سهلة الاستخدام والفهم</li>
+                                <li>تدعمها معظم لغات البرمجة</li>
+                                <li>تستخدم بروتوكولات قياسية</li>
+                                <li>مناسبة للتطبيقات الموزعة</li>
+                            </ul>
+                            <h4>مثال على استخدام REST API مع Python:</h4>
+                            <div class="code-block">
+                                <pre>
+import requests
+import json
+
+# تعريف المعلومات الأساسية
+base_url = "https://192.168.1.1/api"
+headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+}
+auth = ("admin", "password")
+
+# الحصول على معلومات الواجهات
+response = requests.get(
+    f"{base_url}/interfaces",
+    headers=headers,
+    auth=auth,
+    verify=False  # تجاهل التحقق من شهادة SSL (للاختبار فقط)
+)
+
+# عرض النتائج
+if response.status_code == 200:
+    interfaces = response.json()
+    for interface in interfaces:
+        print(f"Interface: {interface['name']}, Status: {interface['status']}")
+else:
+    print(f"Error: {response.status_code}, {response.text}")
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="api-type">
+                            <h3>2. NETCONF (Network Configuration Protocol)</h3>
+                            <p>بروتوكول قياسي من IETF لإدارة تكوين أجهزة الشبكة، يستخدم XML للبيانات وRPC للعمليات.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>نموذج بيانات قوي (YANG)</li>
+                                <li>عمليات تكوين آمنة ومتسقة</li>
+                                <li>دعم للمعاملات والتحقق من صحة التكوين</li>
+                                <li>مدعوم من العديد من مصنعي أجهزة الشبكات</li>
+                            </ul>
+                            <h4>مثال على استخدام NETCONF مع Python (ncclient):</h4>
+                            <div class="code-block">
+                                <pre>
+from ncclient import manager
+import xml.dom.minidom
+
+# الاتصال بجهاز NETCONF
+with manager.connect(
+    host="192.168.1.1",
+    port=830,
+    username="admin",
+    password="password",
+    hostkey_verify=False
+) as m:
+    
+    # الحصول على تكوين الجهاز
+    config = m.get_config(source="running")
+    
+    # تنسيق XML للقراءة
+    xml_pretty = xml.dom.minidom.parseString(config.xml).toprettyxml()
+    print(xml_pretty)
+    
+    # تكوين واجهة باستخدام NETCONF
+    interface_config = """
+    &lt;config&gt;
+      &lt;interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces"&gt;
+        &lt;interface&gt;
+          &lt;name&gt;GigabitEthernet0/1&lt;/name&gt;
+          &lt;description&gt;WAN Connection&lt;/description&gt;
+          &lt;enabled&gt;true&lt;/enabled&gt;
+          &lt;ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"&gt;
+            &lt;address&gt;
+              &lt;ip&gt;10.0.0.1&lt;/ip&gt;
+              &lt;netmask&gt;255.255.255.0&lt;/netmask&gt;
+            &lt;/address&gt;
+          &lt;/ipv4&gt;
+        &lt;/interface&gt;
+      &lt;/interfaces&gt;
+    &lt;/config&gt;
+    """
+    
+    # تطبيق التكوين
+    response = m.edit_config(target="running", config=interface_config)
+    print(response)
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="api-type">
+                            <h3>3. gRPC (Google Remote Procedure Call)</h3>
+                            <p>إطار عمل RPC مفتوح المصدر من Google، يستخدم Protocol Buffers للتشفير وHTTP/2 للنقل.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>أداء عالٍ وكفاءة في استخدام الموارد</li>
+                                <li>دعم للبث المستمر ثنائي الاتجاه</li>
+                                <li>توليد تلقائي للرمز في لغات برمجة متعددة</li>
+                                <li>مستخدم في gNMI (gRPC Network Management Interface)</li>
+                            </ul>
+                            <h4>مثال على استخدام gRPC مع Python:</h4>
+                            <div class="code-block">
+                                <pre>
+import grpc
+import network_pb2
+import network_pb2_grpc
+
+# إنشاء قناة gRPC
+channel = grpc.insecure_channel('192.168.1.1:50051')
+
+# إنشاء stub
+stub = network_pb2_grpc.NetworkServiceStub(channel)
+
+# إنشاء طلب للحصول على معلومات الواجهة
+request = network_pb2.InterfaceRequest(name="GigabitEthernet0/1")
+
+# إرسال الطلب والحصول على الرد
+response = stub.GetInterface(request)
+
+# عرض المعلومات
+print(f"Interface: {response.name}")
+print(f"Status: {response.status}")
+print(f"IP Address: {response.ip_address}")
+print(f"MAC Address: {response.mac_address}")
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>أتمتة الشبكات المعرفة بالبرمجيات (SDN)</h2>
+                    <p>الشبكات المعرفة بالبرمجيات (Software-Defined Networking - SDN) هي نهج في تصميم الشبكات يفصل بين مستوى التحكم ومستوى البيانات، مما يسمح بإدارة الشبكة برمجيًا.</p>
+                    
+                    <div class="sdn-concepts">
+                        <div class="sdn-concept">
+                            <h3>1. مكونات SDN</h3>
+                            <ul>
+                                <li><strong>مستوى البيانات (Data Plane):</strong> أجهزة الشبكة التي تقوم بتوجيه حركة المرور.</li>
+                                <li><strong>مستوى التحكم (Control Plane):</strong> وحدة التحكم المركزية التي تتخذ قرارات التوجيه.</li>
+                                <li><strong>مستوى التطبيقات (Application Plane):</strong> التطبيقات التي تتحكم في سلوك الشبكة.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sdn-concept">
+                            <h3>2. بروتوكول OpenFlow</h3>
+                            <p>بروتوكول اتصال قياسي بين مستوى التحكم ومستوى البيانات في بنية SDN.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>يسمح لوحدة التحكم بالتحكم في جداول تدفق المحولات</li>
+                                <li>يدعم إضافة وتعديل وحذف قواعد التدفق</li>
+                                <li>يوفر إحصائيات عن حركة المرور</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sdn-concept">
+                            <h3>3. وحدات تحكم SDN</h3>
+                            <p>برامج تعمل كدماغ مركزي للشبكة، تتحكم في سلوك أجهزة الشبكة.</p>
+                            <h4>أمثلة على وحدات تحكم SDN:</h4>
+                            <ul>
+                                <li><strong>OpenDaylight:</strong> وحدة تحكم مفتوحة المصدر تدعم العديد من البروتوكولات.</li>
+                                <li><strong>ONOS (Open Network Operating System):</strong> نظام تشغيل شبكة مفتوح المصدر مصمم للأداء العالي.</li>
+                                <li><strong>Ryu:</strong> إطار عمل SDN مفتوح المصدر مكتوب بلغة Python.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sdn-concept">
+                            <h3>4. برمجة تطبيقات SDN</h3>
+                            <p>يمكن برمجة تطبيقات SDN للتحكم في سلوك الشبكة وتنفيذ وظائف متقدمة.</p>
+                            <h4>مثال على تطبيق Ryu بسيط:</h4>
+                            <div class="code-block">
+                                <pre>
+from ryu.base import app_manager
+from ryu.controller import ofp_event
+from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
+from ryu.controller.handler import set_ev_cls
+from ryu.ofproto import ofproto_v1_3
+
+class SimpleSwitch13(app_manager.RyuApp):
+    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
+
+    def __init__(self, *args, **kwargs):
+        super(SimpleSwitch13, self).__init__(*args, **kwargs)
+        self.mac_to_port = {}
+
+    @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
+    def switch_features_handler(self, ev):
+        datapath = ev.msg.datapath
+        ofproto = datapath.ofproto
+        parser = datapath.ofproto_parser
+
+        # تثبيت جدول-miss flow entry
+        match = parser.OFPMatch()
+        actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
+                                          ofproto.OFPCML_NO_BUFFER)]
+        self.add_flow(datapath, 0, match, actions)
+
+    def add_flow(self, datapath, priority, match, actions, buffer_id=None):
+        ofproto = datapath.ofproto
+        parser = datapath.ofproto_parser
+
+        inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,
+                                             actions)]
+        if buffer_id:
+            mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id,
+                                    priority=priority, match=match,
+                                    instructions=inst)
+        else:
+            mod = parser.OFPFlowMod(datapath=datapath, priority=priority,
+                                    match=match, instructions=inst)
+        datapath.send_msg(mod)
+
+    @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
+    def _packet_in_handler(self, ev):
+        # معالجة الحزم الواردة وإضافة قواعد التدفق
+        # ...
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مشاريع عملية في برمجة الشبكات</h2>
+                    <p>فيما يلي بعض المشاريع العملية التي يمكنك تنفيذها لتطبيق مهارات برمجة الشبكات:</p>
+                    
+                    <div class="projects">
+                        <div class="project">
+                            <h3>1. نظام مراقبة الشبكة</h3>
+                            <p>إنشاء نظام لمراقبة أداء الشبكة وإرسال تنبيهات عند حدوث مشكلات.</p>
+                            <h4>الخطوات:</h4>
+                            <ol>
+                                <li>استخدام Python لجمع بيانات الأداء من أجهزة الشبكة باستخدام SNMP أو API.</li>
+                                <li>تخزين البيانات في قاعدة بيانات مثل InfluxDB.</li>
+                                <li>إنشاء لوحة تحكم باستخدام Grafana لعرض البيانات.</li>
+                                <li>إعداد نظام تنبيهات لإرسال إشعارات عبر البريد الإلكتروني أو Telegram.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="project">
+                            <h3>2. أداة نسخ احتياطي للتكوينات</h3>
+                            <p>إنشاء أداة لعمل نسخ احتياطية تلقائية لتكوينات أجهزة الشبكة.</p>
+                            <h4>الخطوات:</h4>
+                            <ol>
+                                <li>استخدام Netmiko أو NAPALM للاتصال بأجهزة الشبكة.</li>
+                                <li>جمع تكوينات الأجهزة وحفظها في ملفات.</li>
+                                <li>استخدام Git لتتبع التغييرات في التكوينات.</li>
+                                <li>جدولة المهمة لتنفيذها بشكل دوري باستخدام cron.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="project">
+                            <h3>3. أداة تحليل حركة المرور</h3>
+                            <p>إنشاء أداة لالتقاط وتحليل حركة المرور في الشبكة.</p>
+                            <h4>الخطوات:</h4>
+                            <ol>
+                                <li>استخدام Scapy أو PyShark لالتقاط حزم الشبكة.</li>
+                                <li>تحليل البيانات لاستخراج معلومات مفيدة (مثل البروتوكولات الأكثر استخدامًا).</li>
+                                <li>إنشاء تقارير وتصورات للبيانات.</li>
+                                <li>تنفيذ اكتشاف الأنماط غير العادية في حركة المرور.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="project">
+                            <h3>4. واجهة ويب لإدارة الشبكة</h3>
+                            <p>إنشاء واجهة ويب لإدارة أجهزة الشبكة بشكل مركزي.</p>
+                            <h4>الخطوات:</h4>
+                            <ol>
+                                <li>استخدام إطار عمل ويب مثل Flask أو Django لإنشاء واجهة خلفية.</li>
+                                <li>استخدام JavaScript وHTML/CSS لإنشاء واجهة أمامية.</li>
+                                <li>تنفيذ وظائف لعرض معلومات الأجهزة وتكوينها.</li>
+                                <li>إضافة ميزات مثل إدارة المستخدمين والتحكم في الوصول.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. أي من المكتبات التالية مصممة خصيصًا للاتصال بأجهزة الشبكة وتكوينها؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">Requests</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">Netmiko</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">NumPy</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">Django</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو البروتوكول القياسي من IETF لإدارة تكوين أجهزة الشبكة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">REST</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">NETCONF</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">SNMP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">HTTP</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. ما هو المكون الذي يتخذ قرارات التوجيه في بنية SDN؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">مستوى البيانات (Data Plane)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">مستوى التحكم (Control Plane)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">مستوى التطبيقات (Application Plane)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">مستوى الإدارة (Management Plane)</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="mikrotik.html" class="btn outline-btn">السابق: مايكروتك (MikroTik)</a>
+                    <a href="advanced-configuration.html" class="btn primary-btn">التالي: تركيب وتكوين الشبكات المتقدمة</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#f8fafc" />
+  <circle cx="300" cy="200" r="150" fill="url(#grad1)" opacity="0.1" />
+  
+  <!-- Server -->
+  <rect x="270" y="120" width="60" height="100" rx="5" fill="#1e293b" />
+  <rect x="280" y="130" width="40" height="5" rx="2" fill="#60a5fa" />
+  <rect x="280" y="145" width="40" height="5" rx="2" fill="#60a5fa" />
+  <rect x="280" y="160" width="40" height="5" rx="2" fill="#60a5fa" />
+  
+  <!-- Devices -->
+  <rect x="150" y="250" width="80" height="60" rx="5" fill="#1e293b" />
+  <rect x="160" y="260" width="60" height="40" rx="2" fill="#e2e8f0" />
+  
+  <rect x="370" y="250" width="80" height="60" rx="5" fill="#1e293b" />
+  <rect x="380" y="260" width="60" height="40" rx="2" fill="#e2e8f0" />
+  
+  <rect x="150" y="100" width="40" height="70" rx="5" fill="#1e293b" />
+  <rect x="155" y="110" width="30" height="50" rx="2" fill="#e2e8f0" />
+  
+  <rect x="410" y="100" width="40" height="70" rx="5" fill="#1e293b" />
+  <rect x="415" y="110" width="30" height="50" rx="2" fill="#e2e8f0" />
+  
+  <!-- Connection Lines -->
+  <line x1="190" y1="170" x2="270" y2="170" stroke="#2563eb" stroke-width="3" stroke-dasharray="5,5" />
+  <line x1="330" y1="170" x2="410" y2="170" stroke="#2563eb" stroke-width="3" stroke-dasharray="5,5" />
+  <line x1="190" y1="250" x2="270" y2="220" stroke="#2563eb" stroke-width="3" stroke-dasharray="5,5" />
+  <line x1="330" y1="220" x2="410" y2="250" stroke="#2563eb" stroke-width="3" stroke-dasharray="5,5" />
+  
+  <!-- Connection Nodes -->
+  <circle cx="190" cy="170" r="5" fill="#ef4444" />
+  <circle cx="270" cy="170" r="5" fill="#ef4444" />
+  <circle cx="330" cy="170" r="5" fill="#ef4444" />
+  <circle cx="410" cy="170" r="5" fill="#ef4444" />
+  <circle cx="190" cy="250" r="5" fill="#ef4444" />
+  <circle cx="270" cy="220" r="5" fill="#ef4444" />
+  <circle cx="330" cy="220" r="5" fill="#ef4444" />
+  <circle cx="410" cy="250" r="5" fill="#ef4444" />
+  
+  <!-- Data Packets -->
+  <circle cx="220" cy="170" r="8" fill="#10b981" />
+  <circle cx="370" cy="170" r="8" fill="#10b981" />
+  <circle cx="230" cy="235" r="8" fill="#10b981" />
+  <circle cx="370" cy="235" r="8" fill="#10b981" />
+</svg>

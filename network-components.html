@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكونات الشبكة - المستوى الأول - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="index.html" class="active">المستوى الأول</a></li>
+                    <li><a href="../level2/index.html">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>مكونات الشبكة</h1>
+            <p>تعرف على المكونات الأساسية للشبكات وكيفية عملها معًا</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الأول</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الأول</a></li>
+                        <li><a href="network-fundamentals.html">مفاهيم الشبكات الأساسية</a></li>
+                        <li><a href="network-types.html">أنواع الشبكات</a></li>
+                        <li><a href="network-components.html" class="active">مكونات الشبكة</a></li>
+                        <li><a href="network-topologies.html">طوبولوجيا الشبكة</a></li>
+                        <li><a href="addressing.html">العنونة في الشبكات</a></li>
+                        <li><a href="basic-security.html">أساسيات أمن الشبكات</a></li>
+                        <li><a href="wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
+                        <li><a href="basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="basic-labs.html">المختبرات العملية الأساسية</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>مكونات الشبكة الأساسية</h2>
+                    <p>تتكون الشبكة من مجموعة من المكونات المادية والبرمجية التي تعمل معًا لتمكين الاتصال وتبادل البيانات. في هذا القسم، سنتعرف على المكونات الأساسية للشبكة.</p>
+                    
+                    <div class="info-box">
+                        <h4>ملاحظة هامة:</h4>
+                        <p>يمكن تقسيم مكونات الشبكة إلى فئتين رئيسيتين:</p>
+                        <ul>
+                            <li><strong>المكونات المادية (Hardware):</strong> الأجهزة الفيزيائية مثل أجهزة التوجيه والمحولات وكروت الشبكة والكابلات.</li>
+                            <li><strong>المكونات البرمجية (Software):</strong> البرامج والبروتوكولات التي تتحكم في عملية الاتصال وتبادل البيانات.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>المكونات المادية للشبكة</h2>
+                    
+                    <div class="components-grid">
+                        <div class="component-card">
+                            <h3>1. بطاقة واجهة الشبكة (NIC - Network Interface Card)</h3>
+                            <div class="component-image">
+                                <img src="../../images/network-components/nic.svg" alt="بطاقة واجهة الشبكة">
+                            </div>
+                            <p>بطاقة واجهة الشبكة هي مكون أساسي يتم تثبيته في الجهاز (كمبيوتر، خادم، إلخ) لتمكينه من الاتصال بالشبكة.</p>
+                            
+                            <h4>الوظائف الرئيسية:</h4>
+                            <ul>
+                                <li>توفير واجهة مادية للاتصال بالشبكة</li>
+                                <li>تحويل البيانات من الجهاز إلى إشارات يمكن نقلها عبر وسائط الشبكة</li>
+                                <li>تحتوي على عنوان MAC فريد يميز الجهاز على الشبكة</li>
+                            </ul>
+                            
+                            <h4>أنواع بطاقات واجهة الشبكة:</h4>
+                            <ul>
+                                <li>بطاقات سلكية (Ethernet)</li>
+                                <li>بطاقات لاسلكية (Wi-Fi)</li>
+                                <li>بطاقات Bluetooth</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <h3>2. المحول (Switch)</h3>
+                            <div class="component-image">
+                                <img src="../../images/network-components/switch.svg" alt="المحول">
+                            </div>
+                            <p>المحول هو جهاز يربط الأجهزة داخل شبكة محلية واحدة ويوجه البيانات بين هذه الأجهزة.</p>
+                            
+                            <h4>الوظائف الرئيسية:</h4>
+                            <ul>
+                                <li>ربط الأجهزة في شبكة محلية</li>
+                                <li>توجيه البيانات إلى الجهاز المقصود فقط (على عكس الهاب الذي يرسل البيانات إلى جميع الأجهزة)</li>
+                                <li>تعلم عناوين MAC للأجهزة المتصلة وتخزينها في جدول العناوين</li>
+                                <li>تقليل الازدحام في الشبكة</li>
+                            </ul>
+                            
+                            <h4>أنواع المحولات:</h4>
+                            <ul>
+                                <li>محولات غير مدارة (Unmanaged Switches): سهلة الاستخدام وتعمل بشكل تلقائي</li>
+                                <li>محولات مدارة (Managed Switches): توفر خيارات تكوين متقدمة وإمكانية المراقبة</li>
+                                <li>محولات ذكية (Smart Switches): توفر بعض ميزات المحولات المدارة بسعر أقل</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <h3>3. جهاز التوجيه (Router)</h3>
+                            <div class="component-image">
+                                <img src="../../images/network-components/router.svg" alt="جهاز التوجيه">
+                            </div>
+                            <p>جهاز التوجيه هو جهاز يقوم بتوجيه حزم البيانات بين الشبكات المختلفة، مثل توجيه البيانات بين الشبكة المحلية والإنترنت.</p>
+                            
+                            <h4>الوظائف الرئيسية:</h4>
+                            <ul>
+                                <li>ربط شبكتين أو أكثر معًا</li>
+                                <li>توجيه البيانات بين الشبكات المختلفة</li>
+                                <li>تحديد أفضل مسار لنقل البيانات</li>
+                                <li>تنفيذ قواعد التوجيه وسياسات الأمان</li>
+                            </ul>
+                            
+                            <h4>أنواع أجهزة التوجيه:</h4>
+                            <ul>
+                                <li>أجهزة توجيه منزلية: للاستخدام المنزلي والمكاتب الصغيرة</li>
+                                <li>أجهزة توجيه للشركات: للشركات المتوسطة والكبيرة</li>
+                                <li>أجهزة توجيه الحافة (Edge Routers): تربط الشبكة المحلية بالإنترنت</li>
+                                <li>أجهزة توجيه الجوهر (Core Routers): تستخدم في مراكز البيانات ومزودي خدمة الإنترنت</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <h3>4. نقطة الوصول اللاسلكية (Wireless Access Point)</h3>
+                            <div class="component-image">
+                                <img src="../../images/network-components/access-point.svg" alt="نقطة الوصول اللاسلكية">
+                            </div>
+                            <p>نقطة الوصول اللاسلكية هي جهاز يسمح للأجهزة اللاسلكية بالاتصال بشبكة سلكية.</p>
+                            
+                            <h4>الوظائف الرئيسية:</h4>
+                            <ul>
+                                <li>توفير اتصال لاسلكي للأجهزة</li>
+                                <li>تحويل البيانات بين الشبكة السلكية واللاسلكية</li>
+                                <li>توسيع نطاق تغطية الشبكة اللاسلكية</li>
+                            </ul>
+                            
+                            <h4>أنواع نقاط الوصول:</h4>
+                            <ul>
+                                <li>نقاط وصول داخلية: للاستخدام داخل المباني</li>
+                                <li>نقاط وصول خارجية: للاستخدام في الأماكن المفتوحة</li>
+                                <li>نقاط وصول مدارة: يمكن إدارتها مركزيًا</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <h3>5. المودم (Modem)</h3>
+                            <div class="component-image">
+                                <img src="../../images/network-components/modem.svg" alt="المودم">
+                            </div>
+                            <p>المودم هو جهاز يحول الإشارات الرقمية من الكمبيوتر إلى إشارات تناظرية يمكن نقلها عبر خطوط الهاتف أو الكابل، والعكس.</p>
+                            
+                            <h4>الوظائف الرئيسية:</h4>
+                            <ul>
+                                <li>تحويل الإشارات الرقمية إلى إشارات تناظرية (Modulation)</li>
+                                <li>تحويل الإشارات التناظرية إلى إشارات رقمية (Demodulation)</li>
+                                <li>توفير اتصال بالإنترنت</li>
+                            </ul>
+                            
+                            <h4>أنواع المودمات:</h4>
+                            <ul>
+                                <li>مودم DSL: يستخدم خطوط الهاتف</li>
+                                <li>مودم الكابل: يستخدم كابلات التلفزيون</li>
+                                <li>مودم الألياف البصرية: يستخدم الألياف البصرية</li>
+                                <li>مودم الأقمار الصناعية: يستخدم الأقمار الصناعية</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="component-card">
+                            <h3>6. الكابلات ووسائط النقل</h3>
+                            <div class="component-image">
+                                <img src="../../images/network-components/cables.svg" alt="الكابلات ووسائط النقل">
+                            </div>
+                            <p>الكابلات ووسائط النقل هي الوسائل المادية التي تنقل البيانات بين الأجهزة في الشبكة.</p>
+                            
+                            <h4>أنواع الكابلات ووسائط النقل:</h4>
+                            <ul>
+                                <li><strong>كابلات الزوج المجدول (Twisted Pair):</strong> تستخدم في شبكات Ethernet، وتنقسم إلى:
+                                    <ul>
+                                        <li>UTP (Unshielded Twisted Pair): غير محمية</li>
+                                        <li>STP (Shielded Twisted Pair): محمية</li>
+                                    </ul>
+                                </li>
+                                <li><strong>كابلات المحور (Coaxial):</strong> تستخدم في شبكات الكابل وبعض شبكات Ethernet القديمة</li>
+                                <li><strong>كابلات الألياف البصرية (Fiber Optic):</strong> تستخدم الضوء لنقل البيانات، وتوفر سرعات عالية جدًا ومسافات طويلة</li>
+                                <li><strong>وسائط لاسلكية:</strong> تستخدم موجات الراديو لنقل البيانات، مثل Wi-Fi وBluetooth</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>المكونات البرمجية للشبكة</h2>
+                    
+                    <div class="software-components">
+                        <div class="software-component">
+                            <h3>1. أنظمة التشغيل الشبكية (Network Operating Systems)</h3>
+                            <p>أنظمة التشغيل المصممة خصيصًا لتشغيل الخوادم وإدارة موارد الشبكة.</p>
+                            <h4>أمثلة:</h4>
+                            <ul>
+                                <li>Windows Server</li>
+                                <li>Linux (مثل Ubuntu Server، CentOS)</li>
+                                <li>Cisco IOS (لأجهزة Cisco)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="software-component">
+                            <h3>2. البروتوكولات (Protocols)</h3>
+                            <p>مجموعة من القواعد والمعايير التي تحكم كيفية تواصل الأجهزة مع بعضها البعض عبر الشبكة.</p>
+                            <h4>أمثلة:</h4>
+                            <ul>
+                                <li>TCP/IP: مجموعة البروتوكولات الأساسية للإنترنت</li>
+                                <li>HTTP/HTTPS: لتصفح الويب</li>
+                                <li>FTP: لنقل الملفات</li>
+                                <li>SMTP: للبريد الإلكتروني</li>
+                                <li>DNS: لترجمة أسماء النطاقات إلى عناوين IP</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="software-component">
+                            <h3>3. برامج الخدمات (Services)</h3>
+                            <p>برامج تقدم خدمات محددة للمستخدمين أو الأجهزة الأخرى على الشبكة.</p>
+                            <h4>أمثلة:</h4>
+                            <ul>
+                                <li>خدمة الويب (Web Service)</li>
+                                <li>خدمة البريد الإلكتروني (Email Service)</li>
+                                <li>خدمة الملفات (File Service)</li>
+                                <li>خدمة الطباعة (Print Service)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="software-component">
+                            <h3>4. برامج الأمان (Security Software)</h3>
+                            <p>برامج تحمي الشبكة من التهديدات المختلفة.</p>
+                            <h4>أمثلة:</h4>
+                            <ul>
+                                <li>جدران الحماية (Firewalls)</li>
+                                <li>برامج مكافحة الفيروسات (Antivirus)</li>
+                                <li>أنظمة كشف ومنع التسلل (IDS/IPS)</li>
+                                <li>الشبكات الخاصة الافتراضية (VPN)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>كيف تعمل مكونات الشبكة معًا؟</h2>
+                    <p>لفهم كيفية عمل مكونات الشبكة معًا، دعنا نتتبع مسار البيانات عندما يقوم مستخدم بتصفح موقع ويب:</p>
+                    
+                    <ol>
+                        <li><strong>الطلب:</strong> يقوم المستخدم بكتابة عنوان موقع ويب في المتصفح.</li>
+                        <li><strong>معالجة الطلب:</strong> يقوم المتصفح بتحويل اسم النطاق إلى عنوان IP باستخدام بروتوكول DNS.</li>
+                        <li><strong>إعداد البيانات:</strong> يقوم الكمبيوتر بإعداد طلب HTTP وتقسيمه إلى حزم.</li>
+                        <li><strong>إرسال البيانات:</strong> ترسل الحزم من بطاقة واجهة الشبكة إلى المحول.</li>
+                        <li><strong>توجيه البيانات:</strong> يقوم المحول بتوجيه الحزم إلى جهاز التوجيه.</li>
+                        <li><strong>توجيه البيانات عبر الإنترنت:</strong> يقوم جهاز التوجيه بإرسال الحزم إلى الإنترنت، حيث تمر عبر العديد من أجهزة التوجيه حتى تصل إلى خادم الويب.</li>
+                        <li><strong>معالجة الطلب:</strong> يقوم خادم الويب بمعالجة الطلب وإرسال صفحة الويب المطلوبة.</li>
+                        <li><strong>استقبال البيانات:</strong> تعود البيانات عبر نفس المسار تقريبًا حتى تصل إلى كمبيوتر المستخدم.</li>
+                        <li><strong>عرض البيانات:</strong> يقوم المتصفح بعرض صفحة الويب للمستخدم.</li>
+                    </ol>
+                    
+                    <div class="info-box">
+                        <h4>ملاحظة هامة:</h4>
+                        <p>كل مكون من مكونات الشبكة يلعب دورًا محددًا في هذه العملية، ويعمل وفقًا لبروتوكولات محددة لضمان نقل البيانات بشكل صحيح وآمن.</p>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. ما هو الجهاز الذي يربط الأجهزة داخل شبكة محلية واحدة ويوجه البيانات إلى الجهاز المقصود فقط؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">جهاز التوجيه (Router)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">المحول (Switch)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">المودم (Modem)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">بطاقة واجهة الشبكة (NIC)</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو المكون الذي يحتوي على عنوان MAC فريد؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">جهاز التوجيه (Router)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">المودم (Modem)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">بطاقة واجهة الشبكة (NIC)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">نظام التشغيل الشبكي</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. أي من الكابلات التالية توفر أعلى سرعة نقل للبيانات؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">كابلات الزوج المجدول (Twisted Pair)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">كابلات المحور (Coaxial)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">كابلات الألياف البصرية (Fiber Optic)</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">جميع الكابلات لها نفس السرعة</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="network-types.html" class="btn outline-btn">السابق: أنواع الشبكات</a>
+                    <a href="network-topologies.html" class="btn primary-btn">التالي: طوبولوجيا الشبكة</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'c'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

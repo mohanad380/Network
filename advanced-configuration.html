@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تركيب وتكوين الشبكات المتقدمة - المستوى الثاني - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="../level1/index.html">المستوى الأول</a></li>
+                    <li><a href="index.html" class="active">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>تركيب وتكوين الشبكات المتقدمة</h1>
+            <p>تعلم تقنيات متقدمة في تصميم وتركيب وتكوين الشبكات للمؤسسات</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الثاني</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الثاني</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                        <li><a href="network-programming.html">برمجة الشبكات</a></li>
+                        <li><a href="advanced-configuration.html" class="active">تركيب وتكوين الشبكات المتقدمة</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                        <li><a href="advanced-wireless.html">الشبكات اللاسلكية المتقدمة</a></li>
+                        <li><a href="virtual-networks.html">الشبكات الافتراضية</a></li>
+                        <li><a href="advanced-labs.html">المختبرات العملية المتقدمة</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../level1/network-components.html">مكونات الشبكة</a></li>
+                        <li><a href="../level1/basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>تصميم الشبكات المتقدم</h2>
+                    <p>تصميم الشبكة هو الخطوة الأولى والأهم في بناء بنية تحتية قوية وموثوقة. يتطلب التصميم الجيد فهمًا عميقًا لمتطلبات المؤسسة واحتياجاتها المستقبلية.</p>
+                    
+                    <div class="info-box">
+                        <h3>مبادئ تصميم الشبكات:</h3>
+                        <ul>
+                            <li><strong>الهرمية (Hierarchy):</strong> تقسيم الشبكة إلى طبقات (الوصول، التوزيع، النواة) لتسهيل الإدارة والتوسع.</li>
+                            <li><strong>التكرار (Redundancy):</strong> توفير مسارات بديلة لضمان استمرارية الخدمة في حالة فشل أحد المكونات.</li>
+                            <li><strong>القابلية للتوسع (Scalability):</strong> تصميم الشبكة بحيث يمكن توسيعها بسهولة لاستيعاب النمو المستقبلي.</li>
+                            <li><strong>الأمان (Security):</strong> دمج الأمان في كل مستوى من مستويات الشبكة.</li>
+                            <li><strong>قابلية الإدارة (Manageability):</strong> تسهيل مراقبة الشبكة وإدارتها وتحديثها.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="design-model">
+                        <h3>نموذج التصميم الهرمي ثلاثي الطبقات:</h3>
+                        <div class="model-image">
+                            <img src="../../images/advanced/hierarchical-network.svg" alt="نموذج الشبكة الهرمي">
+                        </div>
+                        <div class="model-layers">
+                            <div class="layer">
+                                <h4>1. طبقة النواة (Core Layer)</h4>
+                                <p>العمود الفقري للشبكة، مسؤولة عن نقل كميات كبيرة من البيانات بسرعة وكفاءة.</p>
+                                <ul>
+                                    <li>تتكون من أجهزة توجيه وتبديل عالية الأداء</li>
+                                    <li>تركز على السرعة والموثوقية</li>
+                                    <li>لا تقوم بمعالجة حزم البيانات أو تصفيتها</li>
+                                    <li>توفر التكرار لضمان توافر الشبكة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="layer">
+                                <h4>2. طبقة التوزيع (Distribution Layer)</h4>
+                                <p>تعمل كوسيط بين طبقتي النواة والوصول، وتوفر وظائف التوجيه والتصفية والسياسات.</p>
+                                <ul>
+                                    <li>تنفذ سياسات الشبكة (التصفية، QoS، الأمان)</li>
+                                    <li>تقوم بتجميع اتصالات طبقة الوصول</li>
+                                    <li>توفر التوجيه بين الشبكات الفرعية المختلفة</li>
+                                    <li>تحد من نطاق الفشل في الشبكة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="layer">
+                                <h4>3. طبقة الوصول (Access Layer)</h4>
+                                <p>نقطة اتصال المستخدمين والأجهزة بالشبكة.</p>
+                                <ul>
+                                    <li>توفر اتصال للمستخدمين النهائيين والأجهزة</li>
+                                    <li>تنفذ أمان المنفذ وVLAN</li>
+                                    <li>تدعم PoE (الطاقة عبر الإيثرنت) للأجهزة مثل الهواتف ونقاط الوصول اللاسلكية</li>
+                                    <li>تنفذ ميزات مثل الحماية من العواصف البث</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>الشبكات الافتراضية المحلية (VLANs)</h2>
+                    <p>الشبكات الافتراضية المحلية (VLANs) هي تقنية تسمح بتقسيم شبكة محلية فعلية واحدة إلى عدة شبكات منطقية منفصلة. تعتبر VLANs أساسية في تصميم الشبكات الحديثة.</p>
+                    
+                    <div class="vlan-benefits">
+                        <h3>فوائد استخدام VLANs:</h3>
+                        <ul>
+                            <li><strong>تحسين الأداء:</strong> تقليل نطاق البث وتقسيم مجالات التصادم.</li>
+                            <li><strong>تعزيز الأمان:</strong> عزل حركة المرور بين المجموعات المختلفة.</li>
+                            <li><strong>تبسيط الإدارة:</strong> تنظيم الشبكة منطقيًا بدلاً من فعليًا.</li>
+                            <li><strong>تقليل التكاليف:</strong> الاستفادة القصوى من البنية التحتية الحالية.</li>
+                            <li><strong>المرونة:</strong> إمكانية نقل المستخدمين منطقيًا دون تغيير الاتصالات الفعلية.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="vlan-types">
+                        <h3>أنواع VLANs:</h3>
+                        <div class="vlan-type">
+                            <h4>1. VLAN قائم على المنفذ (Port-based VLAN)</h4>
+                            <p>يتم تعيين كل منفذ في المحول إلى VLAN محدد. هذا هو النوع الأكثر شيوعًا.</p>
+                            <div class="code-block">
+                                <pre>
+# مثال على تكوين VLAN قائم على المنفذ في Cisco IOS
+Switch# configure terminal
+Switch(config)# vlan 10
+Switch(config-vlan)# name Engineering
+Switch(config-vlan)# exit
+Switch(config)# vlan 20
+Switch(config-vlan)# name Marketing
+Switch(config-vlan)# exit
+
+# تعيين المنافذ إلى VLANs
+Switch(config)# interface range fastethernet 0/1-5
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 10
+Switch(config-if-range)# exit
+Switch(config)# interface range fastethernet 0/6-10
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 20
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="vlan-type">
+                            <h4>2. VLAN قائم على العنوان MAC (MAC-based VLAN)</h4>
+                            <p>يتم تعيين الأجهزة إلى VLANs بناءً على عناوين MAC الخاصة بها، بغض النظر عن المنفذ المتصلة به.</p>
+                        </div>
+                        
+                        <div class="vlan-type">
+                            <h4>3. VLAN قائم على البروتوكول (Protocol-based VLAN)</h4>
+                            <p>يتم تعيين الحزم إلى VLANs بناءً على نوع البروتوكول (مثل IPv4، IPv6، AppleTalk).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="vlan-trunking">
+                        <h3>ربط VLANs (VLAN Trunking)</h3>
+                        <p>لنقل حركة مرور من عدة VLANs عبر رابط واحد بين المحولات، نستخدم تقنية الربط (Trunking).</p>
+                        <div class="code-block">
+                            <pre>
+# مثال على تكوين منفذ ربط في Cisco IOS
+Switch(config)# interface gigabitethernet 0/1
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk allowed vlan 10,20,30
+Switch(config-if)# switchport trunk native vlan 1
+                            </pre>
+                        </div>
+                        <p>بروتوكولات الربط الشائعة:</p>
+                        <ul>
+                            <li><strong>IEEE 802.1Q:</strong> معيار مفتوح يضيف علامة إلى إطارات الإيثرنت لتحديد VLAN.</li>
+                            <li><strong>ISL (Inter-Switch Link):</strong> بروتوكول خاص بشركة Cisco (قديم ولم يعد يستخدم كثيرًا).</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="inter-vlan-routing">
+                        <h3>التوجيه بين VLANs (Inter-VLAN Routing)</h3>
+                        <p>للسماح بالاتصال بين VLANs المختلفة، نحتاج إلى جهاز توجيه أو محول طبقة 3.</p>
+                        <h4>طرق التوجيه بين VLANs:</h4>
+                        <div class="routing-method">
+                            <h5>1. التوجيه التقليدي (Router-on-a-stick)</h5>
+                            <p>استخدام جهاز توجيه خارجي مع واجهة فرعية لكل VLAN.</p>
+                            <div class="code-block">
+                                <pre>
+# مثال على تكوين Router-on-a-stick في Cisco IOS
+Router(config)# interface fastethernet 0/0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+Router(config)# interface fastethernet 0/0.10
+Router(config-subif)# encapsulation dot1q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config-subif)# exit
+
+Router(config)# interface fastethernet 0/0.20
+Router(config-subif)# encapsulation dot1q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+                                </pre>
+                            </div>
+                        </div>
+                        
+                        <div class="routing-method">
+                            <h5>2. التوجيه باستخدام محول طبقة 3 (Layer 3 Switch)</h5>
+                            <p>استخدام محول متقدم يمكنه أداء وظائف التوجيه.</p>
+                            <div class="code-block">
+                                <pre>
+# مثال على تكوين التوجيه بين VLANs في محول طبقة 3
+Switch(config)# ip routing
+
+# تكوين واجهات SVI (Switched Virtual Interface)
+Switch(config)# interface vlan 10
+Switch(config-if)# ip address 192.168.10.1 255.255.255.0
+Switch(config-if)# no shutdown
+Switch(config-if)# exit
+
+Switch(config)# interface vlan 20
+Switch(config-if)# ip address 192.168.20.1 255.255.255.0
+Switch(config-if)# no shutdown
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>بروتوكولات التوجيه المتقدمة</h2>
+                    <p>بروتوكولات التوجيه هي الآليات التي تستخدمها أجهزة التوجيه لتبادل معلومات التوجيه وتحديد أفضل المسارات لتوجيه حركة المرور.</p>
+                    
+                    <div class="routing-protocols">
+                        <div class="protocol">
+                            <h3>1. OSPF (Open Shortest Path First)</h3>
+                            <p>بروتوكول توجيه حالة الرابط يستخدم خوارزمية Dijkstra لحساب أقصر مسار أولاً.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>يتكيف بسرعة مع التغييرات في الشبكة</li>
+                                <li>يدعم VLSM (أقنعة الشبكة الفرعية ذات الطول المتغير)</li>
+                                <li>يستخدم مفهوم المناطق لتحسين قابلية التوسع</li>
+                                <li>يدعم المصادقة لتأمين تبادل معلومات التوجيه</li>
+                            </ul>
+                            <h4>تكوين OSPF الأساسي:</h4>
+                            <div class="code-block">
+                                <pre>
+# مثال على تكوين OSPF في Cisco IOS
+Router(config)# router ospf 1
+Router(config-router)# network 192.168.1.0 0.0.0.255 area 0
+Router(config-router)# network 192.168.2.0 0.0.0.255 area 0
+Router(config-router)# default-information originate
+                                </pre>
+                            </div>
+                            <h4>مفهوم المناطق في OSPF:</h4>
+                            <p>يستخدم OSPF مفهوم المناطق لتقسيم الشبكة إلى أجزاء أصغر لتحسين الأداء وتقليل حجم جداول التوجيه.</p>
+                            <ul>
+                                <li><strong>المنطقة الصفرية (Area 0):</strong> منطقة العمود الفقري التي تتصل بها جميع المناطق الأخرى.</li>
+                                <li><strong>المناطق العادية (Regular Areas):</strong> تتلقى معلومات كاملة عن الشبكة.</li>
+                                <li><strong>المناطق الطرفية (Stub Areas):</strong> لا تتلقى إعلانات LSA خارجية، مما يقلل حجم قاعدة بيانات حالة الرابط.</li>
+                                <li><strong>المناطق الطرفية التامة (Totally Stubby Areas):</strong> تتلقى فقط مسار افتراضي إلى المنطقة الصفرية.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h3>2. BGP (Border Gateway Protocol)</h3>
+                            <p>بروتوكول توجيه المسار الخارجي الأساسي المستخدم في الإنترنت، يستخدم لتبادل معلومات التوجيه بين الأنظمة المستقلة (AS).</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>يدعم سياسات التوجيه المعقدة</li>
+                                <li>يستخدم سمات المسار لاتخاذ قرارات التوجيه</li>
+                                <li>يوفر استقرارًا وقابلية للتوسع للشبكات الكبيرة</li>
+                                <li>يدعم التجميع والتصفية لتقليل حجم جداول التوجيه</li>
+                            </ul>
+                            <h4>تكوين BGP الأساسي:</h4>
+                            <div class="code-block">
+                                <pre>
+# مثال على تكوين BGP في Cisco IOS
+Router(config)# router bgp 65000
+Router(config-router)# neighbor 192.168.1.2 remote-as 65001
+Router(config-router)# network 192.168.100.0 mask 255.255.255.0
+Router(config-router)# network 192.168.200.0 mask 255.255.255.0
+                                </pre>
+                            </div>
+                            <h4>أنواع جلسات BGP:</h4>
+                            <ul>
+                                <li><strong>iBGP (internal BGP):</strong> جلسات BGP بين أجهزة توجيه في نفس النظام المستقل.</li>
+                                <li><strong>eBGP (external BGP):</strong> جلسات BGP بين أجهزة توجيه في أنظمة مستقلة مختلفة.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="protocol">
+                            <h3>3. EIGRP (Enhanced Interior Gateway Routing Protocol)</h3>
+                            <p>بروتوكول توجيه متقدم خاص بشركة Cisco، يجمع بين ميزات بروتوكولات حالة الرابط وبروتوكولات متجه المسافة.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>تقارب سريع</li>
+                                <li>استخدام فعال لعرض النطاق الترددي</li>
+                                <li>دعم VLSM والتوجيه غير المتجانس</li>
+                                <li>استخدام خوارزمية DUAL (Diffusing Update Algorithm) لحساب المسارات</li>
+                            </ul>
+                            <h4>تكوين EIGRP الأساسي:</h4>
+                            <div class="code-block">
+                                <pre>
+# مثال على تكوين EIGRP في Cisco IOS
+Router(config)# router eigrp 100
+Router(config-router)# network 192.168.1.0 0.0.0.255
+Router(config-router)# network 192.168.2.0 0.0.0.255
+Router(config-router)# no auto-summary
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تقنيات الشبكات الواسعة (WAN)</h2>
+                    <p>الشبكات الواسعة (WAN) تربط المواقع المتباعدة جغرافيًا. هناك العديد من التقنيات المستخدمة لإنشاء اتصالات WAN.</p>
+                    
+                    <div class="wan-technologies">
+                        <div class="technology">
+                            <h3>1. MPLS (Multiprotocol Label Switching)</h3>
+                            <p>تقنية توجيه عالية الأداء تستخدم تسميات لتوجيه حزم البيانات عبر الشبكة.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>أداء عالٍ وتأخير منخفض</li>
+                                <li>دعم لجودة الخدمة (QoS)</li>
+                                <li>قابلية للتوسع وسهولة الإدارة</li>
+                                <li>دعم للشبكات الافتراضية الخاصة (VPN)</li>
+                            </ul>
+                            <h4>كيفية عمل MPLS:</h4>
+                            <ol>
+                                <li>يتم تعيين تسمية (label) للحزم عند دخولها شبكة MPLS.</li>
+                                <li>يتم توجيه الحزم بناءً على التسمية بدلاً من عنوان IP الوجهة.</li>
+                                <li>يتم إزالة التسمية عند خروج الحزم من شبكة MPLS.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="technology">
+                            <h3>2. SD-WAN (Software-Defined WAN)</h3>
+                            <p>تطبيق لمفاهيم الشبكات المعرفة بالبرمجيات (SDN) على شبكات WAN، يسمح بإدارة مركزية وذكية للشبكة.</p>
+                            <h4>المميزات:</h4>
+                            <ul>
+                                <li>تقليل تكاليف WAN من خلال استخدام اتصالات الإنترنت العامة</li>
+                                <li>تحسين الأداء من خلال التوجيه الذكي</li>
+                                <li>تبسيط الإدارة من خلال واجهة مركزية</li>
+                                <li>نشر سريع للمواقع الجديدة</li>
+                            </ul>
+                            <h4>مكونات SD-WAN:</h4>
+                            <ul>
+                                <li><strong>وحدة تحكم SD-WAN:</strong> الدماغ المركزي للشبكة، يوفر إدارة وتحكم مركزيين.</li>
+                                <li><strong>أجهزة SD-WAN الطرفية:</strong> أجهزة توجيه ذكية في المواقع المختلفة.</li>
+                                <li><strong>تطبيقات وخدمات:</strong> توفر وظائف مثل التشفير، جدران الحماية، وتحسين WAN.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="technology">
+                            <h3>3. VPN (Virtual Private Network)</h3>
+                            <p>تقنية تسمح بإنشاء اتصال آمن عبر شبكة عامة مثل الإنترنت.</p>
+                            <h4>أنواع VPN:</h4>
+                            <div class="vpn-types">
+                                <div class="vpn-type">
+                                    <h5>Site-to-Site VPN</h5>
+                                    <p>يربط مواقع كاملة معًا، مثل ربط فروع الشركة بالمقر الرئيسي.</p>
+                                    <h6>بروتوكولات شائعة:</h6>
+                                    <ul>
+                                        <li><strong>IPsec:</strong> مجموعة من البروتوكولات لتأمين اتصالات IP.</li>
+                                        <li><strong>GRE over IPsec:</strong> يجمع بين تغليف GRE وتشفير IPsec.</li>
+                                        <li><strong>DMVPN (Dynamic Multipoint VPN):</strong> يسمح بإنشاء اتصالات مباشرة بين المواقع.</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <pre>
+# مثال على تكوين IPsec VPN في Cisco IOS
+! تعريف مجموعة التحويل (Transform Set)
+Router(config)# crypto ipsec transform-set TS esp-aes 256 esp-sha-hmac
+Router(config)# crypto ipsec security-association lifetime seconds 3600
+
+! تعريف سياسة ISAKMP
+Router(config)# crypto isakmp policy 10
+Router(config-isakmp)# encryption aes 256
+Router(config-isakmp)# hash sha
+Router(config-isakmp)# authentication pre-share
+Router(config-isakmp)# group 5
+Router(config-isakmp)# lifetime 86400
+Router(config-isakmp)# exit
+
+! تعريف مفتاح مشترك مسبقًا
+Router(config)# crypto isakmp key StrongPassword address 203.0.113.1
+
+! تعريف قائمة وصول لتحديد حركة المرور المراد تشفيرها
+Router(config)# access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255
+
+! تعريف خريطة التشفير
+Router(config)# crypto map CMAP 10 ipsec-isakmp
+Router(config-crypto-map)# set peer 203.0.113.1
+Router(config-crypto-map)# set transform-set TS
+Router(config-crypto-map)# match address 101
+Router(config-crypto-map)# exit
+
+! تطبيق خريطة التشفير على الواجهة
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# crypto map CMAP
+                                        </pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="vpn-type">
+                                    <h5>Remote Access VPN</h5>
+                                    <p>يسمح للمستخدمين الفرديين بالاتصال بشبكة الشركة من مواقع بعيدة.</p>
+                                    <h6>بروتوكولات شائعة:</h6>
+                                    <ul>
+                                        <li><strong>SSL/TLS VPN:</strong> يستخدم بروتوكولات الويب الآمنة، سهل الاستخدام عبر المتصفح.</li>
+                                        <li><strong>IPsec:</strong> يوفر أمانًا قويًا ولكن يتطلب برامج عميل خاصة.</li>
+                                        <li><strong>L2TP/IPsec:</strong> يجمع بين L2TP لإنشاء النفق وIPsec للتشفير.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>جودة الخدمة (QoS)</h2>
+                    <p>جودة الخدمة (QoS) هي مجموعة من التقنيات لإدارة موارد الشبكة وضمان أداء التطبيقات الحساسة.</p>
+                    
+                    <div class="qos-concepts">
+                        <h3>مفاهيم أساسية في QoS:</h3>
+                        <ul>
+                            <li><strong>التصنيف والتمييز (Classification and Marking):</strong> تحديد أنواع حركة المرور وتمييزها.</li>
+                            <li><strong>الطوابير (Queuing):</strong> ترتيب حزم البيانات حسب الأولوية.</li>
+                            <li><strong>تشكيل حركة المرور (Traffic Shaping):</strong> التحكم في معدل إرسال البيانات.</li>
+                            <li><strong>تجنب الازدحام (Congestion Avoidance):</strong> منع امتلاء الطوابير.</li>
+                            <li><strong>تحديد النطاق الترددي (Policing):</strong> فرض حدود على معدل حركة المرور.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="qos-models">
+                        <h3>نماذج QoS:</h3>
+                        <div class="qos-model">
+                            <h4>1. نموذج الخدمات المتكاملة (IntServ)</h4>
+                            <p>يتطلب حجز موارد مسبقًا لكل تدفق، يستخدم بروتوكول RSVP.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>ضمانات صارمة لجودة الخدمة</li>
+                                <li>مناسب للتطبيقات الحساسة للغاية</li>
+                            </ul>
+                            <h5>العيوب:</h5>
+                            <ul>
+                                <li>قابلية محدودة للتوسع</li>
+                                <li>يتطلب موارد كبيرة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="qos-model">
+                            <h4>2. نموذج الخدمات المتمايزة (DiffServ)</h4>
+                            <p>يصنف حركة المرور إلى فئات ويعاملها وفقًا لذلك، أكثر قابلية للتوسع.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>قابلية عالية للتوسع</li>
+                                <li>سهولة التنفيذ</li>
+                                <li>لا يتطلب حجز موارد لكل تدفق</li>
+                            </ul>
+                            <h5>آلية العمل:</h5>
+                            <ol>
+                                <li>تصنيف الحزم عند حافة الشبكة</li>
+                                <li>تمييز الحزم باستخدام حقل DSCP (Differentiated Services Code Point)</li>
+                                <li>معالجة الحزم في الشبكة بناءً على علامات DSCP</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="qos-implementation">
+                        <h3>تنفيذ QoS في Cisco IOS:</h3>
+                        <div class="code-block">
+                            <pre>
+# تعريف فئات حركة المرور
+Router(config)# class-map match-all VOICE
+Router(config-cmap)# match dscp ef
+Router(config-cmap)# exit
+
+Router(config)# class-map match-all VIDEO
+Router(config-cmap)# match dscp af41
+Router(config-cmap)# exit
+
+Router(config)# class-map match-all CRITICAL-DATA
+Router(config-cmap)# match dscp af21
+Router(config-cmap)# exit
+
+# تعريف سياسة QoS
+Router(config)# policy-map QOS-POLICY
+Router(config-pmap)# class VOICE
+Router(config-pmap-c)# priority 512
+Router(config-pmap-c)# exit
+Router(config-pmap)# class VIDEO
+Router(config-pmap-c)# bandwidth 1024
+Router(config-pmap-c)# exit
+Router(config-pmap)# class CRITICAL-DATA
+Router(config-pmap-c)# bandwidth 512
+Router(config-pmap-c)# exit
+Router(config-pmap)# class class-default
+Router(config-pmap-c)# fair-queue
+Router(config-pmap-c)# exit
+
+# تطبيق السياسة على الواجهة
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# service-policy output QOS-POLICY
+                            </pre>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. ما هي الطبقة المسؤولة عن نقل كميات كبيرة من البيانات بسرعة وكفاءة في نموذج التصميم الهرمي؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">طبقة الوصول</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">طبقة التوزيع</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">طبقة النواة</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">طبقة التطبيقات</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. أي بروتوكول من بروتوكولات التوجيه التالية يستخدم خوارزمية Dijkstra لحساب أقصر مسار؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">RIP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">OSPF</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">BGP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">EIGRP</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. ما هو البروتوكول المستخدم لربط VLANs المختلفة عبر رابط واحد؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">STP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">IEEE 802.1Q</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">HSRP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">MPLS</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="network-programming.html" class="btn outline-btn">السابق: برمجة الشبكات</a>
+                    <a href="network-security.html" class="btn primary-btn">التالي: أمن الشبكات</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'b',
+                q3: 'b'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

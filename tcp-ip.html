@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بروتوكول TCP/IP - عالم الشبكات</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="osi.html">نموذج OSI</a></li>
+                    <li><a href="tcp-ip.html" class="active">بروتوكول TCP/IP</a></li>
+                    <li><a href="quiz.html">اختبر معلوماتك</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>بروتوكول TCP/IP</h1>
+            <p>تعرف على بروتوكول TCP/IP وآلية عمله وأهميته في شبكات الإنترنت</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات الصفحة</h3>
+                    <ul>
+                        <li><a href="#intro">مقدمة عن بروتوكول TCP/IP</a></li>
+                        <li><a href="#definition">ما هو بروتوكول TCP/IP؟</a></li>
+                        <li><a href="#layers">طبقات بروتوكول TCP/IP</a></li>
+                        <li><a href="#comparison">مقارنة بين نموذج OSI وبروتوكول TCP/IP</a></li>
+                        <li><a href="#tcp">بروتوكول TCP</a></li>
+                        <li><a href="#tcp-vs-udp">مقارنة بين TCP و UDP</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="osi.html">نموذج OSI</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section id="intro" class="content-section">
+                    <h2>مقدمة عن بروتوكول TCP/IP</h2>
+                    <div class="section-image">
+                        <img src="../images/tcp-ip-intro.svg" alt="مقدمة عن بروتوكول TCP/IP">
+                    </div>
+                    <p>بعد أن تعرفنا على أساسيات الشبكات ونموذج OSI، سننتقل الآن إلى دراسة بروتوكول TCP/IP، وهو مجموعة البروتوكولات التي تشكل أساس الإنترنت والشبكات الحديثة.</p>
+                    <p>في هذا القسم، سنتعرف على بروتوكول TCP/IP وطبقاته وآلية عمله وأهميته في شبكات الإنترنت، كما سنتعمق في فهم بروتوكول TCP وخصائصه ومقارنته مع بروتوكول UDP.</p>
+                </section>
+
+                <section id="definition" class="content-section">
+                    <h2>ما هو بروتوكول TCP/IP؟</h2>
+                    <div class="section-image">
+                        <img src="../images/tcp-ip-definition.svg" alt="تعريف بروتوكول TCP/IP">
+                    </div>
+                    <p>بروتوكول TCP/IP (Transmission Control Protocol/Internet Protocol) هو مجموعة من البروتوكولات التي تشكل أساس الإنترنت والشبكات الحديثة. تم تطويره في السبعينات من قبل وكالة مشاريع أبحاث الدفاع المتقدمة (DARPA) في الولايات المتحدة.</p>
+                    <p>يتكون TCP/IP من أربع طبقات، وهو أبسط من نموذج OSI ولكنه أكثر استخدامًا في العالم الحقيقي. في الواقع، الإنترنت بأكمله يعمل على أساس بروتوكول TCP/IP.</p>
+                    
+                    <div class="info-box">
+                        <h4>حقائق سريعة عن TCP/IP:</h4>
+                        <ul>
+                            <li>تم تطويره قبل نموذج OSI</li>
+                            <li>صمم خصيصًا للإنترنت</li>
+                            <li>يستخدم في جميع أنحاء العالم كمعيار للاتصال عبر الشبكات</li>
+                            <li>يتكون من مجموعة من البروتوكولات المختلفة التي تعمل معًا</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="layers" class="content-section">
+                    <h2>طبقات بروتوكول TCP/IP</h2>
+                    <p>يتكون بروتوكول TCP/IP من أربع طبقات:</p>
+
+                    <div class="tcp-ip-layers">
+                        <div class="tcp-ip-layer" id="layer-4">
+                            <div class="layer-header">
+                                <div class="layer-number">4</div>
+                                <h3>طبقة التطبيق (Application Layer)</h3>
+                            </div>
+                            <div class="layer-content">
+                                <p>تجمع بين الطبقات الثلاث العليا في نموذج OSI (طبقة التطبيق، طبقة العرض، طبقة الجلسة).</p>
+                                
+                                <h4>وظائفها:</h4>
+                                <ul>
+                                    <li>توفير واجهة بين تطبيقات المستخدم والشبكة</li>
+                                    <li>تنسيق وعرض البيانات</li>
+                                    <li>إدارة الجلسات</li>
+                                </ul>
+                                
+                                <h4>أمثلة على بروتوكولات هذه الطبقة:</h4>
+                                <div class="protocols-grid">
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-globe"></i>
+                                        </div>
+                                        <p>HTTP/HTTPS</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-file-download"></i>
+                                        </div>
+                                        <p>FTP</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <p>SMTP</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-server"></i>
+                                        </div>
+                                        <p>DNS</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-terminal"></i>
+                                        </div>
+                                        <p>Telnet</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tcp-ip-layer" id="layer-3">
+                            <div class="layer-header">
+                                <div class="layer-number">3</div>
+                                <h3>طبقة النقل (Transport Layer)</h3>
+                            </div>
+                            <div class="layer-content">
+                                <p>تعادل الطبقة الرابعة في نموذج OSI (طبقة النقل).</p>
+                                
+                                <h4>وظائفها:</h4>
+                                <ul>
+                                    <li>ضمان وصول البيانات بشكل صحيح</li>
+                                    <li>تقسيم البيانات إلى أجزاء</li>
+                                    <li>التحكم في تدفق البيانات</li>
+                                </ul>
+                                
+                                <h4>أمثلة على بروتوكولات هذه الطبقة:</h4>
+                                <div class="protocols-grid">
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-exchange-alt"></i>
+                                        </div>
+                                        <p>TCP<br>(Transmission Control Protocol)</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </div>
+                                        <p>UDP<br>(User Datagram Protocol)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tcp-ip-layer" id="layer-2">
+                            <div class="layer-header">
+                                <div class="layer-number">2</div>
+                                <h3>طبقة الإنترنت (Internet Layer)</h3>
+                            </div>
+                            <div class="layer-content">
+                                <p>تعادل الطبقة الثالثة في نموذج OSI (طبقة الشبكة).</p>
+                                
+                                <h4>وظائفها:</h4>
+                                <ul>
+                                    <li>توجيه البيانات بين الشبكات</li>
+                                    <li>تحديد عناوين IP</li>
+                                    <li>تقسيم البيانات إلى حزم</li>
+                                </ul>
+                                
+                                <h4>أمثلة على بروتوكولات هذه الطبقة:</h4>
+                                <div class="protocols-grid">
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-globe-americas"></i>
+                                        </div>
+                                        <p>IP<br>(Internet Protocol)</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-comment-dots"></i>
+                                        </div>
+                                        <p>ICMP<br>(Internet Control Message Protocol)</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-address-card"></i>
+                                        </div>
+                                        <p>ARP<br>(Address Resolution Protocol)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tcp-ip-layer" id="layer-1">
+                            <div class="layer-header">
+                                <div class="layer-number">1</div>
+                                <h3>طبقة الوصول إلى الشبكة (Network Access Layer)</h3>
+                            </div>
+                            <div class="layer-content">
+                                <p>تعادل الطبقتين الأولى والثانية في نموذج OSI (الطبقة المادية وطبقة وصلة البيانات).</p>
+                                
+                                <h4>وظائفها:</h4>
+                                <ul>
+                                    <li>تحديد كيفية إرسال البيانات عبر الوسط المادي</li>
+                                    <li>تحديد عناوين MAC</li>
+                                    <li>تنظيم البيانات في إطارات</li>
+                                </ul>
+                                
+                                <h4>أمثلة على بروتوكولات هذه الطبقة:</h4>
+                                <div class="protocols-grid">
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-ethernet"></i>
+                                        </div>
+                                        <p>Ethernet</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-wifi"></i>
+                                        </div>
+                                        <p>Wi-Fi</p>
+                                    </div>
+                                    <div class="protocol">
+                                        <div class="protocol-icon">
+                                            <i class="fas fa-project-diagram"></i>
+                                        </div>
+                                        <p>PPP<br>(Point-to-Point Protocol)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="comparison" class="content-section">
+                    <h2>مقارنة بين نموذج OSI وبروتوكول TCP/IP</h2>
+                    <div class="section-image">
+                        <img src="../images/osi-vs-tcp-ip.svg" alt="مقارنة بين نموذج OSI وبروتوكول TCP/IP">
+                    </div>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>نموذج OSI</th>
+                                    <th>بروتوكول TCP/IP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>7 طبقات</td>
+                                    <td>4 طبقات</td>
+                                </tr>
+                                <tr>
+                                    <td>نموذج مرجعي نظري</td>
+                                    <td>نموذج تطبيقي عملي</td>
+                                </tr>
+                                <tr>
+                                    <td>طور قبل ظهور الإنترنت</td>
+                                    <td>طور خصيصًا للإنترنت</td>
+                                </tr>
+                                <tr>
+                                    <td>يفصل بين وظائف العرض والجلسة والتطبيق</td>
+                                    <td>يجمع وظائف العرض والجلسة والتطبيق في طبقة واحدة</td>
+                                </tr>
+                                <tr>
+                                    <td>أقل استخدامًا في التطبيق العملي</td>
+                                    <td>الأكثر استخدامًا في العالم الحقيقي</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="tcp" class="content-section">
+                    <h2>بروتوكول TCP (Transmission Control Protocol)</h2>
+                    
+                    <h3>ما هو بروتوكول TCP؟</h3>
+                    <div class="section-image">
+                        <img src="../images/tcp-protocol.svg" alt="بروتوكول TCP">
+                    </div>
+                    <p>بروتوكول TCP هو أحد البروتوكولات الرئيسية في طبقة النقل من بروتوكول TCP/IP. يوفر اتصالًا موثوقًا وموجهًا للاتصال بين الأجهزة على الشبكة، مما يضمن وصول البيانات بشكل صحيح وبالترتيب الصحيح.</p>
+                    
+                    <h3>خصائص بروتوكول TCP</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>موثوق (Reliable)</h4>
+                            <p>يضمن وصول جميع البيانات بدون فقدان أو تكرار.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <h4>موجه للاتصال (Connection-oriented)</h4>
+                            <p>يتطلب إنشاء اتصال قبل نقل البيانات.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-sort-numeric-down"></i>
+                            </div>
+                            <h4>تسليم مرتب (Ordered delivery)</h4>
+                            <p>يضمن وصول البيانات بنفس الترتيب الذي تم إرسالها به.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h4>التحكم في التدفق (Flow control)</h4>
+                            <p>يمنع المرسل من إغراق المستقبل بالبيانات.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-traffic-light"></i>
+                            </div>
+                            <h4>التحكم في الازدحام (Congestion control)</h4>
+                            <p>يقلل من معدل الإرسال عند ازدحام الشبكة.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>آلية عمل بروتوكول TCP</h3>
+                    
+                    <h4>1. إنشاء الاتصال (Three-way Handshake)</h4>
+                    <div class="section-image">
+                        <img src="../images/tcp-handshake.svg" alt="المصافحة الثلاثية">
+                    </div>
+                    <p>قبل نقل البيانات، يقوم TCP بإنشاء اتصال بين المرسل والمستقبل من خلال عملية تسمى "المصافحة الثلاثية":</p>
+                    
+                    <div class="tcp-handshake">
+                        <div class="handshake-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>SYN</h5>
+                                <p>يرسل المرسل حزمة SYN (Synchronize) إلى المستقبل.</p>
+                            </div>
+                        </div>
+                        <div class="handshake-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>SYN-ACK</h5>
+                                <p>يرد المستقبل بحزمة SYN-ACK (Synchronize-Acknowledge).</p>
+                            </div>
+                        </div>
+                        <div class="handshake-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>ACK</h5>
+                                <p>يرسل المرسل حزمة ACK (Acknowledge) للتأكيد.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <p>بعد هذه الخطوات الثلاث، يتم إنشاء اتصال TCP ويمكن البدء في نقل البيانات.</p>
+                    </div>
+                    
+                    <h4>2. نقل البيانات</h4>
+                    <p>بعد إنشاء الاتصال، يتم تقسيم البيانات إلى أجزاء صغيرة تسمى "segments"، ويتم إرسالها إلى المستقبل. كل جزء يحتوي على:</p>
+                    <ul>
+                        <li><strong>رقم تسلسلي (Sequence Number):</strong> لتحديد ترتيب الأجزاء.</li>
+                        <li><strong>رقم التأكيد (Acknowledgment Number):</strong> لتأكيد استلام الأجزاء السابقة.</li>
+                        <li><strong>البيانات الفعلية.</strong></li>
+                        <li><strong>معلومات التحكم الأخرى.</strong></li>
+                    </ul>
+                    
+                    <h4>3. التأكيد والإعادة</h4>
+                    <p>عندما يستلم المستقبل جزءًا، يرسل تأكيدًا (ACK) إلى المرسل. إذا لم يتلق المرسل تأكيدًا خلال فترة زمنية محددة، يفترض أن الجزء قد فُقد ويعيد إرساله.</p>
+                    
+                    <h4>4. إنهاء الاتصال (Four-way Handshake)</h4>
+                    <div class="section-image">
+                        <img src="../images/tcp-close.svg" alt="المصافحة الرباعية">
+                    </div>
+                    <p>عند الانتهاء من نقل البيانات، يتم إنهاء الاتصال من خلال عملية تسمى "المصافحة الرباعية":</p>
+                    
+                    <div class="tcp-handshake">
+                        <div class="handshake-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>FIN</h5>
+                                <p>يرسل أحد الطرفين حزمة FIN (Finish) للإشارة إلى رغبته في إنهاء الاتصال.</p>
+                            </div>
+                        </div>
+                        <div class="handshake-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>ACK</h5>
+                                <p>يرد الطرف الآخر بحزمة ACK للتأكيد.</p>
+                            </div>
+                        </div>
+                        <div class="handshake-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>FIN</h5>
+                                <p>يرسل الطرف الآخر حزمة FIN.</p>
+                            </div>
+                        </div>
+                        <div class="handshake-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>ACK</h5>
+                                <p>يرد الطرف الأول بحزمة ACK للتأكيد.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <p>بعد هذه الخطوات الأربع، يتم إنهاء اتصال TCP.</p>
+                    </div>
+                </section>
+
+                <section id="tcp-vs-udp" class="content-section">
+                    <h2>مقارنة بين TCP و UDP</h2>
+                    <div class="section-image">
+                        <img src="../images/tcp-vs-udp.svg" alt="مقارنة بين TCP و UDP">
+                    </div>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>الخاصية</th>
+                                    <th>TCP</th>
+                                    <th>UDP</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>الموثوقية</td>
+                                    <td>موثوق، يضمن وصول البيانات</td>
+                                    <td>غير موثوق، لا يضمن وصول البيانات</td>
+                                </tr>
+                                <tr>
+                                    <td>الاتصال</td>
+                                    <td>موجه للاتصال</td>
+                                    <td>غير موجه للاتصال</td>
+                                </tr>
+                                <tr>
+                                    <td>الترتيب</td>
+                                    <td>يحافظ على ترتيب البيانات</td>
+                                    <td>لا يحافظ على ترتيب البيانات</td>
+                                </tr>
+                                <tr>
+                                    <td>السرعة</td>
+                                    <td>أبطأ بسبب آليات التحكم</td>
+                                    <td>أسرع بسبب بساطته</td>
+                                </tr>
+                                <tr>
+                                    <td>حجم البيانات</td>
+                                    <td>أكبر بسبب معلومات التحكم</td>
+                                    <td>أصغر بسبب قلة معلومات التحكم</td>
+                                </tr>
+                                <tr>
+                                    <td>التطبيقات</td>
+                                    <td>تصفح الويب، البريد الإلكتروني، نقل الملفات</td>
+                                    <td>بث الفيديو، الألعاب عبر الإنترنت، VoIP</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>استخدامات بروتوكول TCP</h3>
+                    <p>يستخدم بروتوكول TCP في العديد من التطبيقات التي تتطلب نقل بيانات موثوق، مثل:</p>
+                    <div class="applications-grid">
+                        <div class="application">
+                            <div class="application-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <p>تصفح مواقع الويب<br>(HTTP/HTTPS)</p>
+                        </div>
+                        <div class="application">
+                            <div class="application-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p>البريد الإلكتروني<br>(SMTP, POP3, IMAP)</p>
+                        </div>
+                        <div class="application">
+                            <div class="application-icon">
+                                <i class="fas fa-file-download"></i>
+                            </div>
+                            <p>نقل الملفات<br>(FTP)</p>
+                        </div>
+                        <div class="application">
+                            <div class="application-icon">
+                                <i class="fas fa-terminal"></i>
+                            </div>
+                            <p>الاتصال عن بعد<br>(SSH, Telnet)</p>
+                        </div>
+                        <div class="application">
+                            <div class="application-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <p>قواعد البيانات الموزعة</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="navigation-buttons">
+                    <a href="osi.html" class="btn secondary-btn"><i class="fas fa-arrow-right"></i> نموذج OSI</a>
+                    <a href="quiz.html" class="btn primary-btn">اختبر معلوماتك <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <div class="quiz-promo">
+                    <h3>اختبر معلوماتك!</h3>
+                    <p>هل أنت جاهز لاختبار معلوماتك حول بروتوكول TCP/IP؟</p>
+                    <a href="quiz.html#tcp-ip-quiz" class="btn primary-btn">ابدأ الاختبار</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>دليل شامل لأساسيات الشبكات ونموذج OSI وبروتوكول TCP/IP</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="osi.html">نموذج OSI</a></li>
+                        <li><a href="tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-envelope"></i> info@network-world.com</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 عالم الشبكات. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

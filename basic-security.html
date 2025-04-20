@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات أمن الشبكات - المستوى الأول - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="index.html" class="active">المستوى الأول</a></li>
+                    <li><a href="../level2/index.html">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>أساسيات أمن الشبكات</h1>
+            <p>تعرف على المفاهيم الأساسية لحماية الشبكات والبيانات من التهديدات المختلفة</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الأول</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الأول</a></li>
+                        <li><a href="network-fundamentals.html">مفاهيم الشبكات الأساسية</a></li>
+                        <li><a href="network-types.html">أنواع الشبكات</a></li>
+                        <li><a href="network-components.html">مكونات الشبكة</a></li>
+                        <li><a href="network-topologies.html">طوبولوجيا الشبكة</a></li>
+                        <li><a href="addressing.html">العنونة في الشبكات</a></li>
+                        <li><a href="basic-security.html" class="active">أساسيات أمن الشبكات</a></li>
+                        <li><a href="wireless-basics.html">أساسيات الشبكات اللاسلكية</a></li>
+                        <li><a href="basic-routing.html">أساسيات التوجيه</a></li>
+                        <li><a href="basic-labs.html">المختبرات العملية الأساسية</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>أهمية أمن الشبكات</h2>
+                    <p>أمن الشبكات هو مجموعة من الإجراءات والتقنيات المستخدمة لحماية سلامة وخصوصية وإتاحة البيانات والموارد في الشبكة. مع تزايد الاعتماد على الشبكات في جميع جوانب الحياة، أصبح أمن الشبكات أكثر أهمية من أي وقت مضى.</p>
+                    
+                    <div class="info-box">
+                        <h4>لماذا يعتبر أمن الشبكات مهمًا؟</h4>
+                        <ul>
+                            <li><strong>حماية البيانات الحساسة:</strong> منع الوصول غير المصرح به إلى المعلومات الشخصية والمالية والتجارية.</li>
+                            <li><strong>ضمان استمرارية الأعمال:</strong> منع تعطل الخدمات والأنظمة بسبب الهجمات الإلكترونية.</li>
+                            <li><strong>الامتثال للقوانين واللوائح:</strong> العديد من الصناعات لديها متطلبات قانونية لحماية البيانات.</li>
+                            <li><strong>الحفاظ على السمعة:</strong> خرق البيانات يمكن أن يؤدي إلى فقدان ثقة العملاء والشركاء.</li>
+                            <li><strong>تجنب الخسائر المالية:</strong> الهجمات الإلكترونية يمكن أن تكلف الشركات ملايين الدولارات.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>التهديدات الأمنية الشائعة</h2>
+                    <p>هناك العديد من التهديدات التي يمكن أن تؤثر على أمن الشبكات. فهم هذه التهديدات هو الخطوة الأولى في حماية الشبكة.</p>
+                    
+                    <div class="threats-grid">
+                        <div class="threat-card">
+                            <h3>1. البرمجيات الخبيثة (Malware)</h3>
+                            <div class="threat-image">
+                                <img src="../../images/security/malware.svg" alt="البرمجيات الخبيثة">
+                            </div>
+                            <p>البرمجيات الخبيثة هي برامج مصممة لإلحاق الضرر بالأنظمة أو سرقة البيانات.</p>
+                            
+                            <h4>أنواع البرمجيات الخبيثة:</h4>
+                            <ul>
+                                <li><strong>الفيروسات (Viruses):</strong> برامج تنسخ نفسها وتنتشر عن طريق إصابة ملفات أخرى.</li>
+                                <li><strong>الديدان (Worms):</strong> برامج تنتشر عبر الشبكة دون الحاجة إلى تدخل المستخدم.</li>
+                                <li><strong>أحصنة طروادة (Trojans):</strong> برامج تبدو مفيدة ولكنها تحتوي على شفرة ضارة.</li>
+                                <li><strong>برامج الفدية (Ransomware):</strong> برامج تشفر البيانات وتطلب فدية لفك التشفير.</li>
+                                <li><strong>برامج التجسس (Spyware):</strong> برامج تجمع معلومات عن المستخدم دون علمه.</li>
+                            </ul>
+                            
+                            <h4>طرق الحماية:</h4>
+                            <ul>
+                                <li>استخدام برامج مكافحة الفيروسات وتحديثها باستمرار.</li>
+                                <li>تجنب فتح المرفقات أو النقر على الروابط من مصادر غير موثوقة.</li>
+                                <li>تحديث البرامج والأنظمة بانتظام.</li>
+                                <li>عمل نسخ احتياطية منتظمة للبيانات.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="threat-card">
+                            <h3>2. هجمات التصيد (Phishing)</h3>
+                            <div class="threat-image">
+                                <img src="../../images/security/phishing.svg" alt="هجمات التصيد">
+                            </div>
+                            <p>هجمات التصيد هي محاولات خداع المستخدمين للكشف عن معلوماتهم الحساسة مثل كلمات المرور أو بيانات بطاقات الائتمان.</p>
+                            
+                            <h4>أنواع هجمات التصيد:</h4>
+                            <ul>
+                                <li><strong>التصيد العام (Mass Phishing):</strong> إرسال رسائل إلى عدد كبير من المستخدمين.</li>
+                                <li><strong>التصيد المستهدف (Spear Phishing):</strong> استهداف أفراد أو مؤسسات محددة.</li>
+                                <li><strong>التصيد عبر الرسائل القصيرة (Smishing):</strong> استخدام الرسائل النصية للتصيد.</li>
+                                <li><strong>التصيد عبر المكالمات الهاتفية (Vishing):</strong> استخدام المكالمات الهاتفية للتصيد.</li>
+                            </ul>
+                            
+                            <h4>طرق الحماية:</h4>
+                            <ul>
+                                <li>التحقق من المرسل قبل فتح الرسائل أو النقر على الروابط.</li>
+                                <li>عدم مشاركة المعلومات الحساسة عبر البريد الإلكتروني أو الهاتف.</li>
+                                <li>التحقق من عنوان URL قبل إدخال بيانات الاعتماد.</li>
+                                <li>استخدام المصادقة متعددة العوامل (MFA).</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="threat-card">
+                            <h3>3. هجمات الحرمان من الخدمة (DoS/DDoS)</h3>
+                            <div class="threat-image">
+                                <img src="../../images/security/ddos.svg" alt="هجمات الحرمان من الخدمة">
+                            </div>
+                            <p>هجمات الحرمان من الخدمة تهدف إلى تعطيل الخدمات أو المواقع عن طريق إغراقها بحركة مرور زائفة.</p>
+                            
+                            <h4>أنواع هجمات الحرمان من الخدمة:</h4>
+                            <ul>
+                                <li><strong>هجوم الحرمان من الخدمة (DoS):</strong> هجوم من مصدر واحد.</li>
+                                <li><strong>هجوم الحرمان الموزع من الخدمة (DDoS):</strong> هجوم من مصادر متعددة (عادة شبكة من الأجهزة المصابة).</li>
+                                <li><strong>هجمات طبقة التطبيق:</strong> تستهدف تطبيقات محددة مثل خوادم الويب.</li>
+                                <li><strong>هجمات استنفاد الموارد:</strong> تستهدف استنفاد موارد النظام مثل وحدة المعالجة المركزية أو الذاكرة.</li>
+                            </ul>
+                            
+                            <h4>طرق الحماية:</h4>
+                            <ul>
+                                <li>استخدام جدران الحماية وأنظمة كشف ومنع التسلل.</li>
+                                <li>تنفيذ حلول مكافحة DDoS.</li>
+                                <li>توزيع الخوادم جغرافيًا (CDN).</li>
+                                <li>تحديد حدود لحركة المرور وتصفية الحزم المشبوهة.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="threat-card">
+                            <h3>4. هجمات الوسيط (Man-in-the-Middle)</h3>
+                            <div class="threat-image">
+                                <img src="../../images/security/mitm.svg" alt="هجمات الوسيط">
+                            </div>
+                            <p>هجمات الوسيط تحدث عندما يعترض المهاجم الاتصالات بين طرفين ويتنصت عليها أو يعدلها دون علمهما.</p>
+                            
+                            <h4>أنواع هجمات الوسيط:</h4>
+                            <ul>
+                                <li><strong>اعتراض الشبكة:</strong> اعتراض البيانات أثناء انتقالها عبر الشبكة.</li>
+                                <li><strong>تسميم ARP:</strong> خداع الأجهزة لإرسال البيانات إلى المهاجم بدلاً من الوجهة الحقيقية.</li>
+                                <li><strong>تسميم DNS:</strong> توجيه المستخدمين إلى مواقع مزيفة.</li>
+                                <li><strong>نقاط الوصول المزيفة:</strong> إنشاء شبكات Wi-Fi مزيفة لاعتراض البيانات.</li>
+                            </ul>
+                            
+                            <h4>طرق الحماية:</h4>
+                            <ul>
+                                <li>استخدام بروتوكولات التشفير مثل HTTPS و SSL/TLS.</li>
+                                <li>التحقق من شهادات الأمان للمواقع.</li>
+                                <li>استخدام الشبكات الخاصة الافتراضية (VPN).</li>
+                                <li>تجنب استخدام شبكات Wi-Fi العامة غير المؤمنة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>تقنيات وأدوات أمن الشبكات</h2>
+                    <p>هناك العديد من التقنيات والأدوات المستخدمة لحماية الشبكات من التهديدات المختلفة:</p>
+                    
+                    <div class="security-tools">
+                        <div class="security-tool">
+                            <h3>1. جدران الحماية (Firewalls)</h3>
+                            <p>جدران الحماية هي أنظمة أمنية تراقب وتتحكم في حركة المرور الداخلة والخارجة من الشبكة بناءً على قواعد محددة مسبقًا.</p>
+                            
+                            <h4>أنواع جدران الحماية:</h4>
+                            <ul>
+                                <li><strong>جدران الحماية المستندة إلى الأجهزة:</strong> أجهزة مخصصة لحماية الشبكة.</li>
+                                <li><strong>جدران الحماية المستندة إلى البرامج:</strong> برامج تعمل على الخوادم أو أجهزة الكمبيوتر.</li>
+                                <li><strong>جدران حماية الجيل التالي (NGFW):</strong> توفر ميزات متقدمة مثل فحص التطبيقات وكشف التسلل.</li>
+                                <li><strong>جدران حماية تطبيقات الويب (WAF):</strong> تحمي تطبيقات الويب من الهجمات المحددة.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-tool">
+                            <h3>2. أنظمة كشف ومنع التسلل (IDS/IPS)</h3>
+                            <p>أنظمة تراقب حركة المرور في الشبكة بحثًا عن أنشطة مشبوهة وتنبه المسؤولين (IDS) أو تتخذ إجراءات تلقائية لمنع الهجمات (IPS).</p>
+                            
+                            <h4>أنواع أنظمة كشف ومنع التسلل:</h4>
+                            <ul>
+                                <li><strong>أنظمة كشف التسلل المستندة إلى الشبكة (NIDS):</strong> تراقب حركة المرور في الشبكة.</li>
+                                <li><strong>أنظمة كشف التسلل المستندة إلى المضيف (HIDS):</strong> تراقب أنشطة الأجهزة الفردية.</li>
+                                <li><strong>أنظمة كشف التسلل المستندة إلى التوقيع:</strong> تبحث عن أنماط معروفة للهجمات.</li>
+                                <li><strong>أنظمة كشف التسلل المستندة إلى الشذوذ:</strong> تبحث عن الانحرافات عن السلوك الطبيعي.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-tool">
+                            <h3>3. الشبكات الخاصة الافتراضية (VPN)</h3>
+                            <p>الشبكات الخاصة الافتراضية تنشئ اتصالًا آمنًا ومشفرًا عبر شبكة عامة مثل الإنترنت، مما يسمح للمستخدمين بالوصول إلى موارد الشبكة عن بُعد بأمان.</p>
+                            
+                            <h4>أنواع الشبكات الخاصة الافتراضية:</h4>
+                            <ul>
+                                <li><strong>VPN للوصول عن بُعد:</strong> تسمح للمستخدمين بالاتصال بشبكة خاصة من موقع بعيد.</li>
+                                <li><strong>VPN من موقع إلى موقع:</strong> تربط شبكات مختلفة في مواقع مختلفة.</li>
+                                <li><strong>VPN المستندة إلى SSL:</strong> تستخدم بروتوكول SSL/TLS للتشفير.</li>
+                                <li><strong>VPN المستندة إلى IPsec:</strong> تستخدم بروتوكول IPsec للتشفير.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-tool">
+                            <h3>4. التشفير (Encryption)</h3>
+                            <p>التشفير هو عملية تحويل البيانات إلى شكل غير مقروء (نص مشفر) لمنع الوصول غير المصرح به. يمكن فك تشفير البيانات فقط باستخدام المفتاح الصحيح.</p>
+                            
+                            <h4>أنواع التشفير:</h4>
+                            <ul>
+                                <li><strong>التشفير المتماثل:</strong> يستخدم نفس المفتاح للتشفير وفك التشفير.</li>
+                                <li><strong>التشفير غير المتماثل:</strong> يستخدم زوجًا من المفاتيح (عام وخاص).</li>
+                                <li><strong>تشفير البيانات أثناء النقل:</strong> حماية البيانات أثناء انتقالها عبر الشبكة.</li>
+                                <li><strong>تشفير البيانات أثناء التخزين:</strong> حماية البيانات المخزنة على الأجهزة.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-tool">
+                            <h3>5. المصادقة متعددة العوامل (MFA)</h3>
+                            <p>المصادقة متعددة العوامل تتطلب من المستخدمين تقديم أكثر من نوع واحد من الأدلة للتحقق من هويتهم، مما يوفر طبقة إضافية من الأمان.</p>
+                            
+                            <h4>عوامل المصادقة:</h4>
+                            <ul>
+                                <li><strong>شيء تعرفه:</strong> كلمة المرور أو رقم التعريف الشخصي.</li>
+                                <li><strong>شيء تملكه:</strong> الهاتف المحمول أو بطاقة الأمان.</li>
+                                <li><strong>شيء أنت عليه:</strong> البصمة أو بصمة الوجه أو بصمة العين.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>أفضل الممارسات لأمن الشبكات</h2>
+                    <p>لتعزيز أمن الشبكة، يجب اتباع مجموعة من أفضل الممارسات:</p>
+                    
+                    <div class="best-practices">
+                        <div class="practice">
+                            <h3>1. تحديث البرامج والأنظمة بانتظام</h3>
+                            <p>التحديثات غالبًا ما تتضمن إصلاحات للثغرات الأمنية. تأكد من تحديث أنظمة التشغيل والتطبيقات وأجهزة الشبكة بانتظام.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>2. استخدام كلمات مرور قوية وفريدة</h3>
+                            <p>استخدم كلمات مرور طويلة ومعقدة وفريدة لكل حساب، وقم بتغييرها بانتظام. فكر في استخدام مدير كلمات المرور.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>3. تنفيذ سياسة الحد الأدنى من الامتيازات</h3>
+                            <p>امنح المستخدمين فقط الوصول الذي يحتاجونه لأداء وظائفهم، ولا تمنح امتيازات المسؤول إلا عند الضرورة.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>4. عمل نسخ احتياطية منتظمة</h3>
+                            <p>قم بعمل نسخ احتياطية منتظمة للبيانات المهمة واختبر استعادتها للتأكد من أنها تعمل بشكل صحيح.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>5. تدريب المستخدمين على الوعي الأمني</h3>
+                            <p>المستخدمون هم غالبًا أضعف حلقة في سلسلة الأمان. قم بتدريبهم على التعرف على التهديدات واتباع الممارسات الآمنة.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>6. تقسيم الشبكة</h3>
+                            <p>قسم الشبكة إلى أجزاء منفصلة (مثل VLAN) للحد من انتشار التهديدات في حالة اختراق جزء من الشبكة.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>7. مراقبة الشبكة باستمرار</h3>
+                            <p>راقب حركة المرور في الشبكة والأنشطة المشبوهة باستمرار، واستخدم أدوات تحليل السجلات للكشف عن الأنماط غير العادية.</p>
+                        </div>
+                        
+                        <div class="practice">
+                            <h3>8. وضع خطة للاستجابة للحوادث</h3>
+                            <p>ضع خطة واضحة للاستجابة للحوادث الأمنية، بما في ذلك كيفية احتواء التهديد واستعادة العمليات والتواصل مع الأطراف المعنية.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. ما هو نوع البرمجيات الخبيثة الذي يشفر البيانات ويطلب فدية لفك التشفير؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">الفيروس</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">الدودة</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">برنامج الفدية</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">حصان طروادة</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. أي من التقنيات التالية تراقب وتتحكم في حركة المرور الداخلة والخارجة من الشبكة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">جدار الحماية</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">التشفير</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">المصادقة متعددة العوامل</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">النسخ الاحتياطي</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. ما هو الهجوم الذي يهدف إلى تعطيل الخدمات أو المواقع عن طريق إغراقها بحركة مرور زائفة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">هجوم التصيد</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">هجوم الحرمان من الخدمة</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">هجوم الوسيط</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">هجوم القوة الغاشمة</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="addressing.html" class="btn outline-btn">السابق: العنونة في الشبكات</a>
+                    <a href="wireless-basics.html" class="btn primary-btn">التالي: أساسيات الشبكات اللاسلكية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'a',
+                q3: 'b'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

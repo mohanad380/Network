@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المختبرات العملية المتقدمة - المستوى الثاني - عالم الشبكات</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-network-wired"></i> عالم الشبكات</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">الرئيسية</a></li>
+                    <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                    <li><a href="../osi.html">نموذج OSI</a></li>
+                    <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                    <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    <li><a href="../level1/index.html">المستوى الأول</a></li>
+                    <li><a href="index.html" class="active">المستوى الثاني</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="container">
+            <h1>المختبرات العملية المتقدمة</h1>
+            <p>تطبيق المفاهيم النظرية في بيئات عملية محاكية للواقع</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="sidebar">
+                <div class="toc">
+                    <h3>محتويات المستوى الثاني</h3>
+                    <ul>
+                        <li><a href="index.html">نظرة عامة على المستوى الثاني</a></li>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                        <li><a href="network-programming.html">برمجة الشبكات</a></li>
+                        <li><a href="advanced-configuration.html">تركيب وتكوين الشبكات المتقدمة</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                        <li><a href="advanced-wireless.html">الشبكات اللاسلكية المتقدمة</a></li>
+                        <li><a href="virtual-networks.html">الشبكات الافتراضية</a></li>
+                        <li><a href="advanced-labs.html" class="active">المختبرات العملية المتقدمة</a></li>
+                    </ul>
+                </div>
+                <div class="related-content">
+                    <h3>مواضيع ذات صلة</h3>
+                    <ul>
+                        <li><a href="mikrotik.html">مايكروتك (MikroTik)</a></li>
+                        <li><a href="network-programming.html">برمجة الشبكات</a></li>
+                        <li><a href="network-security.html">أمن الشبكات</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <section class="content-section">
+                    <h2>مقدمة في المختبرات العملية المتقدمة</h2>
+                    <p>المختبرات العملية هي جزء أساسي من تعلم الشبكات، حيث تتيح للمتعلمين تطبيق المفاهيم النظرية في بيئات محاكية للواقع. في هذا القسم، سنقدم مجموعة من المختبرات العملية المتقدمة التي تغطي مختلف جوانب الشبكات التي تم دراستها في المستوى الثاني.</p>
+                    
+                    <div class="info-box">
+                        <h3>أهمية المختبرات العملية:</h3>
+                        <ul>
+                            <li><strong>تعزيز الفهم:</strong> تحويل المفاهيم النظرية إلى تطبيقات عملية.</li>
+                            <li><strong>اكتساب المهارات:</strong> تطوير المهارات العملية في تكوين وإدارة وتحليل الشبكات.</li>
+                            <li><strong>استكشاف الأخطاء وإصلاحها:</strong> التعرف على المشكلات الشائعة وكيفية حلها.</li>
+                            <li><strong>التجربة الآمنة:</strong> تجربة التكوينات المختلفة دون المخاطرة بالبنية التحتية الإنتاجية.</li>
+                            <li><strong>التحضير للعمل:</strong> محاكاة سيناريوهات العالم الحقيقي للاستعداد للبيئات المهنية.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lab-tools">
+                        <h3>أدوات المحاكاة المستخدمة في المختبرات:</h3>
+                        <div class="tool">
+                            <h4>1. GNS3 (Graphical Network Simulator-3)</h4>
+                            <p>محاكي شبكات رسومي يسمح بمحاكاة شبكات معقدة باستخدام أجهزة افتراضية حقيقية.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>دعم لأجهزة Cisco و Juniper و MikroTik وغيرها</li>
+                                <li>تكامل مع QEMU/KVM و VirtualBox و VMware</li>
+                                <li>إمكانية محاكاة أنظمة التشغيل الحقيقية</li>
+                                <li>واجهة رسومية سهلة الاستخدام</li>
+                                <li>مجتمع نشط ومكتبة كبيرة من الأجهزة</li>
+                            </ul>
+                            <h5>الاستخدامات:</h5>
+                            <ul>
+                                <li>محاكاة شبكات المؤسسات الكبيرة</li>
+                                <li>اختبار بروتوكولات التوجيه المتقدمة</li>
+                                <li>تصميم وتنفيذ حلول الأمان</li>
+                                <li>التحضير لشهادات الشبكات المتقدمة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool">
+                            <h4>2. EVE-NG (Emulated Virtual Environment - Next Generation)</h4>
+                            <p>منصة محاكاة شبكات متكاملة تدعم مجموعة واسعة من الأجهزة والأنظمة.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>واجهة ويب سهلة الاستخدام</li>
+                                <li>دعم لعدد كبير من الأجهزة والأنظمة</li>
+                                <li>إمكانية الوصول عن بعد</li>
+                                <li>دعم المستخدمين المتعددين</li>
+                                <li>تكامل مع أدوات التقاط الحزم مثل Wireshark</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool">
+                            <h4>3. Packet Tracer</h4>
+                            <p>أداة محاكاة شبكات من Cisco مصممة للتعليم والتدريب.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>سهولة الاستخدام ومناسبة للمبتدئين</li>
+                                <li>متطلبات نظام منخفضة</li>
+                                <li>دعم لمعظم تقنيات Cisco الأساسية</li>
+                                <li>وضع المحاكاة لتتبع حركة الحزم</li>
+                                <li>دعم للبرمجة البسيطة والأتمتة</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool">
+                            <h4>4. VirtualBox / VMware</h4>
+                            <p>منصات افتراضية عامة تستخدم لتشغيل أنظمة التشغيل المختلفة وبرامج الشبكات.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>مرونة عالية في تكوين الأجهزة الافتراضية</li>
+                                <li>دعم لمعظم أنظمة التشغيل</li>
+                                <li>إمكانية إنشاء شبكات افتراضية داخلية</li>
+                                <li>تكامل مع أدوات المحاكاة الأخرى</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tool">
+                            <h4>5. Wireshark</h4>
+                            <p>محلل بروتوكولات الشبكة الأكثر استخدامًا في العالم.</p>
+                            <h5>المميزات:</h5>
+                            <ul>
+                                <li>التقاط وتحليل حزم الشبكة في الوقت الفعلي</li>
+                                <li>دعم لآلاف البروتوكولات</li>
+                                <li>فلترة متقدمة وإمكانيات بحث قوية</li>
+                                <li>تحليل عميق للبروتوكولات</li>
+                                <li>إمكانية قراءة وكتابة ملفات التقاط متعددة الصيغ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مختبر 1: تكوين وإدارة MikroTik RouterOS</h2>
+                    <p>في هذا المختبر، سنتعلم كيفية تكوين وإدارة جهاز توجيه MikroTik باستخدام RouterOS، بدءًا من التكوين الأساسي وصولاً إلى الميزات المتقدمة.</p>
+                    
+                    <div class="lab-requirements">
+                        <h3>متطلبات المختبر:</h3>
+                        <ul>
+                            <li>GNS3 أو EVE-NG مع صورة MikroTik RouterOS</li>
+                            <li>أو جهاز MikroTik فعلي</li>
+                            <li>برنامج WinBox (اختياري للإدارة الرسومية)</li>
+                            <li>متصفح ويب للوصول إلى واجهة الويب</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lab-steps">
+                        <h3>خطوات المختبر:</h3>
+                        <div class="step">
+                            <h4>الجزء 1: التكوين الأساسي</h4>
+                            <ol>
+                                <li>
+                                    <strong>الوصول إلى RouterOS:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# الوصول عبر SSH
+ssh admin@192.168.88.1
+
+# أو استخدام WinBox
+# أو الوصول عبر متصفح الويب: http://192.168.88.1
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين الواجهات:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# عرض الواجهات المتاحة
+/interface print
+
+# تكوين واجهة WAN
+/interface ethernet
+set [ find default-name=ether1 ] name=WAN comment="WAN Interface"
+
+# تكوين واجهة LAN
+/interface ethernet
+set [ find default-name=ether2 ] name=LAN comment="LAN Interface"
+
+# تكوين عناوين IP
+/ip address
+add address=192.168.1.1/24 interface=LAN
+add address=203.0.113.2/30 interface=WAN
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين خادم DHCP:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء نطاق DHCP
+/ip pool
+add name=dhcp_pool1 ranges=192.168.1.100-192.168.1.200
+
+# تكوين خادم DHCP
+/ip dhcp-server
+add address-pool=dhcp_pool1 interface=LAN name=dhcp1
+
+# تكوين شبكة DHCP
+/ip dhcp-server network
+add address=192.168.1.0/24 gateway=192.168.1.1 dns-server=8.8.8.8,8.8.4.4
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين NAT:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# تكوين NAT للوصول إلى الإنترنت
+/ip firewall nat
+add chain=srcnat action=masquerade src-address=192.168.1.0/24 out-interface=WAN
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين جدار الحماية الأساسي:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إضافة قواعد جدار الحماية الأساسية
+/ip firewall filter
+add chain=input action=accept connection-state=established,related
+add chain=input action=accept protocol=icmp
+add chain=input action=accept in-interface=LAN
+add chain=input action=drop in-interface=WAN
+                                        </pre>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>الجزء 2: التكوين المتقدم</h4>
+                            <ol>
+                                <li>
+                                    <strong>تكوين VLAN:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء واجهات VLAN
+/interface vlan
+add name=VLAN10 vlan-id=10 interface=LAN
+add name=VLAN20 vlan-id=20 interface=LAN
+
+# تكوين عناوين IP للـ VLANs
+/ip address
+add address=192.168.10.1/24 interface=VLAN10
+add address=192.168.20.1/24 interface=VLAN20
+
+# إنشاء خوادم DHCP للـ VLANs
+/ip pool
+add name=vlan10_pool ranges=192.168.10.100-192.168.10.200
+add name=vlan20_pool ranges=192.168.20.100-192.168.20.200
+
+/ip dhcp-server
+add address-pool=vlan10_pool interface=VLAN10 name=dhcp_vlan10
+add address-pool=vlan20_pool interface=VLAN20 name=dhcp_vlan20
+
+/ip dhcp-server network
+add address=192.168.10.0/24 gateway=192.168.10.1 dns-server=8.8.8.8
+add address=192.168.20.0/24 gateway=192.168.20.1 dns-server=8.8.8.8
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين QoS:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء علامات حركة المرور
+/ip firewall mangle
+add chain=forward action=mark-connection new-connection-mark=voip_conn passthrough=yes protocol=udp dst-port=5060,10000-20000
+add chain=forward action=mark-packet new-packet-mark=voip_packets passthrough=yes connection-mark=voip_conn
+
+# إنشاء قواعد إدارة الطابور
+/queue tree
+add name=Total parent=LAN
+add name=VoIP parent=Total packet-mark=voip_packets priority=1 limit-at=1M max-limit=2M
+add name=Web parent=Total packet-mark=web_packets priority=3 limit-at=512k max-limit=1M
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين VPN (L2TP/IPsec):</strong>
+                                    <div class="code-block">
+                                        <pre>
+# تكوين IPsec
+/ip ipsec proposal
+add name=l2tp-proposal pfs-group=modp1024 enc-algorithms=aes-256-cbc auth-algorithms=sha256
+
+/ip ipsec policy
+add src-address=0.0.0.0/0 dst-address=0.0.0.0/0 protocol=all proposal=l2tp-proposal
+
+# تكوين L2TP
+/interface l2tp-server server
+set enabled=yes use-ipsec=yes ipsec-secret="StrongIPSecSecret"
+
+# إنشاء نطاق IP للـ VPN
+/ip pool
+add name=l2tp_pool ranges=192.168.99.100-192.168.99.200
+
+# تكوين ملف تعريف L2TP
+/ppp profile
+add name=l2tp-profile local-address=192.168.99.1 remote-address=l2tp_pool dns-server=8.8.8.8,8.8.4.4
+
+# إضافة مستخدم VPN
+/ppp secret
+add name=vpnuser password="StrongPassword" profile=l2tp-profile service=l2tp
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين توجيه متقدم (OSPF):</strong>
+                                    <div class="code-block">
+                                        <pre>
+# تمكين OSPF
+/routing ospf instance
+add name=default router-id=10.0.0.1
+
+# تكوين منطقة OSPF
+/routing ospf area
+add name=backbone area-id=0.0.0.0 instance=default
+
+# إضافة شبكات إلى OSPF
+/routing ospf network
+add network=192.168.1.0/24 area=backbone
+add network=192.168.10.0/24 area=backbone
+add network=192.168.20.0/24 area=backbone
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين النسخ الاحتياطي والاستعادة:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء نسخة احتياطية
+/system backup
+save name=mikrotik-config
+
+# استعادة النسخة الاحتياطية
+/system backup
+load name=mikrotik-config.backup
+
+# جدولة النسخ الاحتياطي التلقائي
+/system scheduler
+add name=daily-backup interval=1d start-time=03:00:00 on-event="/system backup save name=auto-backup-\$[/system clock get date]"
+                                        </pre>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="lab-verification">
+                        <h3>التحقق من المختبر:</h3>
+                        <ol>
+                            <li>تأكد من أن جميع الواجهات تعمل بشكل صحيح: <code>/interface print</code></li>
+                            <li>تحقق من تكوين عناوين IP: <code>/ip address print</code></li>
+                            <li>تحقق من عمل خادم DHCP: <code>/ip dhcp-server lease print</code></li>
+                            <li>اختبر الاتصال بالإنترنت من شبكة LAN</li>
+                            <li>تحقق من عمل VLANs: <code>/interface vlan print</code></li>
+                            <li>اختبر اتصال VPN باستخدام عميل L2TP/IPsec</li>
+                            <li>تحقق من حالة OSPF: <code>/routing ospf neighbor print</code></li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مختبر 2: تنفيذ وتحليل الشبكات الافتراضية</h2>
+                    <p>في هذا المختبر، سنقوم بتنفيذ وتحليل مختلف تقنيات الشبكات الافتراضية، بما في ذلك VLANs وVXLAN وSDN.</p>
+                    
+                    <div class="lab-requirements">
+                        <h3>متطلبات المختبر:</h3>
+                        <ul>
+                            <li>GNS3 أو EVE-NG</li>
+                            <li>صور مفاتيح Cisco أو Arista أو مفاتيح افتراضية أخرى</li>
+                            <li>صور Linux (Ubuntu أو CentOS)</li>
+                            <li>Wireshark لتحليل الحزم</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lab-steps">
+                        <h3>خطوات المختبر:</h3>
+                        <div class="step">
+                            <h4>الجزء 1: تنفيذ VLANs على مفاتيح متعددة</h4>
+                            <ol>
+                                <li>
+                                    <strong>إنشاء طوبولوجيا الشبكة:</strong>
+                                    <p>قم بإنشاء طوبولوجيا تتكون من ثلاثة مفاتيح (SW1, SW2, SW3) متصلة في تكوين نجمي، مع أجهزة محطة عمل متصلة بكل مفتاح.</p>
+                                </li>
+                                <li>
+                                    <strong>تكوين VLANs على SW1 (مفتاح Cisco):</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء VLANs
+SW1(config)# vlan 10
+SW1(config-vlan)# name MANAGEMENT
+SW1(config-vlan)# exit
+SW1(config)# vlan 20
+SW1(config-vlan)# name USERS
+SW1(config-vlan)# exit
+SW1(config)# vlan 30
+SW1(config-vlan)# name SERVERS
+SW1(config-vlan)# exit
+
+# تكوين منافذ الوصول
+SW1(config)# interface gigabitethernet 0/1
+SW1(config-if)# switchport mode access
+SW1(config-if)# switchport access vlan 10
+SW1(config-if)# exit
+
+# تكوين منافذ الجذع
+SW1(config)# interface gigabitethernet 0/2
+SW1(config-if)# switchport mode trunk
+SW1(config-if)# switchport trunk allowed vlan 10,20,30
+SW1(config-if)# exit
+
+SW1(config)# interface gigabitethernet 0/3
+SW1(config-if)# switchport mode trunk
+SW1(config-if)# switchport trunk allowed vlan 10,20,30
+SW1(config-if)# exit
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين VLANs على SW2 و SW3:</strong>
+                                    <p>كرر خطوات مماثلة على SW2 و SW3، مع تعيين منافذ مختلفة لـ VLANs المختلفة.</p>
+                                </li>
+                                <li>
+                                    <strong>تكوين Inter-VLAN Routing:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# على جهاز توجيه متصل بـ SW1
+Router(config)# interface gigabitethernet 0/0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+Router(config)# interface gigabitethernet 0/0.10
+Router(config-subif)# encapsulation dot1q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config-subif)# exit
+
+Router(config)# interface gigabitethernet 0/0.20
+Router(config-subif)# encapsulation dot1q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+Router(config-subif)# exit
+
+Router(config)# interface gigabitethernet 0/0.30
+Router(config-subif)# encapsulation dot1q 30
+Router(config-subif)# ip address 192.168.30.1 255.255.255.0
+Router(config-subif)# exit
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>التحقق من تكوين VLANs:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# على المفاتيح
+show vlan brief
+show interfaces trunk
+show spanning-tree vlan 10
+
+# على أجهزة المحطات
+ping 192.168.10.1  # اختبار الاتصال بالموجه
+ping 192.168.20.1  # اختبار الاتصال بين VLANs
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تحليل حركة VLAN باستخدام Wireshark:</strong>
+                                    <p>التقط حزم على منفذ الجذع وحلل تأشيرات 802.1Q.</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>الجزء 2: تنفيذ VXLAN على Linux</h4>
+                            <ol>
+                                <li>
+                                    <strong>إعداد خوادم Linux:</strong>
+                                    <p>قم بإعداد خادمي Linux (Host1 و Host2) متصلين عبر شبكة IP.</p>
+                                </li>
+                                <li>
+                                    <strong>تثبيت الحزم المطلوبة:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# على كلا الخادمين
+sudo apt update
+sudo apt install -y bridge-utils vxlan iproute2
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين VXLAN على Host1:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء جسر
+sudo ip link add br0 type bridge
+sudo ip link set br0 up
+
+# إنشاء واجهة VXLAN
+sudo ip link add vxlan0 type vxlan id 100 remote 192.168.1.2 dstport 4789 dev eth0
+sudo ip link set vxlan0 up
+
+# إضافة واجهة VXLAN إلى الجسر
+sudo ip link set vxlan0 master br0
+
+# تكوين عنوان IP للجسر
+sudo ip addr add 10.0.0.1/24 dev br0
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين VXLAN على Host2:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء جسر
+sudo ip link add br0 type bridge
+sudo ip link set br0 up
+
+# إنشاء واجهة VXLAN
+sudo ip link add vxlan0 type vxlan id 100 remote 192.168.1.1 dstport 4789 dev eth0
+sudo ip link set vxlan0 up
+
+# إضافة واجهة VXLAN إلى الجسر
+sudo ip link set vxlan0 master br0
+
+# تكوين عنوان IP للجسر
+sudo ip addr add 10.0.0.2/24 dev br0
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>اختبار الاتصال عبر VXLAN:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# على Host1
+ping 10.0.0.2
+
+# على Host2
+ping 10.0.0.1
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تحليل حركة VXLAN باستخدام Wireshark:</strong>
+                                    <p>التقط حزم على واجهة eth0 وحلل تغليف VXLAN (UDP منفذ 4789).</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>الجزء 3: تنفيذ SDN باستخدام Open vSwitch و Ryu</h4>
+                            <ol>
+                                <li>
+                                    <strong>إعداد بيئة SDN:</strong>
+                                    <p>قم بإعداد خادم Linux ليعمل كوحدة تحكم SDN ومفتاح Open vSwitch.</p>
+                                </li>
+                                <li>
+                                    <strong>تثبيت Open vSwitch و Ryu:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# تثبيت Open vSwitch
+sudo apt update
+sudo apt install -y openvswitch-switch
+
+# تثبيت Ryu
+sudo apt install -y python3-pip
+sudo pip3 install ryu
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>إنشاء مفتاح Open vSwitch:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء جسر OVS
+sudo ovs-vsctl add-br br0
+
+# إضافة منافذ إلى الجسر
+sudo ovs-vsctl add-port br0 eth1
+sudo ovs-vsctl add-port br0 eth2
+
+# تكوين وحدة تحكم OpenFlow
+sudo ovs-vsctl set-controller br0 tcp:127.0.0.1:6653
+
+# تكوين إصدار OpenFlow
+sudo ovs-vsctl set bridge br0 protocols=OpenFlow13
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>إنشاء تطبيق Ryu بسيط:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# إنشاء ملف simple_switch.py
+cat > simple_switch.py << EOF
+from ryu.base import app_manager
+from ryu.controller import ofp_event
+from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
+from ryu.controller.handler import set_ev_cls
+from ryu.ofproto import ofproto_v1_3
+from ryu.lib.packet import packet
+from ryu.lib.packet import ethernet
+
+class SimpleSwitch13(app_manager.RyuApp):
+    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
+
+    def __init__(self, *args, **kwargs):
+        super(SimpleSwitch13, self).__init__(*args, **kwargs)
+        self.mac_to_port = {}
+
+    @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
+    def switch_features_handler(self, ev):
+        datapath = ev.msg.datapath
+        ofproto = datapath.ofproto
+        parser = datapath.ofproto_parser
+
+        # install table-miss flow entry
+        match = parser.OFPMatch()
+        actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
+                                          ofproto.OFPCML_NO_BUFFER)]
+        self.add_flow(datapath, 0, match, actions)
+
+    def add_flow(self, datapath, priority, match, actions, buffer_id=None):
+        ofproto = datapath.ofproto
+        parser = datapath.ofproto_parser
+
+        inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS,
+                                             actions)]
+        if buffer_id:
+            mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id,
+                                    priority=priority, match=match,
+                                    instructions=inst)
+        else:
+            mod = parser.OFPFlowMod(datapath=datapath, priority=priority,
+                                    match=match, instructions=inst)
+        datapath.send_msg(mod)
+
+    @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
+    def _packet_in_handler(self, ev):
+        msg = ev.msg
+        datapath = msg.datapath
+        ofproto = datapath.ofproto
+        parser = datapath.ofproto_parser
+        in_port = msg.match['in_port']
+
+        pkt = packet.Packet(msg.data)
+        eth = pkt.get_protocols(ethernet.ethernet)[0]
+
+        dst = eth.dst
+        src = eth.src
+
+        dpid = datapath.id
+        self.mac_to_port.setdefault(dpid, {})
+
+        self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
+
+        # learn a mac address to avoid FLOOD next time.
+        self.mac_to_port[dpid][src] = in_port
+
+        if dst in self.mac_to_port[dpid]:
+            out_port = self.mac_to_port[dpid][dst]
+        else:
+            out_port = ofproto.OFPP_FLOOD
+
+        actions = [parser.OFPActionOutput(out_port)]
+
+        # install a flow to avoid packet_in next time
+        if out_port != ofproto.OFPP_FLOOD:
+            match = parser.OFPMatch(in_port=in_port, eth_dst=dst)
+            # verify if we have a valid buffer_id, if yes avoid to send both
+            # flow_mod & packet_out
+            if msg.buffer_id != ofproto.OFP_NO_BUFFER:
+                self.add_flow(datapath, 1, match, actions, msg.buffer_id)
+                return
+            else:
+                self.add_flow(datapath, 1, match, actions)
+        data = None
+        if msg.buffer_id == ofproto.OFP_NO_BUFFER:
+            data = msg.data
+
+        out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id,
+                                  in_port=in_port, actions=actions, data=data)
+        datapath.send_msg(out)
+EOF
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تشغيل وحدة تحكم Ryu:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# تشغيل تطبيق Ryu
+ryu-manager simple_switch.py
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>التحقق من تكوين SDN:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# عرض حالة المفتاح
+sudo ovs-vsctl show
+
+# عرض تدفقات OpenFlow
+sudo ovs-ofctl dump-flows br0
+
+# اختبار الاتصال بين الأجهزة المتصلة
+# (يجب أن تظهر تدفقات جديدة في المفتاح)
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تحليل حركة OpenFlow باستخدام Wireshark:</strong>
+                                    <p>التقط حزم على واجهة lo وحلل رسائل OpenFlow بين وحدة التحكم والمفتاح.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="lab-verification">
+                        <h3>التحقق من المختبر:</h3>
+                        <ol>
+                            <li>تأكد من أن أجهزة المحطات في نفس VLAN يمكنها الاتصال ببعضها البعض</li>
+                            <li>تأكد من أن أجهزة المحطات في VLANs مختلفة يمكنها الاتصال عبر الموجه</li>
+                            <li>تحقق من أن الاتصال عبر VXLAN يعمل بين Host1 و Host2</li>
+                            <li>تحقق من أن وحدة تحكم SDN تتلقى أحداث PacketIn وتضيف تدفقات إلى المفتاح</li>
+                            <li>قم بتحليل حزم VLAN و VXLAN و OpenFlow باستخدام Wireshark</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h2>مختبر 3: أمن الشبكات وتحليل الثغرات</h2>
+                    <p>في هذا المختبر، سنتعلم كيفية تنفيذ تدابير أمان الشبكات وتحليل الثغرات الأمنية باستخدام أدوات مختلفة.</p>
+                    
+                    <div class="lab-requirements">
+                        <h3>متطلبات المختبر:</h3>
+                        <ul>
+                            <li>GNS3 أو VirtualBox</li>
+                            <li>صورة Kali Linux</li>
+                            <li>صورة Ubuntu Server</li>
+                            <li>صورة Windows Server (اختياري)</li>
+                            <li>صورة pfSense أو OPNsense</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lab-steps">
+                        <h3>خطوات المختبر:</h3>
+                        <div class="step">
+                            <h4>الجزء 1: تكوين جدار حماية متقدم باستخدام pfSense</h4>
+                            <ol>
+                                <li>
+                                    <strong>إعداد طوبولوجيا الشبكة:</strong>
+                                    <p>قم بإعداد pfSense مع ثلاث واجهات: WAN و LAN و DMZ.</p>
+                                </li>
+                                <li>
+                                    <strong>التكوين الأساسي لـ pfSense:</strong>
+                                    <p>قم بتكوين عناوين IP للواجهات:</p>
+                                    <ul>
+                                        <li>WAN: 203.0.113.1/24 (أو DHCP)</li>
+                                        <li>LAN: 192.168.1.1/24</li>
+                                        <li>DMZ: 192.168.2.1/24</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>تكوين قواعد جدار الحماية:</strong>
+                                    <p>قم بإنشاء قواعد جدار الحماية التالية:</p>
+                                    <ul>
+                                        <li>السماح بحركة المرور من LAN إلى أي مكان</li>
+                                        <li>السماح بحركة المرور من DMZ إلى WAN فقط</li>
+                                        <li>السماح بحركة المرور من WAN إلى DMZ على منافذ محددة (80, 443)</li>
+                                        <li>حظر جميع حركة المرور الأخرى</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>تكوين NAT:</strong>
+                                    <p>قم بتكوين NAT للسماح للأجهزة في LAN و DMZ بالوصول إلى الإنترنت.</p>
+                                </li>
+                                <li>
+                                    <strong>تكوين إعادة توجيه المنافذ:</strong>
+                                    <p>قم بتكوين إعادة توجيه المنافذ للسماح بالوصول إلى خادم الويب في DMZ من الإنترنت.</p>
+                                </li>
+                                <li>
+                                    <strong>تكوين IDS/IPS (Snort):</strong>
+                                    <p>قم بتثبيت وتكوين Snort على pfSense لاكتشاف ومنع الهجمات.</p>
+                                </li>
+                                <li>
+                                    <strong>تكوين VPN (OpenVPN):</strong>
+                                    <p>قم بإعداد خادم OpenVPN للسماح بالوصول عن بعد إلى شبكة LAN.</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>الجزء 2: تقييم الثغرات الأمنية باستخدام Kali Linux</h4>
+                            <ol>
+                                <li>
+                                    <strong>استكشاف الشبكة:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# مسح نطاق IP
+nmap -sn 192.168.2.0/24
+
+# مسح المنافذ المفتوحة
+nmap -sS -A 192.168.2.10
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تحليل الثغرات:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# مسح الثغرات باستخدام Nmap
+nmap --script vuln 192.168.2.10
+
+# استخدام OpenVAS
+gvm-start
+firefox https://127.0.0.1:9392
+# قم بإنشاء مهمة مسح جديدة لـ 192.168.2.10
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>اختبار أمان الويب:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# استخدام OWASP ZAP
+zaproxy
+
+# استخدام Nikto
+nikto -h 192.168.2.10
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>اختبار كلمات المرور:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# استخدام Hydra لاختبار SSH
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.2.10 ssh
+
+# استخدام Hydra لاختبار HTTP Basic Auth
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.2.10 http-get /admin/
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>التقاط وتحليل حركة المرور:</strong>
+                                    <div class="code-block">
+                                        <pre>
+# استخدام Wireshark
+wireshark
+
+# استخدام tcpdump
+sudo tcpdump -i eth0 -w capture.pcap host 192.168.2.10
+                                        </pre>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>الجزء 3: تأمين خادم Linux</h4>
+                            <ol>
+                                <li>
+                                    <strong>تحديث النظام:</strong>
+                                    <div class="code-block">
+                                        <pre>
+sudo apt update
+sudo apt upgrade -y
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين جدار الحماية (UFW):</strong>
+                                    <div class="code-block">
+                                        <pre>
+sudo apt install ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
+sudo ufw status
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تأمين SSH:</strong>
+                                    <div class="code-block">
+                                        <pre>
+sudo nano /etc/ssh/sshd_config
+# قم بتعديل الإعدادات التالية:
+# PermitRootLogin no
+# PasswordAuthentication no
+# Port 2222  # تغيير المنفذ الافتراضي
+
+# إنشاء مفاتيح SSH
+ssh-keygen -t rsa -b 4096
+ssh-copy-id user@192.168.2.10
+
+sudo systemctl restart sshd
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تثبيت وتكوين Fail2Ban:</strong>
+                                    <div class="code-block">
+                                        <pre>
+sudo apt install fail2ban
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo nano /etc/fail2ban/jail.local
+# قم بتعديل الإعدادات حسب الحاجة
+
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تثبيت وتكوين OSSEC HIDS:</strong>
+                                    <div class="code-block">
+                                        <pre>
+sudo apt install build-essential
+wget https://github.com/ossec/ossec-hids/archive/3.6.0.tar.gz
+tar -xzf 3.6.0.tar.gz
+cd ossec-hids-3.6.0
+./install.sh
+# اتبع معالج التثبيت التفاعلي
+
+# بدء OSSEC
+sudo /var/ossec/bin/ossec-control start
+                                        </pre>
+                                    </div>
+                                </li>
+                                <li>
+                                    <strong>تكوين تحديثات الأمان التلقائية:</strong>
+                                    <div class="code-block">
+                                        <pre>
+sudo apt install unattended-upgrades
+sudo dpkg-reconfigure unattended-upgrades
+                                        </pre>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="lab-verification">
+                        <h3>التحقق من المختبر:</h3>
+                        <ol>
+                            <li>تأكد من أن قواعد جدار الحماية تعمل بشكل صحيح عن طريق اختبار الاتصال بين المناطق المختلفة</li>
+                            <li>تحقق من أن IDS/IPS يكتشف ويمنع الهجمات المعروفة</li>
+                            <li>تأكد من أن VPN يعمل بشكل صحيح للوصول عن بعد</li>
+                            <li>راجع نتائج مسح الثغرات وحدد الثغرات المحتملة</li>
+                            <li>تحقق من أن تدابير أمان Linux تعمل بشكل صحيح (جدار الحماية، Fail2Ban، إلخ)</li>
+                            <li>قم بإنشاء تقرير أمني يلخص النتائج والتوصيات</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <div class="quiz-section">
+                    <h2>اختبر فهمك</h2>
+                    <div class="quiz-container">
+                        <div class="question">
+                            <h3>1. أي من الأدوات التالية تستخدم لمحاكاة شبكات معقدة باستخدام أجهزة افتراضية حقيقية؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1a" value="a">
+                                    <label for="q1a">Wireshark</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1b" value="b">
+                                    <label for="q1b">GNS3</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1c" value="c">
+                                    <label for="q1c">Nmap</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q1" id="q1d" value="d">
+                                    <label for="q1d">Fail2Ban</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>2. ما هو الأمر المستخدم لإنشاء واجهة VXLAN في Linux؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2a" value="a">
+                                    <label for="q2a">ip link add vxlan0 type vxlan</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2b" value="b">
+                                    <label for="q2b">ifconfig vxlan0 create</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2c" value="c">
+                                    <label for="q2c">vxlan-create vxlan0</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q2" id="q2d" value="d">
+                                    <label for="q2d">ovs-vsctl add-port vxlan0</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question">
+                            <h3>3. أي من الأدوات التالية تستخدم لتقييم الثغرات الأمنية في الشبكة؟</h3>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3a" value="a">
+                                    <label for="q3a">UFW</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3b" value="b">
+                                    <label for="q3b">OpenVAS</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3c" value="c">
+                                    <label for="q3c">DHCP</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="q3" id="q3d" value="d">
+                                    <label for="q3d">OSPF</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="check-answers" class="btn primary-btn">تحقق من إجاباتك</button>
+                        <div id="quiz-results" class="quiz-results" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <a href="virtual-networks.html" class="btn outline-btn">السابق: الشبكات الافتراضية</a>
+                    <a href="index.html" class="btn primary-btn">العودة إلى نظرة عامة على المستوى الثاني</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-network-wired"></i> عالم الشبكات</h2>
+                    <p>منصة تعليمية متخصصة في مجال الشبكات وتكنولوجيا المعلومات</p>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../../index.html">الرئيسية</a></li>
+                        <li><a href="../basics.html">أساسيات الشبكات</a></li>
+                        <li><a href="../osi.html">نموذج OSI</a></li>
+                        <li><a href="../tcp-ip.html">بروتوكول TCP/IP</a></li>
+                        <li><a href="../quiz.html">اختبر معلوماتك</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-phone"></i> 772505594</p>
+                    <p><i class="fas fa-envelope"></i> mohannadm380w108@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/772505594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/772505594" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; 2025 - عالم الشبكات | تم التطوير بواسطة مهند مهدي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        document.getElementById('check-answers').addEventListener('click', function() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'b'
+            };
+            
+            let score = 0;
+            let feedback = '';
+            
+            // التحقق من الإجابات
+            for (const question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[question]) {
+                        score++;
+                        feedback += `<p class="correct">السؤال ${question.substring(1)}: إجابة صحيحة! ✓</p>`;
+                    } else {
+                        feedback += `<p class="incorrect">السؤال ${question.substring(1)}: إجابة خاطئة. ✗</p>`;
+                    }
+                } else {
+                    feedback += `<p class="unanswered">السؤال ${question.substring(1)}: لم تتم الإجابة. !</p>`;
+                }
+            }
+            
+            // عرض النتيجة
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.innerHTML = `
+                <h3>النتيجة: ${score} من ${Object.keys(correctAnswers).length}</h3>
+                ${feedback}
+            `;
+            resultsDiv.style.display = 'block';
+            
+            // التمرير إلى النتائج
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
